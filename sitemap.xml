@@ -6,4 +6,20 @@
     <url>
         <loc>https://furtidev.github.io/blog/</loc>
     </url>
+    <url>
+        <loc>https://furtidev.github.io/blog/using-zola-to-create-my-blog/</loc>
+        <lastmod>2023-07-08</lastmod>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/ssg/</loc>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/tutorial/</loc>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/zola/</loc>
+    </url>
 </urlset>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>Using Zola to create my blog</title>
+  <meta name="description" content="An introduction to Zola and my experience so far.">
+
+    <link rel="stylesheet" href='https://furtidev.github.io/site.css'>
+</head>
+
+<body>
+<table class="header">
+<tbody>
+    <tr>
+        <!-- <td class="logo" rowspan="2"></td> -->
+        <td class="main">
+            furtidev
+        </td>
+    </tr>
+    <tr>
+        <td class="sub">Keyboard warrior with vast interests in computer science.</td>
+        <td class="sub right">Run by a single guy</td>
+    </tr>
+</tbody>
+</table>
+
+
+<table class="tabs">
+<tbody>
+    <tr>
+        <td>
+            <a href="/">about</a>
+            <a class="active" href="https://furtidev.github.io/blog/">blog</a>
+            <a href="/tags">tags</a>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+
+<div class="content">
+
+
+
+<div class="post">
+<a href="https://furtidev.github.io/blog/"><- Go back</a>
+<br><br>
+<div style="font-size: 40px">
+  Using Zola to create my blog
+</div>
+<p style="font-size: 14px"><time datetime="2023-07-08">Jul 08, 2023</time> 
+
+| tags: 
+
+<a href='https://furtidev.github.io/tags/ssg/'>ssg</a>
+
+<a href='https://furtidev.github.io/tags/zola/'>zola</a>
+
+<a href='https://furtidev.github.io/tags/tutorial/'>tutorial</a>
+
+ 
+</p>
+<p>My original plan for this blog site was to write my own backend in Go. But after stumbling upon a couple of static site generators, I realized there's a much better and more maintainable way to do this. I will be refererring to static site generators as SSGs from now on. </p>
+<h2 id="static-site-generator-what">Static site generator? What?!</h2>
+<p>Static site generators are tools that generate static web pages (HTML, CSS, JS, no backend) from text files (Markdown, reStructuredText etc.). Say you have a bunch of markdown files as posts, a SSG will automatically compile that into a webpage. You can modify how the content is shown by writing your own templates and using custom css. See? No need for a backend, no need to manually update the HTML, just update your content, run the build command, and your site is ready, publish it wherever you want. This is how Hugo and Zola works, but some SSGs might take a different approach.</p>
+<h2 id="hugo-oh-god"><a rel="noopener" target="_blank" href="https://gohugo.io/">Hugo</a>.. oh god</h2>
+<p>Now, you might be wondering what is Hugo doing in a blog about Zola, you see, Hugo was the my first choice. Mainly because it was very popular (67.9k stars on GitHub at the time of writing!). But it was extremely complex, at least to me. It has a lot of features, and overall it's a great choice for your static site. But it just wasn't for me, I wanted something simple so that I can get my site running as quickly as possible. In the future, I might give Hugo another try.</p>
+<h2 id="zola-time"><a rel="noopener" target="_blank" href="https://www.getzola.org">Zola</a> time!</h2>
+<p>I knew Zola existed, but never gave it a try. This was the perfect opportunity. Zola is written in Rust, and uses the Tera templating language which is very similar to Jinja2 so it was a breeze to work with. It's also very simple, it doesn't have that many built-in features (not as much as Hugo at least), so you can focus on what matters. Zola has an excellent <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">quickstart guide</a> that walks you through the steps on how to create your own static site with real content. The documentation is easy to understand but I agree, it isn't as popular as Hugo and it's hard to find stuff online related to it. I wish it had a Discord server or something similar, but there's at least a Discourse forum. </p>
+<h2 id="tada-zola-tips-for-you">🎉 Zola tips for you!</h2>
+<p>After you've followed the <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">quickstart guide</a>, you should have an idea of how Zola operates. Now, you're probably interested in making your own site. I have some tips and knowledge for you below which will help you get started!</p>
+<h3 id="custom-css-on-zola">Custom CSS on Zola</h3>
+<p>First of all, Zola uses <a rel="noopener" target="_blank" href="https://sass-lang.com/">Sass</a> for styling, which gets compiled to CSS when building. Now, I'll be honest, I feel comfortable writing CSS, so I just used a <a rel="noopener" target="_blank" href="https://css2sass.herokuapp.com/">CSS to Sass</a> converter online. You have to put the Sass file under the <code style="font-size: 15px; background-color: #555; padding: 2px">sass</code> folder on your project root and refer to it on your templates with: {{code(value=&quot;<link rel='stylesheet' href='{{ get_url(path="filename.css", trailing_slash=false) | safe }}'>&quot;)}}. If your file is under a subdirectory inside the <code style="font-size: 15px; background-color: #555; padding: 2px">sass</code> folder, the structure will be similar on the compiled static site too, so your css file path will for example be: <code style="font-size: 15px; background-color: #555; padding: 2px">home&#x2F;site.css</code> (original: <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;sass&#x2F;home&#x2F;site.sass</code>) and that's the path you'll have to put on your template.</p>
+<h3 id="tags-on-zola-taxonomies">Tags on Zola (Taxonomies)</h3>
+<p>I never heard of this term before until I started using SSGs. By using taxonomies you can group your content easily. My site has support for tags, which is actually a taxonomy. You'll have to define your taxonomies in the <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;config.toml</code> file.
+I have this:</p>
+<pre data-lang="toml" style="background-color:#151515;color:#e8e8d3;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#ffb964;">taxonomies </span><span>= [
+</span><span>	{ </span><span style="color:#ffb964;">name </span><span>= </span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">tags</span><span style="color:#556633;">&quot;</span><span>, </span><span style="color:#ffb964;">feed </span><span>= true},
+</span><span>]
+</span></code></pre>
+<p>Then, at your post's <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/content/section/#front-matter">frontmatter</a> (the TOML configuration enclosed in +++ at the top of your markdown files) you can put something like this:</p>
+<pre data-lang="toml" style="background-color:#151515;color:#e8e8d3;" class="language-toml "><code class="language-toml" data-lang="toml"><span>+++
+</span><span style="color:#ffb964;">title </span><span>=
+</span><span style="color:#ffb964;">date </span><span>=
+</span><span style="color:#ffb964;">description </span><span>=
+</span><span>[</span><span style="color:#ffb964;">taxonomies</span><span>]
+</span><span style="color:#ffb964;">tags </span><span>= [</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">wow</span><span style="color:#556633;">&quot;</span><span>, </span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">nice</span><span style="color:#556633;">&quot;</span><span>, </span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">tags</span><span style="color:#556633;">&quot;</span><span>]
+</span><span>+++
+</span></code></pre>
+<p>And then, in your template, you can easily access them like this (code from my template):</p>
+<pre data-lang="jinja2" style="background-color:#151515;color:#e8e8d3;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">if </span><span style="color:#ffb964;">page</span><span>.</span><span style="color:#ffb964;">taxonomies</span><span>.</span><span style="color:#ffb964;">tags %}
+</span><span>tags: 
+</span><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">for </span><span style="color:#ffb964;">tag </span><span style="color:#8fbfdc;">in </span><span style="color:#ffb964;">page</span><span>.</span><span style="color:#ffb964;">taxonomies</span><span>.</span><span style="color:#ffb964;">tags %}
+</span><span>&lt;a href=&#39;</span><span style="color:#ffb964;">{{ get_taxonomy_url</span><span>(</span><span style="color:#ffb964;">kind</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">tags</span><span style="color:#556633;">&quot;</span><span>, </span><span style="color:#ffb964;">name</span><span>=</span><span style="color:#ffb964;">tag</span><span>) | </span><span style="color:#ffb964;">safe }}</span><span>&#39;&gt;</span><span style="color:#ffb964;">{{ tag }}</span><span>&lt;/a&gt;
+</span><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">endfor </span><span style="color:#ffb964;">%}
+</span><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">endif </span><span style="color:#ffb964;">%} 
+</span></code></pre>
+<p>Now, you've probably already seen that my site has dedicated pages for the tags. How? Well, it's simple. Zola will look for the following files:</p>
+<ul>
+<li><code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;$TAXONOMY_NAME&#x2F;single.html</code></li>
+<li><code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;$TAXONOMY_NAME&#x2F;list.html</code></li>
+</ul>
+<p>In my case, I have <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;tags&#x2F;single.html</code> &amp; <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;tags&#x2F;list.html</code>. The <strong>single.html</strong> file contains template for posts that have a specific tag and <strong>list.html</strong> contains template for listing all tags. You can take a look at what variables are available on each page: <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/templates/taxonomies/">Taxonomies documentation</a>. Here's mine code:</p>
+<pre data-lang="jinja2" style="background-color:#151515;color:#e8e8d3;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#ffb964;">{#</span><span style="color:#888888;"> list.html </span><span style="color:#ffb964;">#}
+</span><span>&lt;h1&gt;Tags&lt;/h1&gt;
+</span><span>
+</span><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">if </span><span style="color:#ffb964;">terms %}
+</span><span>&lt;ul&gt;
+</span><span>	</span><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">for </span><span style="color:#ffb964;">term </span><span style="color:#8fbfdc;">in </span><span style="color:#ffb964;">terms %}
+</span><span>		&lt;li&gt;&lt;a href=&quot;</span><span style="color:#ffb964;">{{ term</span><span>.</span><span style="color:#ffb964;">permalink </span><span>| </span><span style="color:#ffb964;">safe }}</span><span>&quot;&gt;</span><span style="color:#ffb964;">{{ term</span><span>.</span><span style="color:#ffb964;">name }}</span><span>&lt;/a&gt;&lt;/li&gt;
+</span><span>	</span><span style="color:#ffb964;">{%</span><span style="color:#8fbfdc;">endfor</span><span style="color:#ffb964;">%}
+</span><span>&lt;/ul&gt;
+</span><span style="color:#ffb964;">{%</span><span style="color:#8fbfdc;">endif</span><span style="color:#ffb964;">%}
+</span></code></pre>
+<pre data-lang="jinja2" style="background-color:#151515;color:#e8e8d3;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#ffb964;">{#</span><span style="color:#888888;"> single.html </span><span style="color:#ffb964;">#}
+</span><span>&lt;h1&gt;</span><span style="color:#ffb964;">{{term</span><span>.</span><span style="color:#ffb964;">name}}</span><span>&lt;/h1&gt;
+</span><span>
+</span><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">for </span><span style="color:#ffb964;">page </span><span style="color:#8fbfdc;">in </span><span style="color:#ffb964;">term</span><span>.</span><span style="color:#ffb964;">pages %}
+</span><span>&lt;h2&gt;&lt;a href=&quot;</span><span style="color:#ffb964;">{{page</span><span>.</span><span style="color:#ffb964;">permalink </span><span>| </span><span style="color:#ffb964;">safe}}</span><span>&quot;&gt;</span><span style="color:#ffb964;">{{page</span><span>.</span><span style="color:#ffb964;">title}}</span><span>&lt;/a&gt;&lt;/h2&gt;
+</span><span>&lt;br&gt;
+</span><span style="color:#ffb964;">{% </span><span style="color:#8fbfdc;">endfor </span><span style="color:#ffb964;">%}
+</span></code></pre>
+<h3 id="date-formatting">Date formatting</h3>
+<p>Have you seen how the publishing dates are nicely formatted in my site? How did I turn <code style="font-size: 15px; background-color: #555; padding: 2px">2023-07-08</code> to <code style="font-size: 15px; background-color: #555; padding: 2px">Jul 08, 2023</code>? Here's the secret formula:</p>
+<pre data-lang="jinja2" style="background-color:#151515;color:#e8e8d3;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#ffb964;">{{ page</span><span>.</span><span style="color:#ffb964;">date </span><span>| </span><span style="color:#ffb964;">date</span><span>(</span><span style="color:#ffb964;">format</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">%b %d, %Y</span><span style="color:#556633;">&quot;</span><span>) </span><span style="color:#ffb964;">}} 
+</span></code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>I enjoy using Zola a lot, there's a lot more for me learn about it, and I'm still a beginner, so if I've made any mistakes or if you have any feedback, send me an email on: <a href="mailto:furtidev@poto.cafe">furtidev@poto.cafe</a>.</p>
+
+</div>
+    
+</div>
+
+<div class="footer">Copyright (c) 2018-2023 furtidev - Design inspired by <a href="https://git.zx2c4.com/cgit/about/">cgit</a></div>
+
+</body>
