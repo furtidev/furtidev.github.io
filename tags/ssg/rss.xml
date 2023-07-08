@@ -79,7 +79,7 @@ I have this:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;jinja2&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-jinja2 &quot;&gt;&lt;code class=&quot;language-jinja2&quot; data-lang=&quot;jinja2&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;{{ page&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;date &lt;&#x2F;span&gt;&lt;span&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;date&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;format&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#556633;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;%b %d, %Y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#556633;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;}} 
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
-&lt;p&gt;I enjoy using Zola a lot, there&#x27;s a lot more for me to learn about it, and I&#x27;m still a beginner, so if I&#x27;ve made any mistakes or if you have any feedback, send me an email on: &lt;a href=&quot;mailto:furtidev@poto.cafe&quot;&gt;furtidev@poto.cafe&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I enjoy using Zola a lot, there&#x27;s a lot more for me to learn about it, and I&#x27;m still a beginner, so if I&#x27;ve made any mistakes or if you have any feedback, send me an email on: &lt;a href=&quot;mailto:furtidev@poto.cafe&quot;&gt;furtidev@poto.cafe&lt;&#x2F;a&gt; or you can just comment below.&lt;&#x2F;p&gt;
 </description>
       </item>
     </channel>
