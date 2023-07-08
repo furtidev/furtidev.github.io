@@ -6,7 +6,7 @@
   <title>Using Zola to create my blog</title>
   <meta name="description" content="An introduction to Zola and my experience so far.">
 
-    <link rel="stylesheet" href='https://furtidev.github.io/site.css'>
+    <link rel="stylesheet" href="https://furtidev.github.io/site.css">
 </head>
 
 <body>
@@ -74,9 +74,9 @@
 <h2 id="tada-zola-tips-for-you">🎉 Zola tips for you!</h2>
 <p>After you've followed the <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">quickstart guide</a>, you should have an idea of how Zola operates. Now, you're probably interested in making your own site. I have some tips and knowledge for you below which will help you get started!</p>
 <h3 id="custom-css-on-zola">Custom CSS on Zola</h3>
-<p>First of all, Zola uses <a rel="noopener" target="_blank" href="https://sass-lang.com/">Sass</a> for styling, which gets compiled to CSS when building. Now, I'll be honest, I feel comfortable writing CSS, so I just used a <a rel="noopener" target="_blank" href="https://css2sass.herokuapp.com/">CSS to Sass</a> converter online. You have to put the Sass file under the <code style="font-size: 15px; background-color: #555; padding: 2px">sass</code> folder on your project root and refer to it on your templates with: {{code(code=&quot;<link rel='stylesheet' href='{{ get_url(path="filename.css", trailing_slash=false) | safe }}'>&quot;)}}. If your file is under a subdirectory inside the <code style="font-size: 15px; background-color: #555; padding: 2px">sass</code> folder, the structure will be similar on the compiled static site too, so your css file path will for example be: <code style="font-size: 15px; background-color: #555; padding: 2px">home&#x2F;site.css</code> (original: <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;sass&#x2F;home&#x2F;site.sass</code>) and that's the path you'll have to put on your template.</p>
+<p>First of all, Zola uses <a rel="noopener" target="_blank" href="https://sass-lang.com/">Sass</a> for styling, which gets compiled to CSS when building. Now, I'll be honest, I feel comfortable writing CSS, so I just used a <a rel="noopener" target="_blank" href="https://css2sass.herokuapp.com/">CSS to Sass</a> converter online. You have to put the Sass file under the <code style="font-size: 15px; background-color: #555; padding: 2px">sass</code> folder on your project root and refer to it on your templates with: <code style="font-size: 15px; background-color: #555; padding: 2px">&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ get_url(path='site.css', trailing_slash=false) | safe }}&quot;></code>. If your file is under a subdirectory inside the <code style="font-size: 15px; background-color: #555; padding: 2px">sass</code> folder, the structure will be similar on the compiled static site too, so your css file path will for example be: <code style="font-size: 15px; background-color: #555; padding: 2px">home/site.css</code> (original: <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/sass/home/site.sass</code>) and that's the path you'll have to put on your template.</p>
 <h3 id="tags-on-zola-taxonomies">Tags on Zola (Taxonomies)</h3>
-<p>I never heard of this term before until I started using SSGs. By using taxonomies you can group your content easily. My site has support for tags, which is actually a taxonomy. You'll have to define your taxonomies in the <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;config.toml</code> file.
+<p>I never heard of this term before until I started using SSGs. By using taxonomies you can group your content easily. My site has support for tags, which is actually a taxonomy. You'll have to define your taxonomies in the <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/config.toml</code> file.
 I have this:</p>
 <pre data-lang="toml" style="background-color:#151515;color:#e8e8d3;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#ffb964;">taxonomies </span><span>= [
 </span><span>	{ </span><span style="color:#ffb964;">name </span><span>= </span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">tags</span><span style="color:#556633;">&quot;</span><span>, </span><span style="color:#ffb964;">feed </span><span>= true},
@@ -101,10 +101,10 @@ I have this:</p>
 </span></code></pre>
 <p>Now, you've probably already seen that my site has dedicated pages for the tags. How? Well, it's simple. Zola will look for the following files:</p>
 <ul>
-<li><code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;$TAXONOMY_NAME&#x2F;single.html</code></li>
-<li><code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;$TAXONOMY_NAME&#x2F;list.html</code></li>
+<li><code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/templates/$TAXONOMY_NAME/single.html</code></li>
+<li><code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/templates/$TAXONOMY_NAME/list.html</code></li>
 </ul>
-<p>In my case, I have <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;tags&#x2F;single.html</code> &amp; <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT&#x2F;templates&#x2F;tags&#x2F;list.html</code>. The <strong>single.html</strong> file contains template for posts that have a specific tag and <strong>list.html</strong> contains template for listing all tags. You can take a look at what variables are available on each page: <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/templates/taxonomies/">Taxonomies documentation</a>. Here's my code:</p>
+<p>In my case, I have <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/templates/tags/single.html</code> &amp; <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/templates/tags/list.html</code>. The <strong>single.html</strong> file contains template for posts that have a specific tag and <strong>list.html</strong> contains template for listing all tags. You can take a look at what variables are available on each page: <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/templates/taxonomies/">Taxonomies documentation</a>. Here's my code:</p>
 <pre data-lang="jinja2" style="background-color:#151515;color:#e8e8d3;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#ffb964;">{#</span><span style="color:#888888;"> list.html </span><span style="color:#ffb964;">#}
 </span><span>&lt;h1&gt;Tags&lt;/h1&gt;
 </span><span>
