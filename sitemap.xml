@@ -7,6 +7,10 @@
         <loc>https://furtidev.github.io/blog/</loc>
     </url>
     <url>
+        <loc>https://furtidev.github.io/blog/my-experience-with-password-managers/</loc>
+        <lastmod>2023-09-11</lastmod>
+    </url>
+    <url>
         <loc>https://furtidev.github.io/blog/page/1/</loc>
     </url>
     <url>
@@ -20,12 +24,12 @@
         <loc>https://furtidev.github.io/tags/</loc>
     </url>
     <url>
-        <loc>https://furtidev.github.io/tags/ssg/</loc>
+        <loc>https://furtidev.github.io/tags/misc/</loc>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/tool/</loc>
     </url>
     <url>
         <loc>https://furtidev.github.io/tags/tutorial/</loc>
-    </url>
-    <url>
-        <loc>https://furtidev.github.io/tags/zola/</loc>
     </url>
 </urlset>

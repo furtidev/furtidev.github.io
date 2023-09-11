@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta property="og:title" content="furtidev's site">
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="https://64.media.tumblr.com/3f4bdb341cc76f13c75a88acac9faaf3/d5e34d96762c59ae-25/s75x75_c1/765d5795496a70fe5c58a689ef835181b25429e5.gif">
+    <meta property="og:url" content="https://furtidev.github.io">
+    <meta property="og:description" content="Welcome to my internet home!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>My experience with password managers</title>
+  <meta name="description" content="Sharing my experiences with 3 different password managers and hating on LastPass">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "My experience with password managers",
+      "datePublished": "2023-09-11",
+      "author": [{
+          "@type": "Person",
+          "name": "furtidev",
+          "url": "https://poto.cafe/@furtidev"
+      }]
+    }
+  </script>
+
+    <link rel="stylesheet" href="https://furtidev.github.io/site.css">
+</head>
+
+<body>
+<table class="header">
+<tbody>
+    <tr>
+        <td class="logo" rowspan="2"><img src="https://64.media.tumblr.com/3f4bdb341cc76f13c75a88acac9faaf3/d5e34d96762c59ae-25/s75x75_c1/765d5795496a70fe5c58a689ef835181b25429e5.gifv"></td>
+        <td class="main">
+            furtidev
+        </td>
+    </tr>
+    <tr>
+        <td class="sub">Keyboard warrior with vast interests in computer science.</td>
+        <td class="sub right">Run by a single guy</td>
+    </tr>
+</tbody>
+</table>
+
+
+<table class="tabs">
+<tbody>
+    <tr>
+        <td>
+            <a href="/">about</a>
+            <a class="active" href="https://furtidev.github.io/blog/">blog</a>
+            <a href="/tags">tags</a>
+            <a href="https://furtidev.github.io/status/">status</a>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+
+<div class="content">
+
+
+
+<div class="post">
+<a href="https://furtidev.github.io/blog/"><- Go back</a>
+<br><br>
+
+<article>
+
+<div style="font-size: 40px">
+  My experience with password managers
+</div>
+<p style="font-size: 14px; color: #ccc"><time datetime="2023-09-11">Sep 11, 2023</time> 
+
+- tags: 
+
+<a style='border: 1px solid #3af; padding: 3px; color: white' href='https://furtidev.github.io/tags/misc/'>misc</a>
+
+
+<br/>
+<i>Sharing my experiences with 3 different password managers and hating on LastPass</i>
+</p>
+<div style="font-size: 18px;"><p>Back when I was a foolish young man, I used the same password everywhere so that I won't have to struggle with remembering what password I set for what account. In retrospect, that was a very, very stupid decision. And as you can guess, I got <a rel="noopener" target="_blank" href="https://haveibeenpwned.com/">pwned</a>!</p>
+<p>So after that I finally decided to use a password manager. So I'll be sharing my experience with the ones I've used so far.</p>
+<h2 id="lastpass-don-t">LastPass (don't)</h2>
+<p>I chose LastPass at first because Daddy Google had it on top of the search results when I looked up 'Best Password Manager'. I was using it until LastPass had a data breach last year, it was a huge mess. A few months later the company revealed that GoTo's (the company behind LastPass) other services were also attacked, plus encrypted backups <strong>with encryption keys for said backups</strong> and MFA data were also stolen. </p>
+<p>GoTo didn't give any more details about it, like how old the backups were etc. LastPass is a horrible service. GoTo is a horrible company, the handled the breach very poorly. Constantly getting spammed with promotional e-mails was also very annoying. I just exported all my data, changed all my passwords and switched to BitWarden.</p>
+<h2 id="bitwarden-great">BitWarden (great)</h2>
+<p>I just said to myself, &quot;Heh, it can't be worse than LastPass&quot;, and went in. First of all, BitWarden is open source on <a rel="noopener" target="_blank" href="https://github.com/bitwarden/">GitHub</a>. I used the free plan but the personal premium plan is also great, only $10/year. Unlike LastPass, BitWarden actually encrypts all your fields. I had a very strong and long (that's... what... she.... said....) master password. </p>
+<p>Regular security audits conducted by notable third-party security firms, open source, self-hostable, generous free plan, transparent company, <a rel="noopener" target="_blank" href="https://bitwarden.com/help/what-encryption-is-used/">zero knowledge encryption</a> (<a rel="noopener" target="_blank" href="https://bitwarden.com/resources/zero-knowledge-encryption-white-paper/">white paper</a>), good reputation and I like their philosophy towards security. </p>
+<p>I don't really have any particular reason for not using BitWarden anymore, I just found something better that works.</p>
+<h2 id="keepassxc-currently-using-great">KeePassXC (currently using, great)</h2>
+<p>I currently use KeePassXC regularly. There's no server involved, you just download KeePassXC and start using it. Importing data from BitWarden wasn't hard though it wasn't seamless either. I just save regular backups of my database on the cloud, and use a strong master password. Plus, you can also use YubiKey and OnlyKey for extra protection. It is also open source software and I like that everything about it is handled by me and me only. I also use it for OTP.</p>
+<p>I'm no encryption/security specialist, I just wanted to share my experience so if I've made any mistakes then comment below or send me an email on: <a href="mailto:furtidev@poto.cafe">furtidev@poto.cafe</a>.</p>
+</div>
+</div>
+</article>
+
+<script src="https://utteranc.es/client.js"
+        repo="furtidev/furtidev.github.io"
+        issue-term="pathname"
+        label="comment"
+        theme="gruvbox-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+</div>
+
+<div class="footer">Copyright (c) 2018-2023 furtidev - Design inspired by <a href="https://git.zx2c4.com/cgit/about/">cgit</a> - <a href='https://furtidev.github.io/rss.xml'>rss feed</a></div>
+
+</body>
