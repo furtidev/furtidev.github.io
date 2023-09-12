@@ -27,12 +27,14 @@
 </head>
 
 <div class="navbar">
-<img style="width: 10em; height: 10em; padding-right: 1rem" src="https://i.pinimg.com/736x/51/14/e8/5114e8a94a9cf3211887b17128b49980.jpg"/>
-<ul style="list-style: none; padding: 0">
-    <li><h1 style="margin: auto">furtidev</h1></li>
-    <li style="font-size: 20px;">A place for me to rant on. Mood swing specialist. Code enthusiast.</li>
-    <li style="font-size: 20px; margin-bottom: 5px;"><a href='/'>home</a> <a href="https://furtidev.github.io/blog/">blog</a> <a href='https://furtidev.github.io/rss.xml'>rss</a>
-</ul>
+<span class="title">
+    <font color="#ff5555">furti</font><font color="#00AA00">dev</font>
+</span>
+<br>
+<ul>
+    <li><a href="/">home</a></li>
+    <li><a href="https://furtidev.github.io/blog/">blog</a></li>
+    <li><a href='https://furtidev.github.io/rss.xml'>rss</a></li>
 </div>
 
 <div class="content">
@@ -45,21 +47,21 @@
 
 <article>
 
-<div style="font-size: 50px">
+<div style="font-size: 40px; line-height: 35px">
   Using Zola to create my blog
 </div>
-<p style="font-size: 18px; color: #ccc"><time datetime="2023-07-08">Jul 08, 2023</time> 
+<p style="color: #ccc"><time datetime="2023-07-08">Jul 08, 2023</time> 
 
 - tags: 
 
-<a style='border: 1px solid #ff5555; padding: 3px; color: white' href='https://furtidev.github.io/tags/tutorial/'>tutorial</a>
+<a style='border: 1px solid #ccc; padding: 3px; color: white' href='https://furtidev.github.io/tags/tutorial/'>tutorial</a>
 
-<a style='border: 1px solid #ff5555; padding: 3px; color: white' href='https://furtidev.github.io/tags/tool/'>tool</a>
+<a style='border: 1px solid #ccc; padding: 3px; color: white' href='https://furtidev.github.io/tags/tool/'>tool</a>
 
 
 <br/>
 </p>
-<div style="font-size: 18px;"><p>My original plan for this blog site was to write my own backend in Go. But after stumbling upon a couple of static site generators, I realized there's a much better and more maintainable way to do this. I will be refererring to static site generators as SSGs from now on. </p>
+<div><p>My original plan for this blog site was to write my own backend in Go. But after stumbling upon a couple of static site generators, I realized there's a much better and more maintainable way to do this. I will be refererring to static site generators as SSGs from now on. </p>
 <h2 id="static-site-generator-what">Static site generator? What?!</h2>
 <p>Static site generators are tools that generate static web pages (HTML, CSS, JS, no backend) from text files (Markdown, reStructuredText etc.). Say you have a bunch of markdown files as posts, a SSG will automatically compile that into a webpage. You can modify how the content is shown by writing your own templates and using custom css. See? No need for a backend, no need to manually update the HTML, just update your content, run the build command, and your site is ready, publish it wherever you want. This is how Hugo and Zola works, but some SSGs might take a different approach.</p>
 <h2 id="hugo-oh-god"><a rel="noopener" target="_blank" href="https://gohugo.io/">Hugo</a>.. oh god</h2>
@@ -73,26 +75,26 @@
 <h3 id="tags-on-zola-taxonomies">Tags on Zola (Taxonomies)</h3>
 <p>I never heard of this term before until I started using SSGs. By using taxonomies you can group your content easily. My site has support for tags, which is actually a taxonomy. You'll have to define your taxonomies in the <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/config.toml</code> file.
 I have this:</p>
-<pre data-lang="toml" style="background-color:#212121;color:#eeffff;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#f07178;">taxonomies </span><span style="color:#89ddff;">= [
-</span><span>	</span><span style="color:#89ddff;">{ </span><span style="color:#f07178;">name </span><span style="color:#89ddff;">= &quot;</span><span style="color:#c3e88d;">tags</span><span style="color:#89ddff;">&quot;, </span><span style="color:#f07178;">feed </span><span style="color:#89ddff;">= </span><span style="color:#f78c6c;">true</span><span style="color:#89ddff;">},
-</span><span style="color:#89ddff;">]
+<pre data-lang="toml" style="background-color:#282828;color:#fdf4c1aa;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="font-weight:bold;color:#8ec07c;">taxonomies </span><span>= [
+</span><span>	{ </span><span style="font-weight:bold;color:#8ec07c;">name </span><span>= </span><span style="color:#b8bb26;">&quot;tags&quot;</span><span>, </span><span style="font-weight:bold;color:#8ec07c;">feed </span><span>= </span><span style="color:#d3869b;">true</span><span>},
+</span><span>]
 </span></code></pre>
 <p>Then, at your post's <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/content/section/#front-matter">frontmatter</a> (the TOML configuration enclosed in +++ at the top of your markdown files) you can put something like this:</p>
-<pre data-lang="toml" style="background-color:#212121;color:#eeffff;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="background-color:#ff5370;color:#ffffff;">+++</span><span>
-</span><span style="color:#f07178;">title </span><span style="color:#89ddff;">=
-</span><span style="color:#f07178;">date </span><span style="color:#89ddff;">=
-</span><span style="color:#f07178;">description </span><span style="color:#89ddff;">=
-</span><span style="color:#89ddff;">[taxonomies]
-</span><span style="color:#f07178;">tags </span><span style="color:#89ddff;">= [&quot;</span><span style="color:#c3e88d;">wow</span><span style="color:#89ddff;">&quot;, &quot;</span><span style="color:#c3e88d;">nice</span><span style="color:#89ddff;">&quot;, &quot;</span><span style="color:#c3e88d;">tags</span><span style="color:#89ddff;">&quot;]
-</span><span style="background-color:#ff5370;color:#ffffff;">+++</span><span>
+<pre data-lang="toml" style="background-color:#282828;color:#fdf4c1aa;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="background-color:#932b1e;color:#fdf4c1;">+++</span><span>
+</span><span style="font-weight:bold;color:#8ec07c;">title </span><span>=
+</span><span style="font-weight:bold;color:#8ec07c;">date </span><span>=
+</span><span style="font-weight:bold;color:#8ec07c;">description </span><span>=
+</span><span>[</span><span style="color:#8ec07c;">taxonomies</span><span>]
+</span><span style="font-weight:bold;color:#8ec07c;">tags </span><span>= [</span><span style="color:#b8bb26;">&quot;wow&quot;</span><span>, </span><span style="color:#b8bb26;">&quot;nice&quot;</span><span>, </span><span style="color:#b8bb26;">&quot;tags&quot;</span><span>]
+</span><span style="background-color:#932b1e;color:#fdf4c1;">+++</span><span>
 </span></code></pre>
 <p>And then, in your template, you can easily access them like this (code from my template):</p>
-<pre data-lang="jinja2" style="background-color:#212121;color:#eeffff;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span>{% </span><span style="font-style:italic;color:#c792ea;">if </span><span>page</span><span style="color:#89ddff;">.</span><span>taxonomies</span><span style="color:#89ddff;">.</span><span>tags %}
+<pre data-lang="jinja2" style="background-color:#282828;color:#fdf4c1aa;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">if </span><span style="color:#fdf4c1;">page</span><span>.</span><span style="color:#fdf4c1;">taxonomies</span><span>.</span><span style="color:#fdf4c1;">tags </span><span style="color:#8ec07c;">%}
 </span><span>tags: 
-</span><span>{% </span><span style="font-style:italic;color:#c792ea;">for </span><span>tag </span><span style="font-style:italic;color:#c792ea;">in </span><span>page</span><span style="color:#89ddff;">.</span><span>taxonomies</span><span style="color:#89ddff;">.</span><span>tags %}
-</span><span>&lt;a href=&#39;{{ get_taxonomy_url</span><span style="color:#89ddff;">(</span><span>kind</span><span style="color:#89ddff;">=&quot;</span><span style="color:#c3e88d;">tags</span><span style="color:#89ddff;">&quot;, </span><span>name</span><span style="color:#89ddff;">=</span><span>tag</span><span style="color:#89ddff;">) | </span><span>safe }}&#39;&gt;{{ tag }}&lt;/a&gt;
-</span><span>{% </span><span style="font-style:italic;color:#c792ea;">endfor </span><span>%}
-</span><span>{% </span><span style="font-style:italic;color:#c792ea;">endif </span><span>%} 
+</span><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">for </span><span style="color:#fdf4c1;">tag </span><span style="color:#fa5c4b;">in </span><span style="color:#fdf4c1;">page</span><span>.</span><span style="color:#fdf4c1;">taxonomies</span><span>.</span><span style="color:#fdf4c1;">tags </span><span style="color:#8ec07c;">%}
+</span><span>&lt;a href=&#39;</span><span style="color:#8ec07c;">{{ </span><span style="color:#fdf4c1;">get_taxonomy_url</span><span>(</span><span style="color:#fdf4c1;">kind</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">&quot;tags&quot;</span><span>, </span><span style="color:#fdf4c1;">name</span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1;">tag</span><span>) | </span><span style="color:#fdf4c1;">safe </span><span style="color:#8ec07c;">}}</span><span>&#39;&gt;</span><span style="color:#8ec07c;">{{ </span><span style="color:#fdf4c1;">tag </span><span style="color:#8ec07c;">}}</span><span>&lt;/a&gt;
+</span><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">endfor </span><span style="color:#8ec07c;">%}
+</span><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">endif </span><span style="color:#8ec07c;">%} 
 </span></code></pre>
 <p>Now, you've probably already seen that my site has dedicated pages for the tags. How? Well, it's simple. Zola will look for the following files:</p>
 <ul>
@@ -100,28 +102,28 @@ I have this:</p>
 <li><code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/templates/$TAXONOMY_NAME/list.html</code></li>
 </ul>
 <p>In my case, I have <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/templates/tags/single.html</code> &amp; <code style="font-size: 15px; background-color: #555; padding: 2px">PROJECT_ROOT/templates/tags/list.html</code>. The <strong>single.html</strong> file contains template for posts that have a specific tag and <strong>list.html</strong> contains template for listing all tags. You can take a look at what variables are available on each page: <a rel="noopener" target="_blank" href="https://www.getzola.org/documentation/templates/taxonomies/">Taxonomies documentation</a>. Here's my code:</p>
-<pre data-lang="jinja2" style="background-color:#212121;color:#eeffff;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="font-style:italic;color:#4a4a4a;">{# list.html #}
+<pre data-lang="jinja2" style="background-color:#282828;color:#fdf4c1aa;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#8ec07c;">{#</span><span style="font-style:italic;color:#928374;"> list.html </span><span style="color:#8ec07c;">#}
 </span><span>&lt;h1&gt;Tags&lt;/h1&gt;
 </span><span>
-</span><span>{% </span><span style="font-style:italic;color:#c792ea;">if </span><span>terms %}
+</span><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">if </span><span style="color:#fdf4c1;">terms </span><span style="color:#8ec07c;">%}
 </span><span>&lt;ul&gt;
-</span><span>	{% </span><span style="font-style:italic;color:#c792ea;">for </span><span>term </span><span style="font-style:italic;color:#c792ea;">in </span><span>terms %}
-</span><span>		&lt;li&gt;&lt;a href=&quot;{{ term</span><span style="color:#89ddff;">.</span><span>permalink </span><span style="color:#89ddff;">| </span><span>safe }}&quot;&gt;{{ term</span><span style="color:#89ddff;">.</span><span>name }}&lt;/a&gt;&lt;/li&gt;
-</span><span>	{%</span><span style="font-style:italic;color:#c792ea;">endfor</span><span>%}
+</span><span>	</span><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">for </span><span style="color:#fdf4c1;">term </span><span style="color:#fa5c4b;">in </span><span style="color:#fdf4c1;">terms </span><span style="color:#8ec07c;">%}
+</span><span>		&lt;li&gt;&lt;a href=&quot;</span><span style="color:#8ec07c;">{{ </span><span style="color:#fdf4c1;">term</span><span>.</span><span style="color:#fdf4c1;">permalink </span><span>| </span><span style="color:#fdf4c1;">safe </span><span style="color:#8ec07c;">}}</span><span>&quot;&gt;</span><span style="color:#8ec07c;">{{ </span><span style="color:#fdf4c1;">term</span><span>.</span><span style="color:#fdf4c1;">name </span><span style="color:#8ec07c;">}}</span><span>&lt;/a&gt;&lt;/li&gt;
+</span><span>	</span><span style="color:#8ec07c;">{%</span><span style="color:#fa5c4b;">endfor</span><span style="color:#8ec07c;">%}
 </span><span>&lt;/ul&gt;
-</span><span>{%</span><span style="font-style:italic;color:#c792ea;">endif</span><span>%}
+</span><span style="color:#8ec07c;">{%</span><span style="color:#fa5c4b;">endif</span><span style="color:#8ec07c;">%}
 </span></code></pre>
-<pre data-lang="jinja2" style="background-color:#212121;color:#eeffff;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="font-style:italic;color:#4a4a4a;">{# single.html #}
-</span><span>&lt;h1&gt;{{term</span><span style="color:#89ddff;">.</span><span>name}}&lt;/h1&gt;
+<pre data-lang="jinja2" style="background-color:#282828;color:#fdf4c1aa;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#8ec07c;">{#</span><span style="font-style:italic;color:#928374;"> single.html </span><span style="color:#8ec07c;">#}
+</span><span>&lt;h1&gt;</span><span style="color:#8ec07c;">{{</span><span style="color:#fdf4c1;">term</span><span>.</span><span style="color:#fdf4c1;">name</span><span style="color:#8ec07c;">}}</span><span>&lt;/h1&gt;
 </span><span>
-</span><span>{% </span><span style="font-style:italic;color:#c792ea;">for </span><span>page </span><span style="font-style:italic;color:#c792ea;">in </span><span>term</span><span style="color:#89ddff;">.</span><span>pages %}
-</span><span>&lt;h2&gt;&lt;a href=&quot;{{page</span><span style="color:#89ddff;">.</span><span>permalink </span><span style="color:#89ddff;">| </span><span>safe}}&quot;&gt;{{page</span><span style="color:#89ddff;">.</span><span>title}}&lt;/a&gt;&lt;/h2&gt;
+</span><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">for </span><span style="color:#fdf4c1;">page </span><span style="color:#fa5c4b;">in </span><span style="color:#fdf4c1;">term</span><span>.</span><span style="color:#fdf4c1;">pages </span><span style="color:#8ec07c;">%}
+</span><span>&lt;h2&gt;&lt;a href=&quot;</span><span style="color:#8ec07c;">{{</span><span style="color:#fdf4c1;">page</span><span>.</span><span style="color:#fdf4c1;">permalink </span><span>| </span><span style="color:#fdf4c1;">safe</span><span style="color:#8ec07c;">}}</span><span>&quot;&gt;</span><span style="color:#8ec07c;">{{</span><span style="color:#fdf4c1;">page</span><span>.</span><span style="color:#fdf4c1;">title</span><span style="color:#8ec07c;">}}</span><span>&lt;/a&gt;&lt;/h2&gt;
 </span><span>&lt;br&gt;
-</span><span>{% </span><span style="font-style:italic;color:#c792ea;">endfor </span><span>%}
+</span><span style="color:#8ec07c;">{% </span><span style="color:#fa5c4b;">endfor </span><span style="color:#8ec07c;">%}
 </span></code></pre>
 <h3 id="date-formatting">Date formatting</h3>
 <p>Have you seen how the publishing dates are nicely formatted in my site? How did I turn <code style="font-size: 15px; background-color: #555; padding: 2px">2023-07-08</code> to <code style="font-size: 15px; background-color: #555; padding: 2px">Jul 08, 2023</code>? Here's the secret formula:</p>
-<pre data-lang="jinja2" style="background-color:#212121;color:#eeffff;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span>{{ page</span><span style="color:#89ddff;">.</span><span>date </span><span style="color:#89ddff;">| </span><span>date</span><span style="color:#89ddff;">(</span><span>format</span><span style="color:#89ddff;">=&quot;</span><span style="color:#c3e88d;">%b %d, %Y</span><span style="color:#89ddff;">&quot;) </span><span>}} 
+<pre data-lang="jinja2" style="background-color:#282828;color:#fdf4c1aa;" class="language-jinja2 "><code class="language-jinja2" data-lang="jinja2"><span style="color:#8ec07c;">{{ </span><span style="color:#fdf4c1;">page</span><span>.</span><span style="color:#fdf4c1;">date </span><span>| </span><span style="color:#fdf4c1;">date</span><span>(</span><span style="color:#fdf4c1;">format</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">&quot;%b %d, %Y&quot;</span><span>) </span><span style="color:#8ec07c;">}} 
 </span></code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>I enjoy using Zola a lot, there's a lot more for me to learn about it, and I'm still a beginner, so if I've made any mistakes or if you have any feedback, send me an email on: <a href="mailto:furtidev@poto.cafe">furtidev@poto.cafe</a> or you can just comment below.</p>
