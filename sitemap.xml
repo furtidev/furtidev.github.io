@@ -18,6 +18,10 @@
         <loc>https://furtidev.github.io/blog/page/1/</loc>
     </url>
     <url>
+        <loc>https://furtidev.github.io/blog/plankton-devlog-1/</loc>
+        <lastmod>2023-10-15</lastmod>
+    </url>
+    <url>
         <loc>https://furtidev.github.io/blog/using-zola-to-create-my-blog/</loc>
         <lastmod>2023-07-08</lastmod>
     </url>
@@ -26,6 +30,9 @@
     </url>
     <url>
         <loc>https://furtidev.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/devlog/</loc>
     </url>
     <url>
         <loc>https://furtidev.github.io/tags/misc/</loc>

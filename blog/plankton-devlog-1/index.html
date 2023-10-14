@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta property="og:url" content="https://furtidev.github.io/blog/plankton-devlog-1/">
+    <meta property="og:type" content="blog" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>Plankton Devlog #1</title>
+  <meta property="og:title" content="Plankton Devlog #1 | furtidev's blog">
+  <meta property="og:description" content="Trying to write my own programming language.">
+  <meta name="description" content="Trying to write my own programming language.">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Plankton Devlog #1",
+      "datePublished": "2023-10-15",
+      "author": [{
+          "@type": "Person",
+          "name": "furtidev",
+          "url": "https://poto.cafe/@furtidev"
+      }]
+    }
+  </script>
+
+    <link rel="stylesheet" href="https://furtidev.github.io/site.css">
+</head>
+
+<div class="navbar">
+<span class="title">
+    <font color="#ff5555">furti</font><font color="#00AA00">dev</font>
+</span>
+<br>
+<ul>
+    <li><a href="/">home</a></li>
+    <li><a href="https://furtidev.github.io/blog/">blog</a></li>
+    <li><a href='https://furtidev.github.io/rss.xml'>rss</a></li>
+</div>
+
+<div class="content">
+
+
+
+<div class="post"><br>
+<a href="https://furtidev.github.io/blog/">Go back</a>
+<br><br>
+
+<article>
+
+<div style="font-size: 40px; line-height: 35px">
+  Plankton Devlog #1
+</div>
+<p style="color: #ccc"><time datetime="2023-10-15">Oct 15, 2023</time> 
+
+- tags: 
+
+<a style='border: 1px solid #ccc; padding: 3px; color: white' href='https://furtidev.github.io/tags/devlog/'>devlog</a>
+
+
+<br/>
+</p>
+<div><p>Apparently people make new programming languages all the time, a few of my friends did it too, so why miss out? That's what I thought last year. I even chose a name for my language at the time. But I never actually got around to it until a few days ago. </p>
+<center><img src="https://i.ibb.co/RYdSZPt/image.png" /></center>
+<h1 id="the-gameplan">The gameplan</h1>
+<p>That's great Furti, but how do you make a programming language? Thankfully I had some previous knowledge about the topic, mostly from reading <a rel="noopener" target="_blank" href="https://interpreterbook.com/">Writing an interpreter in Go</a> (I never finished it ☹) and researching about it last year. So my approach was simple:</p>
+<ul>
+<li>Figure out the syntax of the language.
+<ul>
+<li>I wanted it to have very simple syntax, with static typing. It turned out to be a combination between C and Python. </li>
+</ul>
+</li>
+<li>Write the lexer.
+<ul>
+<li>This was the easiest part so far. The purpose of a lexer is to convert source code into a list of tokens. But it is also the most stable part of my language so far, because everything else is a joke. </li>
+</ul>
+</li>
+<li>Write the parser.
+<ul>
+<li>A parser's job is to take the list of tokens and build out an Abstract Syntax Tree (AST). So basically representing our source code using a tree structure. </li>
+</ul>
+</li>
+<li>Write the compiler (or the interpreter because writing a compiler is hard).
+<ul>
+<li>Well, I want to write a compiler using <a rel="noopener" target="_blank" href="https://c9x.me/compile/">QBE</a> as a backend. It is not an easy task, so I've decided to write an interpreter for now. We'll leave the compiler for Future Furti™. My interpreter just traverses through the AST and does silly things. We'll talk more about this later.</li>
+</ul>
+</li>
+</ul>
+<h2 id="syntax-of-plankton">Syntax of Plankton</h2>
+<p>I think the best way to showcase the syntax is to show some code in Plankton:</p>
+<pre data-lang="kotlin" style="background-color:#282828;color:#fdf4c1aa;" class="language-kotlin "><code class="language-kotlin" data-lang="kotlin"><span>n</span><span style="color:#fe8019;">:</span><span> int </span><span style="color:#fe8019;">= </span><span style="color:#d3869b;">4832</span><span>;
+</span><span>print(n);
+</span><span style="color:#fa5c4b;">while</span><span> (n </span><span style="color:#fe8019;">!= </span><span style="color:#d3869b;">1</span><span>) {
+</span><span>	</span><span style="color:#fa5c4b;">if</span><span> (n </span><span style="color:#fe8019;">% </span><span style="color:#d3869b;">2 </span><span style="color:#fe8019;">== </span><span style="color:#d3869b;">0</span><span>) {
+</span><span>		n </span><span style="color:#fe8019;">=</span><span> n </span><span style="color:#fe8019;">/ </span><span style="color:#d3869b;">2</span><span>;
+</span><span>	} </span><span style="color:#fa5c4b;">else</span><span> {
+</span><span>		n </span><span style="color:#fe8019;">= </span><span style="color:#d3869b;">3 </span><span style="color:#fe8019;">*</span><span> n </span><span style="color:#fe8019;">+ </span><span style="color:#d3869b;">1</span><span>;
+</span><span>	}
+</span><span>	print(n);
+</span><span>}
+</span><span>
+</span><span style="color:#fa5c4b;">fun </span><span style="color:#8ec07c;">add</span><span>(</span><span style="color:#fdf4c1;">x</span><span>, </span><span style="color:#fdf4c1;">y</span><span style="color:#fe8019;">:</span><span> int) int {
+</span><span>	</span><span style="color:#fa5c4b;">return</span><span> x </span><span style="color:#fe8019;">+</span><span> y;
+</span><span>}
+</span><span>
+</span><span>print(add(</span><span style="color:#d3869b;">34</span><span>, </span><span style="color:#d3869b;">39</span><span>));
+</span></code></pre>
+<p>This combination of C and Python is not my greatest idea but hey, it works. The language is statically typed, so all variables must have their types defined. </p>
+<h2 id="what-is-ast">What is AST?</h2>
+<p>So far this is the part that took the longest. I couldn't figure out how to write an AST generator (a.k.a parser). But a website that helped me out a lot was <a rel="noopener" target="_blank" href="https://astexplorer.net/">AST Explorer</a>. In AST Explorer, you can generate AST for popular programming languages. So I got somewhat of an idea of how to make my own parser. I won't bore you with the details but if you're interested, check out <a rel="noopener" target="_blank" href="https://www.youtube.com/watch?v=wINY109MG10">this video</a> on how an AST works.</p>
+<p>My parser represents the AST using Python dictionaries, so it was pleasant to work with, though I'm not sure if I'm sacrificing my long term sanity by doing this. Guess we'll find out in later devlogs.</p>
+<center><img src="https://ruslanspivak.com/lsbasi-part7/lsbasi_part7_astprecedence_01.png" width="50%" height="50%" /><br><small>Example of an AST (<a href="https://ruslanspivak.com/lsbasi-part7/">from here</a>)</small></center>
+<h2 id="the-interpreter">The Interpreter</h2>
+<p>I have no idea how to make an interpreter. No, seriously, I don't. So what I did was make a simpler iterator that iterates over the AST and performs various actions depending on the data provided by the AST. Variables are stored in a global dictionary. </p>
+<p>Let's say we're trying to run this piece of code:</p>
+<pre data-lang="kotlin" style="background-color:#282828;color:#fdf4c1aa;" class="language-kotlin "><code class="language-kotlin" data-lang="kotlin"><span>x</span><span style="color:#fe8019;">:</span><span> int </span><span style="color:#fe8019;">= </span><span style="color:#d3869b;">2023</span><span>;
+</span><span>print(x);
+</span></code></pre>
+<p>Interpreter sees that there's a variable declaration, so what does it do? It adds the variable to the dictionary like this: <code>self.variables[var.identifier] = var.value</code> which translates to <code>self.variables[&quot;x&quot;] = 2023</code>.</p>
+<p>Now, when it comes to printing the variable, all we do is: <code>print(self.variables[print_argument]</code>, so it translates to <code>print(self.variables[&quot;x&quot;])</code>.</p>
+<p>So it is pretty dumb, and I still have no idea how to actually write an interpreter. Wish me luck!</p>
+<p>But hey, it works:</p>
+<center><img src="https://i.ibb.co/tcjhYwR/image.png" /></center>
+<h2 id="what-s-next">What's next?</h2>
+<p>My main focus for now is going to be on the AST, since it's still premature and I want to make it full-fledged before moving on to interpreters and compilers. </p>
+<p>If you have any feedback or suggestions regarding my approach, feel free to comment below or send me an email on: <a href="mailto:furtidev@poto.cafe">furtidev@poto.cafe</a>. Until next time!</p>
+</div>
+</div>
+</article>
+
+<script src="https://utteranc.es/client.js"
+        repo="furtidev/furtidev.github.io"
+        issue-term="pathname"
+        label="comment"
+        theme="gruvbox-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+</div>
+</body>
