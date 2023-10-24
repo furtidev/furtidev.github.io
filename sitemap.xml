@@ -22,6 +22,10 @@
         <lastmod>2023-10-15</lastmod>
     </url>
     <url>
+        <loc>https://furtidev.github.io/blog/spamtoberfest/</loc>
+        <lastmod>2023-10-25</lastmod>
+    </url>
+    <url>
         <loc>https://furtidev.github.io/blog/using-zola-to-create-my-blog/</loc>
         <lastmod>2023-07-08</lastmod>
     </url>
@@ -36,6 +40,9 @@
     </url>
     <url>
         <loc>https://furtidev.github.io/tags/misc/</loc>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/rant/</loc>
     </url>
     <url>
         <loc>https://furtidev.github.io/tags/review/</loc>

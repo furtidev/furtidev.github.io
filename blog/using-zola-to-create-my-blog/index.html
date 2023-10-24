@@ -24,44 +24,44 @@
   </script>
 
     <link rel="stylesheet" href="https://furtidev.github.io/site.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <div class="navbar">
-<span class="title">
-    <font color="#ff5555">furti</font><font color="#00AA00">dev</font>
-</span>
-<br>
-<ul>
-    <li><a href="/">home</a></li>
+    <ul>
+    <li><a href="/">~</a></li>
     <li><a href="https://furtidev.github.io/blog/">blog</a></li>
+    <li><a href='https://furtidev.github.io/status'>status</a></li>
     <li><a href='https://furtidev.github.io/rss.xml'>rss</a></li>
+    </ul>
 </div>
 
 <div class="content">
 
 
-
-<div class="post"><br>
-<a href="https://furtidev.github.io/blog/">Go back</a>
-<br><br>
-
+<div class="post">
 <article>
+<div class="heading-template" style="line-height: 35px;">
+<span style="font-size: 40px; margin-bottom">Using Zola to create my blog</span><br/>
+<span style="font-size: 25px; color: #ccc">🗓️ <time datetime="2023-07-08">Jul 08, 2023</time></span><br>
+<span style="font-size: 20px">
+Tags:
 
-<div style="font-size: 40px; line-height: 35px">
-  Using Zola to create my blog
+
+<a href='https://furtidev.github.io/tags/tutorial/'>#tutorial</a>
+
+<a href='https://furtidev.github.io/tags/tool/'>#tool</a>
+
+
+</span>
 </div>
-<p style="color: #ccc"><time datetime="2023-07-08">Jul 08, 2023</time> 
-
-- tags: 
-
-<a style='border: 1px solid #ccc; padding: 3px; color: white' href='https://furtidev.github.io/tags/tutorial/'>tutorial</a>
-
-<a style='border: 1px solid #ccc; padding: 3px; color: white' href='https://furtidev.github.io/tags/tool/'>tool</a>
-
-
-<br/>
-</p>
-<div><p>My original plan for this blog site was to write my own backend in Go. But after stumbling upon a couple of static site generators, I realized there's a much better and more maintainable way to do this. I will be refererring to static site generators as SSGs from now on. </p>
+<div style="font-size: 110%"><p>My original plan for this blog site was to write my own backend in Go. But after stumbling upon a couple of static site generators, I realized there's a much better and more maintainable way to do this. I will be refererring to static site generators as SSGs from now on. </p>
 <h2 id="static-site-generator-what">Static site generator? What?!</h2>
 <p>Static site generators are tools that generate static web pages (HTML, CSS, JS, no backend) from text files (Markdown, reStructuredText etc.). Say you have a bunch of markdown files as posts, a SSG will automatically compile that into a webpage. You can modify how the content is shown by writing your own templates and using custom css. See? No need for a backend, no need to manually update the HTML, just update your content, run the build command, and your site is ready, publish it wherever you want. This is how Hugo and Zola works, but some SSGs might take a different approach.</p>
 <h2 id="hugo-oh-god"><a rel="noopener" target="_blank" href="https://gohugo.io/">Hugo</a>.. oh god</h2>
@@ -128,8 +128,8 @@ I have this:</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>I enjoy using Zola a lot, there's a lot more for me to learn about it, and I'm still a beginner, so if I've made any mistakes or if you have any feedback, send me an email on: <a href="mailto:furtidev@poto.cafe">furtidev@poto.cafe</a> or you can just comment below.</p>
 </div>
-</div>
 </article>
+</div>
 
 <script src="https://utteranc.es/client.js"
         repo="furtidev/furtidev.github.io"

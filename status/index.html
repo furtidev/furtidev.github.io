@@ -6,38 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>furtidev</title>
     <link rel="stylesheet" href="https://furtidev.github.io/site.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <div class="navbar">
-<span class="title">
-    <font color="#ff5555">furti</font><font color="#00AA00">dev</font>
-</span>
-<br>
-<ul>
-    <li><a href="/">home</a></li>
+    <ul>
+    <li><a href="/">~</a></li>
     <li><a href="https://furtidev.github.io/blog/">blog</a></li>
+    <li><a href='https://furtidev.github.io/status'>status</a></li>
     <li><a href='https://furtidev.github.io/rss.xml'>rss</a></li>
+    </ul>
 </div>
 
 <div class="content">
 
 <style>
 .status {
-	margin: 8px;
+	border: 1px solid #515151;
+    background: #1b1b1b;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
 }
 
-.status .title {
-	border-radius: 8px 8px 0px 0px;
-	background: #363636;
-	padding: 8px;
+.status .title .author {
+    color: #73c936;
+}
+
+.status .title .time {
+    color: #717171;
 }
 
 .status .desc {
-	border-radius: 0px 0px 8px 8px;
-	background: #ececec;
-	color: #363636;
-	padding: 6px;
+    color: #A4A4A4;
 }
+
 </style>
 <script>
 // stolen from https://stackoverflow.com/a/1417392
@@ -80,15 +88,15 @@ function timeDifference(current, previous) {
     }
 
     else if (elapsed < msPerMonth) {
-        return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';   
+        return Math.round(elapsed/msPerDay) + ' days ago';   
     }
 
     else if (elapsed < msPerYear) {
-        return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';   
+        return Math.round(elapsed/msPerMonth) + ' months ago';   
     }
 
     else {
-        return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';   
+        return Math.round(elapsed/msPerYear ) + ' years ago';   
     }
 }
 
@@ -108,7 +116,7 @@ if (xhttp.readyState == 4 && xhttp.status == 200) {
   	if (i >= 20) {
   		break;
   	}
-    posts += '<div class="status"><div class="title">' + title[i].childNodes[0].nodeValue.slice(0, 11) + ' ' + timeDifference(Date.now(), DateParser(published[i-1].innerHTML)) + '</div><div class="desc">' + content[i-1].textContent + '</div></div>'
+    posts += '<div class="status"><div class="title"><span class="author">' + title[i].childNodes[0].nodeValue.slice(0, 11) + '</span> <span class="time">' + timeDifference(Date.now(), DateParser(published[i-1].innerHTML)) + '</span></div><div class="desc">' + content[i-1].textContent + '</div></div>'
   }
   
   posts += '';

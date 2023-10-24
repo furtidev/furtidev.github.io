@@ -7,7 +7,21 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://furtidev.github.io/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 15 Oct 2023 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Wed, 25 Oct 2023 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Spamtoberfest 2023</title>
+          <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://furtidev.github.io/blog/spamtoberfest/</link>
+          <guid>https://furtidev.github.io/blog/spamtoberfest/</guid>
+          <description>&lt;p&gt;Hacktoberfest is an yearly event run by the folks at DigitalOcean, the point is to make contributions to open source and win some stuff along the way. But there&#x27;s a huge problem, and that is &lt;em&gt;spam&lt;&#x2F;em&gt;. Now, to win prizes in Hacktoberfest, you have to make 4 pull requests during the month of October. So what happens is that each year a huge group of people make useless PRs on either shitty repositories that were made to game this event or on actual open source projects causing extra headache for the project maintainers. As &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;blog.domenic.me&#x2F;hacktoberfest&#x2F;&quot;&gt;Domenic Denicola&lt;&#x2F;a&gt; has put it - &lt;strong&gt;Hacktoberfest is a corporate-sponsored distributed denial of service attack against the open source maintainer community&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;2020&lt;&#x2F;strong&gt; specifically was a rough year, because a large YouTuber whose name I&#x27;m not gonna mention made a video about &amp;quot;how to earn free t-shirts&amp;quot;. It was about Hacktoberfest. The video showed how to make a fork, how to open a pull request etc. My opinion is that anybody who doesn&#x27;t know how to do these basic things won&#x27;t be able to contribute anything valuable to open source. The whole point of the video was to encourage spam, whether the YouTuber wants to admit it or not. They basically wanted to show their audience how to cheat the system and gain views in the process. The video is gone now, they were so unapologetic about the whole thing - saying that their audience misinterpreted the video. So yeah, this is the guy who caused DigitalOcean to make Hacktoberfest opt-in for project maintainers by using GitHub labels.&lt;&#x2F;p&gt;
+&lt;p&gt;So this happens every year. Though I think this year the spam is a bit low since DigitalOcean isn&#x27;t giving free physical prizes this year instead switching to digital rewards, so people had less interest I assume. But the spam is still there. If you search &lt;strong&gt;&amp;quot;Hacktoberfest 2023&amp;quot;&lt;&#x2F;strong&gt; on YouTube, you&#x27;ll see so many videos encouraging spam. A lot of these people making such videos have no idea what open source is about. Nobody cares about contributing to open source, they only care about how to &amp;quot;win&amp;quot; Hacktoberfest. Really disheartening. A lot of the people who make these spam contributions have no idea how to code and just click buttons. Some of these spam PRs are just hilarious. You can check out some of these for yourself on &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;shitoberfest&quot;&gt;@shitoberfest&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, I think DigitalOcean switching to digital prizes was a good step towards reducing spam. And this year they&#x27;ve implemented more functionality to detect spam which is great. Also, apparently they will plant one tree for every Hacktoberfest winner this year, so around 50,000 trees, I&#x27;m all in for that (at least all that spam is helping in someway). &lt;&#x2F;p&gt;
+&lt;p&gt;If you want to use Hacktoberfest as an opportunity give back to open source, that&#x27;s great. But I think you should do it regardless, since a lot of us (including me!) take open source for granted, so we should help out where we can.&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s all for today. Hope you stay safe from all the spam this year and all the years to come. For any feedback feel free to comment below or send me an email on: &lt;a href=&quot;mailto:furtidev@poto.cafe&quot;&gt;furtidev@poto.cafe&lt;&#x2F;a&gt;. Until next time!&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Plankton Devlog #1</title>
           <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>
