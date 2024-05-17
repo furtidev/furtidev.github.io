@@ -14,7 +14,7 @@
           <author>Unknown</author>
           <link>https://furtidev.github.io/blog/plankton-devlog-1/</link>
           <guid>https://furtidev.github.io/blog/plankton-devlog-1/</guid>
-          <description>&lt;p&gt;Apparently people make new programming languages all the time, a few of my friends did it too, so why miss out? That&#x27;s what I thought last year. I even chose a name for my language at the time. But I never actually got around to it until a few days ago. &lt;&#x2F;p&gt;
+          <description xml:base="https://furtidev.github.io/blog/plankton-devlog-1/">&lt;p&gt;Apparently people make new programming languages all the time, a few of my friends did it too, so why miss out? That&#x27;s what I thought last year. I even chose a name for my language at the time. But I never actually got around to it until a few days ago. &lt;&#x2F;p&gt;
 &lt;center&gt;&lt;img src=&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;RYdSZPt&#x2F;image.png&quot; &#x2F;&gt;&lt;&#x2F;center&gt;
 &lt;h1 id=&quot;the-gameplan&quot;&gt;The gameplan&lt;&#x2F;h1&gt;
 &lt;p&gt;That&#x27;s great Furti, but how do you make a programming language? Thankfully I had some previous knowledge about the topic, mostly from reading &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;interpreterbook.com&#x2F;&quot;&gt;Writing an interpreter in Go&lt;&#x2F;a&gt; (I never finished it ☹) and researching about it last year. So my approach was simple:&lt;&#x2F;p&gt;
