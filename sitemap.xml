@@ -7,6 +7,10 @@
         <loc>https://furtidev.github.io/blog/</loc>
     </url>
     <url>
+        <loc>https://furtidev.github.io/blog/daydreaming-and-storywriting/</loc>
+        <lastmod>2024-10-13</lastmod>
+    </url>
+    <url>
         <loc>https://furtidev.github.io/blog/my-experience-with-password-managers/</loc>
         <lastmod>2023-09-11</lastmod>
     </url>
@@ -59,5 +63,8 @@
     </url>
     <url>
         <loc>https://furtidev.github.io/tags/tutorial/</loc>
+    </url>
+    <url>
+        <loc>https://furtidev.github.io/tags/writing/</loc>
     </url>
 </urlset>

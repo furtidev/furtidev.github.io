@@ -14,24 +14,24 @@
           <author>Unknown</author>
           <link>https://furtidev.github.io/blog/plankton-devlog-1/</link>
           <guid>https://furtidev.github.io/blog/plankton-devlog-1/</guid>
-          <description xml:base="https://furtidev.github.io/blog/plankton-devlog-1/">&lt;p&gt;Apparently people make new programming languages all the time, a few of my friends did it too, so why miss out? That&#x27;s what I thought last year. I even chose a name for my language at the time. But I never actually got around to it until a few days ago. &lt;&#x2F;p&gt;
+          <description xml:base="https://furtidev.github.io/blog/plankton-devlog-1/">&lt;p&gt;Apparently people make new programming languages all the time, a few of my friends did it too, so why miss out? That&#x27;s what I thought last year. I even chose a name for my language at the time. But I never actually got around to it until a few days ago.&lt;&#x2F;p&gt;
 &lt;center&gt;&lt;img src=&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;RYdSZPt&#x2F;image.png&quot; &#x2F;&gt;&lt;&#x2F;center&gt;
 &lt;h1 id=&quot;the-gameplan&quot;&gt;The gameplan&lt;&#x2F;h1&gt;
 &lt;p&gt;That&#x27;s great Furti, but how do you make a programming language? Thankfully I had some previous knowledge about the topic, mostly from reading &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;interpreterbook.com&#x2F;&quot;&gt;Writing an interpreter in Go&lt;&#x2F;a&gt; (I never finished it ☹) and researching about it last year. So my approach was simple:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Figure out the syntax of the language.
 &lt;ul&gt;
-&lt;li&gt;I wanted it to have very simple syntax, with static typing. It turned out to be a combination between C and Python. &lt;&#x2F;li&gt;
+&lt;li&gt;I wanted it to have very simple syntax, with static typing. It turned out to be a combination between C and Python.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;Write the lexer.
 &lt;ul&gt;
-&lt;li&gt;This was the easiest part so far. The purpose of a lexer is to convert source code into a list of tokens. But it is also the most stable part of my language so far, because everything else is a joke. &lt;&#x2F;li&gt;
+&lt;li&gt;This was the easiest part so far. The purpose of a lexer is to convert source code into a list of tokens. But it is also the most stable part of my language so far, because everything else is a joke.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;Write the parser.
 &lt;ul&gt;
-&lt;li&gt;A parser&#x27;s job is to take the list of tokens and build out an Abstract Syntax Tree (AST). So basically representing our source code using a tree structure. &lt;&#x2F;li&gt;
+&lt;li&gt;A parser&#x27;s job is to take the list of tokens and build out an Abstract Syntax Tree (AST). So basically representing our source code using a tree structure.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;Write the compiler (or the interpreter because writing a compiler is hard).
@@ -42,6 +42,9 @@
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;syntax-of-plankton&quot;&gt;Syntax of Plankton&lt;&#x2F;h2&gt;
 &lt;p&gt;I think the best way to showcase the syntax is to show some code in Plankton:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PLANKTON&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;pre data-lang=&quot;kotlin&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-kotlin &quot;&gt;&lt;code class=&quot;language-kotlin&quot; data-lang=&quot;kotlin&quot;&gt;&lt;span&gt;n&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;4832&lt;&#x2F;span&gt;&lt;span&gt;;
 &lt;&#x2F;span&gt;&lt;span&gt;print(n);
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;while&lt;&#x2F;span&gt;&lt;span&gt; (n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) {
@@ -59,24 +62,27 @@
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;print(add(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;34&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;39&lt;&#x2F;span&gt;&lt;span&gt;));
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;This combination of C and Python is not my greatest idea but hey, it works. The language is statically typed, so all variables must have their types defined. &lt;&#x2F;p&gt;
+&lt;p&gt;This combination of C and Python is not my greatest idea but hey, it works. The language is statically typed, so all variables must have their types defined.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-is-ast&quot;&gt;What is AST?&lt;&#x2F;h2&gt;
 &lt;p&gt;So far this is the part that took the longest. I couldn&#x27;t figure out how to write an AST generator (a.k.a parser). But a website that helped me out a lot was &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;astexplorer.net&#x2F;&quot;&gt;AST Explorer&lt;&#x2F;a&gt;. In AST Explorer, you can generate AST for popular programming languages. So I got somewhat of an idea of how to make my own parser. I won&#x27;t bore you with the details but if you&#x27;re interested, check out &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=wINY109MG10&quot;&gt;this video&lt;&#x2F;a&gt; on how an AST works.&lt;&#x2F;p&gt;
 &lt;p&gt;My parser represents the AST using Python dictionaries, so it was pleasant to work with, though I&#x27;m not sure if I&#x27;m sacrificing my long term sanity by doing this. Guess we&#x27;ll find out in later devlogs.&lt;&#x2F;p&gt;
 &lt;center&gt;&lt;img src=&quot;https:&#x2F;&#x2F;ruslanspivak.com&#x2F;lsbasi-part7&#x2F;lsbasi_part7_astprecedence_01.png&quot; width=&quot;50%&quot; height=&quot;50%&quot; &#x2F;&gt;&lt;br&gt;&lt;small&gt;Example of an AST (&lt;a href=&quot;https:&#x2F;&#x2F;ruslanspivak.com&#x2F;lsbasi-part7&#x2F;&quot;&gt;from here&lt;&#x2F;a&gt;)&lt;&#x2F;small&gt;&lt;&#x2F;center&gt;
 &lt;h2 id=&quot;the-interpreter&quot;&gt;The Interpreter&lt;&#x2F;h2&gt;
-&lt;p&gt;I have no idea how to make an interpreter. No, seriously, I don&#x27;t. So what I did was make a simpler iterator that iterates over the AST and performs various actions depending on the data provided by the AST. Variables are stored in a global dictionary. &lt;&#x2F;p&gt;
+&lt;p&gt;I have no idea how to make an interpreter. No, seriously, I don&#x27;t. So what I did was make a simpler iterator that iterates over the AST and performs various actions depending on the data provided by the AST. Variables are stored in a global dictionary.&lt;&#x2F;p&gt;
 &lt;p&gt;Let&#x27;s say we&#x27;re trying to run this piece of code:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PLANKTON&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;pre data-lang=&quot;kotlin&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-kotlin &quot;&gt;&lt;code class=&quot;language-kotlin&quot; data-lang=&quot;kotlin&quot;&gt;&lt;span&gt;x&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2023&lt;&#x2F;span&gt;&lt;span&gt;;
 &lt;&#x2F;span&gt;&lt;span&gt;print(x);
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Interpreter sees that there&#x27;s a variable declaration, so what does it do? It adds the variable to the dictionary like this: &lt;code&gt;self.variables[var.identifier] = var.value&lt;&#x2F;code&gt; which translates to &lt;code&gt;self.variables[&amp;quot;x&amp;quot;] = 2023&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;Now, when it comes to printing the variable, all we do is: &lt;code&gt;print(self.variables[print_argument]&lt;&#x2F;code&gt;, so it translates to &lt;code&gt;print(self.variables[&amp;quot;x&amp;quot;])&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Interpreter sees that there&#x27;s a variable declaration, so what does it do? It adds the variable to the dictionary like this: &lt;code&gt;self.variables[var.identifier] = var.value&lt;&#x2F;code&gt; which translates to &lt;code&gt;self.variables[&quot;x&quot;] = 2023&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Now, when it comes to printing the variable, all we do is: &lt;code&gt;print(self.variables[print_argument]&lt;&#x2F;code&gt;, so it translates to &lt;code&gt;print(self.variables[&quot;x&quot;])&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;So it is pretty dumb, and I still have no idea how to actually write an interpreter. Wish me luck!&lt;&#x2F;p&gt;
 &lt;p&gt;But hey, it works:&lt;&#x2F;p&gt;
 &lt;center&gt;&lt;img src=&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;tcjhYwR&#x2F;image.png&quot; &#x2F;&gt;&lt;&#x2F;center&gt;
 &lt;h2 id=&quot;what-s-next&quot;&gt;What&#x27;s next?&lt;&#x2F;h2&gt;
-&lt;p&gt;My main focus for now is going to be on the AST, since it&#x27;s still premature and I want to make it full-fledged before moving on to interpreters and compilers. &lt;&#x2F;p&gt;
+&lt;p&gt;My main focus for now is going to be on the AST, since it&#x27;s still premature and I want to make it full-fledged before moving on to interpreters and compilers.&lt;&#x2F;p&gt;
 &lt;p&gt;If you have any feedback or suggestions regarding my approach, feel free to comment below or send me an email on: &lt;a href=&quot;mailto:furtidev@poto.cafe&quot;&gt;furtidev@poto.cafe&lt;&#x2F;a&gt;. Until next time!&lt;&#x2F;p&gt;
 </description>
       </item>
