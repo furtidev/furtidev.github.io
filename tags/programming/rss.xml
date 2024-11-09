@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-      <title> - writing</title>
+      <title> - programming</title>
       <link>https://furtidev.github.io</link>
       <description></description>
       <generator>Zola</generator>
       <language>en</language>
-      <atom:link href="https://furtidev.github.io/tags/writing/rss.xml" rel="self" type="application/rss+xml"/>
+      <atom:link href="https://furtidev.github.io/tags/programming/rss.xml" rel="self" type="application/rss+xml"/>
       <lastBuildDate>Sun, 10 Nov 2024 00:00:00 +0000</lastBuildDate>
       <item>
           <title>Trying Ghostty: My experience with terminal emulators</title>
@@ -60,21 +60,81 @@
 </description>
       </item>
       <item>
-          <title>Daydreaming and story writing</title>
-          <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
+          <title>Plankton Devlog #1</title>
+          <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>
           <author>Unknown</author>
-          <link>https://furtidev.github.io/blog/daydreaming-and-storywriting/</link>
-          <guid>https://furtidev.github.io/blog/daydreaming-and-storywriting/</guid>
-          <description xml:base="https://furtidev.github.io/blog/daydreaming-and-storywriting/">&lt;p&gt;It&#x27;s hard to admit this to myself, but I&#x27;m something of a chronic daydreamer. The triggers are random at best, and once I start, it&#x27;s hard to stop. I often realize that I&#x27;ve created quite a complex world in my head. Actually, multiple worlds. But of course, the world I return to the most is the one where I&#x27;m rich, buying all the latest tech, making everything I ever wanted to make blah blah blah - tldr: a world where my life is perfect.&lt;&#x2F;p&gt;
-&lt;p&gt;And frankly, that world is quite boring for an outsider. Why would you care about dreams and definitions of a perfect life? Although lately I started getting annoyed at myself for going back to this world so often. Sometimes I&#x27;d spend more than 20 minutes in this world, indulging in this fantasy, and then I&#x27;d be extremely afraid of coming to terms with my current reality. All in all, it&#x27;s a terrible coping mechanism. To put it simply, I daydreamed too close to the sun. I was afraid of taking initiative on things, because in my head, I had already created the perfect scenario. So, if I take initiative and dare I say, I fail then that perfect scenario will no longer make sense. Losing these bits of copium was really harsh for my brain to accept.&lt;&#x2F;p&gt;
-&lt;p&gt;But being stuck in these fantasies is terrible, terrible, terrible (repeat it a few hundred times). And these days I consciously try to stop myself from daydreaming too much. Yes, indeed, I just try to limit it. I don&#x27;t think I&#x27;m ready to completely stop daydreaming. I&#x27;m addicted. Then again, always thinking about how bad your life is, isn&#x27;t going to do you any good either. But my mind also just can&#x27;t stay empty. The solution, is what this blog is about. Master of long intros, back at it again.&lt;&#x2F;p&gt;
-&lt;p&gt;I try to replace my daydreaming and in turn overthinking with other things, like watching a video, playing a game or writing code. But it gets extremely hard when I can&#x27;t do these things. And when does that usually happen? When I&#x27;m trying to sleep. Different kinds of thoughts just won&#x27;t leave my brain, and of course I fall into the trap of daydreaming once again (though, i think it&#x27;s night dreaming, right? heh heh heh). It&#x27;s just very appealing. I don&#x27;t have to think about negative things and instead for a brief moment I get to live in this perfect world. But as said before, this has serious negative effects. So, I replaced it with story writing, in mah head, on the fly, hell yeah.&lt;&#x2F;p&gt;
-&lt;p&gt;I&#x27;ve always been fond of telling stories. I started making shit comics when I was a kid. It wasn&#x27;t limited to comics, I had some cheap figurine toys and I used them to tell stories to myself. One of these ideas was about a private security company, Deepin Inc. Managed by 3 friends who barely have any idea of what they are doing, they are faced with great challenges which they never could have expected. I modeled an entire character after &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Boudica&quot;&gt;Boudica of Iceni&lt;&#x2F;a&gt;. I wrote character arcs (or rather, thought of) that explore the complexities and hardships of the characters involved. I wrote an intergalactic universe, with planets, with their countries and politics, their own unjustices and cruelties. It&#x27;s fun.&lt;&#x2F;p&gt;
-&lt;p&gt;But I often wonder how I can come up with stories that easily. If I were to assume, I think it&#x27;s a by product of all the daydreaming. Daydreaming is also story writing of sorts, except not as interesting. So when I think of these fictional stories instead of making up fantasies of an imaginary perfect life - I still am flexing the same brain muscles. I think. Not an expert at all. Either way it works and that&#x27;s what matters.&lt;&#x2F;p&gt;
-&lt;p&gt;Though, most of these stories are actually quite old, I&#x27;ve had them in mind ever since I was a kid in my single digit era, but only had the chance to properly develop them recently. But I also often come up with new ideas, and feel urged to write them down even though I haven&#x27;t. And that&#x27;s why this is a blog post and not a private journal entry. You know what they say, once something&#x27;s on the internet, it&#x27;s always on the internet... or... well.. something like that. The ultimate goal of this blog post is to take the iniatiave, to tell you about my worlds. Or at least let you know that they exist.&lt;&#x2F;p&gt;
-&lt;p&gt;I don&#x27;t think I&#x27;m ready to publish stories yet, but someday for sure. I think I&#x27;ll never do it if I just keep it within myself and never express them to others. So this post is the first step in a long initiative, but since I&#x27;ve taken the first step, aka, told the world about the existence of the fact that I write stories, I think I can follow through, even if it takes 20 years.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;em&gt;[hands shaking as I publish this post]&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;See you next time. Also, daydream less, implement more ;)&lt;&#x2F;p&gt;
+          <link>https://furtidev.github.io/blog/plankton-devlog-1/</link>
+          <guid>https://furtidev.github.io/blog/plankton-devlog-1/</guid>
+          <description xml:base="https://furtidev.github.io/blog/plankton-devlog-1/">&lt;p&gt;Apparently people make new programming languages all the time, a few of my friends did it too, so why miss out? That&#x27;s what I thought last year. I even chose a name for my language at the time. But I never actually got around to it until a few days ago.&lt;&#x2F;p&gt;
+&lt;center&gt;&lt;img src=&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;RYdSZPt&#x2F;image.png&quot; &#x2F;&gt;&lt;&#x2F;center&gt;
+&lt;h1 id=&quot;the-gameplan&quot;&gt;The gameplan&lt;&#x2F;h1&gt;
+&lt;p&gt;That&#x27;s great Furti, but how do you make a programming language? Thankfully I had some previous knowledge about the topic, mostly from reading &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;interpreterbook.com&#x2F;&quot;&gt;Writing an interpreter in Go&lt;&#x2F;a&gt; (I never finished it ☹) and researching about it last year. So my approach was simple:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Figure out the syntax of the language.
+&lt;ul&gt;
+&lt;li&gt;I wanted it to have very simple syntax, with static typing. It turned out to be a combination between C and Python.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Write the lexer.
+&lt;ul&gt;
+&lt;li&gt;This was the easiest part so far. The purpose of a lexer is to convert source code into a list of tokens. But it is also the most stable part of my language so far, because everything else is a joke.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Write the parser.
+&lt;ul&gt;
+&lt;li&gt;A parser&#x27;s job is to take the list of tokens and build out an Abstract Syntax Tree (AST). So basically representing our source code using a tree structure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Write the compiler (or the interpreter because writing a compiler is hard).
+&lt;ul&gt;
+&lt;li&gt;Well, I want to write a compiler using &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;c9x.me&#x2F;compile&#x2F;&quot;&gt;QBE&lt;&#x2F;a&gt; as a backend. It is not an easy task, so I&#x27;ve decided to write an interpreter for now. We&#x27;ll leave the compiler for Future Furti™. My interpreter just traverses through the AST and does silly things. We&#x27;ll talk more about this later.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;syntax-of-plankton&quot;&gt;Syntax of Plankton&lt;&#x2F;h2&gt;
+&lt;p&gt;I think the best way to showcase the syntax is to show some code in Plankton:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PLANKTON&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;pre data-lang=&quot;kotlin&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-kotlin &quot;&gt;&lt;code class=&quot;language-kotlin&quot; data-lang=&quot;kotlin&quot;&gt;&lt;span&gt;n&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;4832&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;print(n);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;while&lt;&#x2F;span&gt;&lt;span&gt; (n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; (n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;% &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;		n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;	} &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;else&lt;&#x2F;span&gt;&lt;span&gt; {
+&lt;&#x2F;span&gt;&lt;span&gt;		n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;	}
+&lt;&#x2F;span&gt;&lt;span&gt;	print(n);
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fun &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;add&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;x&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; int) int {
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span&gt; y;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;print(add(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;34&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;39&lt;&#x2F;span&gt;&lt;span&gt;));
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This combination of C and Python is not my greatest idea but hey, it works. The language is statically typed, so all variables must have their types defined.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-ast&quot;&gt;What is AST?&lt;&#x2F;h2&gt;
+&lt;p&gt;So far this is the part that took the longest. I couldn&#x27;t figure out how to write an AST generator (a.k.a parser). But a website that helped me out a lot was &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;astexplorer.net&#x2F;&quot;&gt;AST Explorer&lt;&#x2F;a&gt;. In AST Explorer, you can generate AST for popular programming languages. So I got somewhat of an idea of how to make my own parser. I won&#x27;t bore you with the details but if you&#x27;re interested, check out &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=wINY109MG10&quot;&gt;this video&lt;&#x2F;a&gt; on how an AST works.&lt;&#x2F;p&gt;
+&lt;p&gt;My parser represents the AST using Python dictionaries, so it was pleasant to work with, though I&#x27;m not sure if I&#x27;m sacrificing my long term sanity by doing this. Guess we&#x27;ll find out in later devlogs.&lt;&#x2F;p&gt;
+&lt;center&gt;&lt;img src=&quot;https:&#x2F;&#x2F;ruslanspivak.com&#x2F;lsbasi-part7&#x2F;lsbasi_part7_astprecedence_01.png&quot; width=&quot;50%&quot; height=&quot;50%&quot; &#x2F;&gt;&lt;br&gt;&lt;small&gt;Example of an AST (&lt;a href=&quot;https:&#x2F;&#x2F;ruslanspivak.com&#x2F;lsbasi-part7&#x2F;&quot;&gt;from here&lt;&#x2F;a&gt;)&lt;&#x2F;small&gt;&lt;&#x2F;center&gt;
+&lt;h2 id=&quot;the-interpreter&quot;&gt;The Interpreter&lt;&#x2F;h2&gt;
+&lt;p&gt;I have no idea how to make an interpreter. No, seriously, I don&#x27;t. So what I did was make a simpler iterator that iterates over the AST and performs various actions depending on the data provided by the AST. Variables are stored in a global dictionary.&lt;&#x2F;p&gt;
+&lt;p&gt;Let&#x27;s say we&#x27;re trying to run this piece of code:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PLANKTON&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;pre data-lang=&quot;kotlin&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-kotlin &quot;&gt;&lt;code class=&quot;language-kotlin&quot; data-lang=&quot;kotlin&quot;&gt;&lt;span&gt;x&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2023&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;print(x);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Interpreter sees that there&#x27;s a variable declaration, so what does it do? It adds the variable to the dictionary like this: &lt;code&gt;self.variables[var.identifier] = var.value&lt;&#x2F;code&gt; which translates to &lt;code&gt;self.variables[&quot;x&quot;] = 2023&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Now, when it comes to printing the variable, all we do is: &lt;code&gt;print(self.variables[print_argument]&lt;&#x2F;code&gt;, so it translates to &lt;code&gt;print(self.variables[&quot;x&quot;])&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;So it is pretty dumb, and I still have no idea how to actually write an interpreter. Wish me luck!&lt;&#x2F;p&gt;
+&lt;p&gt;But hey, it works:&lt;&#x2F;p&gt;
+&lt;center&gt;&lt;img src=&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;tcjhYwR&#x2F;image.png&quot; &#x2F;&gt;&lt;&#x2F;center&gt;
+&lt;h2 id=&quot;what-s-next&quot;&gt;What&#x27;s next?&lt;&#x2F;h2&gt;
+&lt;p&gt;My main focus for now is going to be on the AST, since it&#x27;s still premature and I want to make it full-fledged before moving on to interpreters and compilers.&lt;&#x2F;p&gt;
+&lt;p&gt;If you have any feedback or suggestions regarding my approach, feel free to comment below or send me an email on: &lt;a href=&quot;mailto:furtidev@poto.cafe&quot;&gt;furtidev@poto.cafe&lt;&#x2F;a&gt;. Until next time!&lt;&#x2F;p&gt;
 </description>
       </item>
     </channel>

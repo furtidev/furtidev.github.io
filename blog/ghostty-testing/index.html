@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta property="og:url" content="https://furtidev.github.io/blog/ghostty-testing/">
+    <meta property="og:type" content="blog" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>Trying Ghostty: My experience with terminal emulators</title>
+  <meta property="og:title" content="Trying Ghostty: My experience with terminal emulators | furtidev's blog">
+  <meta property="og:description" content="and why Ghostty matters">
+  <meta name="description" content="and why Ghostty matters">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Trying Ghostty: My experience with terminal emulators",
+      "datePublished": "2024-11-10",
+      "author": [{
+          "@type": "Person",
+          "name": "furtidev",
+          "url": "https://poto.cafe/@furtidev"
+      }]
+    }
+  </script>
+
+    <link rel="stylesheet" href="https://furtidev.github.io/site.css?h=0914397ba5637029d1a0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<div class="navbar">
+    <ul>
+    <li><a href="/">~</a></li>
+    <li><a href="https://furtidev.github.io/blog/">blog</a></li>
+    <li><a href='https://furtidev.github.io/tags'>tags</a></li>
+    <li><a href='https://furtidev.github.io/status'>status</a></li>
+    <li><a href='https://furtidev.github.io/rss.xml'>rss</a></li>
+    </ul>
+</div>
+
+<div class="content">
+
+
+<div class="post">
+<article>
+<div class="heading-template" style="line-height: 35px;">
+<span style="font-size: 40px; margin-bottom">Trying Ghostty: My experience with terminal emulators</span><br/>
+<span style="color: #95a99f">and why Ghostty matters</span> <br>
+<span style="font-size: 25px; color: #ccc">🗓️ <time datetime="2024-11-10">Nov 10, 2024</time></span><br>
+<span style="font-size: 20px">
+Tags:
+
+
+<a href='https://furtidev.github.io/tags/writing/'>#writing</a>
+
+<a href='https://furtidev.github.io/tags/programming/'>#programming</a>
+
+
+</span>
+</div>
+<div style="font-size: 110%"><h1 id="childhood">Childhood</h1>
+<p>I first started programming on an Android phone, basically running a PHP 7.x and MySQL 5.x server (I couldn't find the app I was using for that at the time) and using a barebones text editor (it was probably <a rel="noopener" target="_blank" href="https://play.google.com/store/apps/details?id=com.rhmsoft.edit.pro">this one</a>). I didn't need to interact with terminals. That all changed in 2021, when I was using the terminal more frequently. As far as terminal emulation goes, I just used the basic Command Line, yeah, the Windows one - yikes. I can't imagine how I programmed on Windows.</p>
+<h1 id="adolescence">Adolescence</h1>
+<p>But after some time, I found <a rel="noopener" target="_blank" href="https://alacritty.org/">Alacritty</a>. It was fast, it made me feel cool. I installed all the hip stuff, like <a rel="noopener" target="_blank" href="https://starship.rs/">Starship</a> prompt. But Alacritty had no support for tabs and I <em>love</em> organizing things via tabs. So it was inconvenient and on top of that, after going through <a rel="noopener" target="_blank" href="https://github.com/alacritty/alacritty/issues/3129">this discourse</a> on their GitHub, I guess it's safe to say that Alacritty will never have tabs. From this thread and some googling, I learned about Kovid Goyal's <a rel="noopener" target="_blank" href="https://sw.kovidgoyal.net/kitty/">kitty terminal emulator</a> - but I was disappointed because <code>kitty</code> wasn't on Windows. Okay, I guess I'll use a terminal multiplexer.. oh no I can't - neither <a rel="noopener" target="_blank" href="https://zellij.dev/">zellij</a> nor tmux are natively supported on Windows. I think I did try <a rel="noopener" target="_blank" href="https://www.google.com/search?client=firefox-b-d&amp;q=wezterm">Wezterm</a> somewhere along the way, but it didn't stick for long.</p>
+<h1 id="redemption">Redemption</h1>
+<p>On 13th of January, 2023 (yes, I noted down the exact date), I switched to Linux. That means I could finally use <code>kitty</code>. But I had a thought.. what if I just use Alacritty with <code>zellij</code>? I did that for a bit and couldn't get used to using a terminal multiplexer for tabs, so - <code>kitty</code> it is. So all in all, I've used <code>kitty</code> for quite some time up until a <strong>ghost</strong> started haunting me. Before moving on to talking about that, <code>kitty</code> deserves some words. I like it a lot - with the occassional <a rel="noopener" target="_blank" href="https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work">SSH ragequit</a>, you could say it was a love-hate relationship, majority of it being love though. But anyway, I'm supposed to talk about .. the hauntings of a ghost.</p>
+<h1 id="enter-ghostty">Enter Ghostty</h1>
+<p><a rel="noopener" target="_blank" href="https://mitchellh.com/">Mitchell Hashimoto</a>. You might know him. He's just this niche guy, <em><strong>co-founder of <a rel="noopener" target="_blank" href="https://www.hashicorp.com/">HashiCorp</a></strong></em>. So, when he announced that he was working on a terminal emulator written fully in Zig - there was hype. This was the light in the darkness, as Warp (no, I don't feel like linking Warp) receives $73M in funding for their terminal emulator where you have to log in, yes, log in to use your terminal, the coming of Ghostty showed light to the believers.</p>
+<p>Ghostty is still in private beta, with a <a rel="noopener" target="_blank" href="https://mitchellh.com/writing/ghostty-is-coming">1.0 release</a> coming in December, 2024. Mark your calendars, folks. I got invited into the private beta right before Halloween, so it fits.</p>
+<h3 id="purpose">Purpose</h3>
+<p>But why does Ghostty exist? There are a few key reasons:</p>
+<ul>
+<li>
+<p><strong>Native UI</strong>. It uses GTK on Linux and SwiftUI on MacOS. This also means native tabs support. While <code>kitty</code> does support tabs, it doesn't use native widgets.</p>
+</li>
+<li>
+<p><strong>Extremely fast</strong>, often beating Alacritty.</p>
+</li>
+<li>
+<p><strong>Feature-rich</strong>. Supports kitty image protocol, native support for emojis, built-in terminal inspector for rich terminal debugging etc.</p>
+</li>
+<li>
+<p><strong>Most importantly</strong>, all of this in a <em>complete</em> cross-platform package. Before Ghostty, there wasn't a single terminal emulator that had all of the aforementioned perks. See figure 1 &amp; 2 below for a summary.</p>
+</li>
+</ul>
+<center style="margin-bottom: 10px"><img src=".&#x2F;figure-1.webp" width="70%" height="70%" /> <br> <span style="color: gray; font-style: italic">Figure 1: Chart comparing popular terminal emulators with Ghostty</span></center><center style="margin-bottom: 10px"><img src=".&#x2F;figure-2.webp" width="70%" height="70%" /> <br> <span style="color: gray; font-style: italic">Figure 2: Core purpose of Ghostty.</span></center><center style="margin-bottom: 10px"><img src=".&#x2F;tabs_one.png" width="70%" height="70%" /> <br> <span style="color: gray; font-style: italic">Native tabs, using GTK on Linux</span></center><center style="margin-bottom: 10px"><img src=".&#x2F;kitty_image_protocol.png" width="70%" height="70%" /> <br> <span style="color: gray; font-style: italic">Image rendering using Kitty Image Protocol (image: NCR Veteran Ranger Helmet)</span></center><center style="margin-bottom: 10px"><img src=".&#x2F;terminal_inspector.png" width="70%" height="70%" /> <br> <span style="color: gray; font-style: italic">Built-in terminal inspector for TUI debugging</span></center>
+<p>What more could one ask for?! Well, as it turns out.. a lot more. Ghostty wants to be the browser-equivalent for TUIs (terminal user interface). It wants to have native support for progress bars, context menus, drag &amp; drop, mouse gestures and so much more - a complete platform for text based user interfaces. I mean, that's A LOT to take in, even though these are long-term goals. It's ambitious, it's exciting, and finally there's someone willing to bring innovations to the terminal.</p>
+<p>At the core of Ghostty, there's <code>libghostty</code>, a cross-platform library that powers Ghostty. I like where they're going with this, essentially you can use libghostty to ship whatever you want: standalone TUI applications, embedding Ghostty in other places and even getting a terminal emulator running on the web, seems like your imagination is the limit. Ghostty itself is a software using libghostty. Sort of like how the Godot game engine is a Godot "game". <code>libghostty</code> will eventually be available as a standlone library, and I'm excited for that - it exposes a C api so you can use whatever language you want with it as long as it can interface with C.</p>
+<p>Even though it currently only supports MacOS and Linux, Windows support is planned for sometime after the 1.0 release. I'll shed a tear when that happens, considering the pain I had to go through to find an appropriate terminal emulator for my needs on Windows.</p>
+<p>So even though I was a bit confused by why Ghostty needs to exist at first, I'm now completely sold. And to be completely honest, <em>you</em> should be too.</p>
+<h3 id="daily-driving">Daily driving</h3>
+<p>Ever since I got access to the private beta, Ghostty has been my daily driver. Sorry cat terminal. Apart from some weird issues here and there which I reported, it has been fantastic. The community is friendly, there's an active group of developers writing TUIs on Ghostty and some are contributing to the project itself. Point is, Ghostty gets out of the way and lets me do my work peacefully. I also giggle once in a while thinking a ghost is watching me while I run my commands. So if you were wondering if it's ready for some rigorous daily use, now you know.</p>
+<p>I'm not an avid recompiler, in fact I haven't recompiled Ghostty ever since. I should really do it one of these days.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Need I say more? I'm sure I've gotten my point across, yes, Ghostty is good. You should use it when it's out. Also, why not <a href="https://furtidev.github.io/blog/ghostty-testing/discord.gg/ghostty">join the Discord</a>? I forgot to mention a <em>killer</em> feature: shaders. I wrote a small TUI to make the best use of it (if you can't tell, I've been playing a lot of Fallout: New Vegas):</p>
+<center style="margin-bottom: 10px"><img src=".&#x2F;fallout_terminal.png" width="70%" height="70%" /> <br> <span style="color: gray; font-style: italic">I got spurs that jingle, jangle, jingle</span></center>
+<p>There's also a repository for Ghostty shaders: <a rel="noopener" target="_blank" href="https://github.com/hackrmomo/ghostty-shaders">hackrmomo/ghostty-shaders</a>. And lastly:</p>
+<ul>
+<li>Childhood: Clueless early days of programming.</li>
+<li>Adolescence: Still clueless, but pretending to be wise using Windows for development.</li>
+<li>Redemption: Making up for my past crimes and switching to Linux.</li>
+</ul>
+<p>Also, I can't wait to actually contribute to Ghostty someday, but that's for another time. For now, I gotta take a nap. This blog took <em>[calculates time]</em> at least 3 hours. Goodbye, Good Night, Oyasumi and everything else.</p>
+</div>
+</article>
+</div>
+
+<script src="https://utteranc.es/client.js"
+        repo="furtidev/furtidev.github.io"
+        issue-term="pathname"
+        label="comment"
+        theme="gruvbox-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+</div>
+</body>
