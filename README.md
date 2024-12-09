@@ -1,3 +1,3 @@
-<p align="center">Source code of my website, built using [Zola static site generator](https://www.getzola.org/)</p>
+<p align="center">Source code of my website, built using <a href="https://www.getzola.org/">Zola static site generator</a></p>
 <br>
 
