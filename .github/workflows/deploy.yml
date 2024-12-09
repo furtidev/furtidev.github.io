@@ -39,5 +39,5 @@ jobs:
       - name: Deploy to GitHub pages
         id: deployment
         uses: actions/deploy-pages@v4
-        outputs:
-          page_url: "https://furtidev.github.io"
+outputs:
+  page_url: "https://furtidev.github.io"
