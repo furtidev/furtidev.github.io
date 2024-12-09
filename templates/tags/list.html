@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block pagetitle %}
+  <title>Tags</title>
+  <meta name="description" content="All tags on my blog!">
+{% endblock pagetitle %}
+
+{% block tabs %}
+{% include 'tags-header.html' %}
+{% endblock tabs %}
+
+{% block content %}
+<div class="heading-template">
+<h1 style="margin: 0; padding: 0; margin-bottom: 10px">Tags</h1>
+All tags on this site.
+</div>
+
+{% if terms %}
+<br>
+<center>
+{% for term in terms %}
+	<a href="{{ term.permalink | safe }}"><span class="tag-item">{{ term.name }} ({{ term.pages | length}})</span></a>
+{%endfor%}
+</center>
+{%endif%}
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block tabs %}
+{% include 'blog-header.html' %}
+{% endblock tabs %}
+
+{% block content %}
+{% if paginator.pages|length == 0 %}
+<center>no blogs!</center>
+{%else%}
+<div class="heading-template">
+<h1 style="margin: 0; padding: 0; margin-bottom: 10px">Blog Entries</h1>
+Stuff I write from time to time.
+</div>
+
+{% for page in paginator.pages %}
+<div class='blog-item'>
+	<span class="title"><a href="{{ page.permalink | safe }}">{{page.title}}</a></span><br>
+
+	<span class="date">on <font color="#bbb">🗓️ <time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time> 🕒 ~{{page.reading_time}} minute read</font></span><br>
+
+	<span class="description">{{ page.description }}</span>
+	<br>
+	{% if page.taxonomies.tags %}
+	{% for tag in page.taxonomies.tags %}
+	<i><a href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}' style="font-weight: bold;">#{{ tag }}</a></i>
+	{% endfor %}
+	{% endif %}
+</div>
+{% endfor %}
+<br>
+<center>
+	{% if paginator.previous %}
+		<a href="{{ paginator.previous }}">&laquo; Previous</a> |
+	{% endif %}
+	Page {{ paginator.current_index }} of {{ paginator.number_pagers }}
+	{% if paginator.next %}
+		| <a href="{{ paginator.next }}">Next &raquo;</a>
+	{% endif %}
+</center>
+<br>
+{%endif%}
+
+{% endblock content %}

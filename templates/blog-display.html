@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block pagetitle %}
+  <title>{{page.title}}</title>
+  <meta property="og:title" content="{{page.title}} | furtidev's blog">
+  <meta property="og:description" content="{{page.description}}">
+  <meta name="description" content="{{page.description}}">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{page.title}}",
+      "datePublished": "{{ page.date }}",
+      "author": [{
+          "@type": "Person",
+          "name": "furtidev",
+          "url": "https://poto.cafe/@furtidev"
+      }]
+    }
+  </script>
+{% endblock pagetitle %}
+
+{% block content %}
+
+<div class="post">
+<article>
+<div class="heading-template" style="line-height: 35px;">
+<span style="font-size: 40px; margin-bottom">{{ page.title }}</span><br/>
+<span style="color: #95a99f">{{ page.description }}</span> <br>
+<span style="font-size: 25px; color: #ccc">🗓️ <time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></span><br>
+<span style="font-size: 20px">
+Tags:
+{% if page.taxonomies.tags %}
+{% for tag in page.taxonomies.tags %}
+<a href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}'>#{{ tag }}</a>
+{% endfor %}
+{% endif %}
+</span>
+</div>
+<div style="font-size: 110%">{{ page.content | safe }}</div>
+</article>
+</div>
+
+<center style="color: #aaa; text-decoration: underline;">Note: all old comments are not displayed anymore as I switch repos. Sorry.</center>
+
+<script src="https://utteranc.es/client.js"
+        repo="furtidev/website"
+        issue-term="pathname"
+        label="comment"
+        theme="gruvbox-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+{% endblock content %}

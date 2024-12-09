@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}
+    <title>furtidev's site</title>
+    <meta property="og:title" content="furtidev's site">
+    <meta property="og:description" content="Welcome to my internet home!">
+{% endblock pagetitle %}
+
+{% block content %}
+<div class="header-bar">
+<img src="logo.png" style="border-radius: 10px; width: 15%; height: 15%;"><br/>
+<h1>@furtidev</h1>
+<span style="font-size: 18px"><a href="https://github.com/furtidev/">[github]</a> <a href="https://furtidev.itch.io/">[itch.io]</a> <a href="https://poto.cafe/@furtidev">[mastodon]</a> <a href="https://twitter.com/furtidev">[twitter]</a> <a href="http://tilde.town/~furtidev/">[tilde.town]</a> </span>
+<br>
+<span class="description">I write software. Currently working on *REDACTED* 🐈</span>
+</div>
+<div style="font-size: 20px; line-height: 28px">
+This portion of the site has been empty for a while now, and it's the first thing you see - needless to say, my priorities are different than most. To be honest, introducing myself in the classic "I'm me, this is what I do, I'm so cool" format felt pretentious but I didn't know what else to write either so I kept this empty. I've seen people write about their personal life - living in a seemingly random but beautiful place, with a loving partner and two kids - that's interesting enough but I can't do that. Or can I? I forgot I can just lie on the internets!
+<br><br>
+Other times, I'll see a simple yet effective "About Me". They'll have some of the most "hardest" one-liners (e.g. "President and Lead Developer of Zig Software Foundation" or "Creator of Stardew Valley"). If I could just do that, this massive essay wouldn't be here right now. So.
+<br><br>
+Where does that leave me? Writing a massive rant on why there is no "About Me" on this site I guess. In the meanwhile, enjoy this cat:
+<br><br>
+</div>
+
+<center id="3d-render"></center>
+<script type="module">
+    import * as THREE from './libraries/three.module.min.js';
+    import { OrbitControls } from './libraries/OrbitControls.js';
+    import { GLTFLoader } from './libraries/GLTFLoader.js';
+    import { DRACOLoader } from './libraries/DRACOLoader.js';
+    import { RoomEnvironment } from './libraries/RoomEnvironment.js';
+    //create a scene
+    const scene = new THREE.Scene();
+    const loader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath( './libraries/draco/' );
+    loader.setDRACOLoader( dracoLoader );
+
+    //create a camera
+    const camera = new THREE.PerspectiveCamera(
+      50,
+      window.innerWidth * 1 / window.innerHeight * 1,
+      0.1,
+      500
+    );
+    camera.position.z = 4.5;
+
+    //create an object
+    const geometry = new THREE.BoxGeometry(3, 3, 3);
+    var material = new THREE.MeshBasicMaterial({
+      color: 0xfffff,
+      wireframe: true,
+    });
+    var cube = new THREE.Mesh(geometry, material);
+
+    let cat;
+
+    //add the object to scene
+    // scene.add(cube);
+
+    loader.load( 'Cat.glb', function ( gltf ) {
+        cat = gltf.scene;
+        cat.position.y -= 0.8;
+        cat.scale.x = 1.25;
+        cat.scale.y = 1.25;
+
+        scene.add( cat );
+
+    }, undefined, function ( error ) {
+
+        console.error( error );
+
+    });
+
+    //create renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth * 0.5, window.innerHeight * 0.5);
+    renderer.render(scene, camera);
+
+    const environment = new RoomEnvironment();
+    const pmremGenerator = new THREE.PMREMGenerator( renderer );
+    scene.environment = pmremGenerator.fromScene( environment ).texture;
+
+    //animation loop
+    const animate = () => {
+      requestAnimationFrame(animate);
+      if (cat) {
+          cat.rotation.y += 0.04;
+          // cat.rotation.x += 0.02;
+      }
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    document.getElementById('3d-render').appendChild(renderer.domElement);
+</script>
+<br>
+<center>
+    Built using Zola 0.19.2<br>Cat model by <a href="https://poly.pizza/m/qKICY6xla2">Quaternius</a><p><a href="https://github.com/furtidev/website/blob/main/LICENSE.md" target="_blank">Read license</p>
+</center>
+{% endblock content %}
