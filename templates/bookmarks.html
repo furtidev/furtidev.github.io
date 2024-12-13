@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if paginator.pages|length == 0 %}
+<br>
+<center>No bookmarks</center>
+{%else%}
+<div class="heading-template">
+<h1 style="margin: 0; padding: 0; margin-bottom: 10px">Bookmarks</h1>
+Various bookmarks.
+</div>
+
+<ul style="font-size: 130%">
+{% for page in paginator.pages %}
+<li><a href="{{ page.extra.bloglink | safe }}" target="_blank">{{page.title}}</a> added on <span class="date">on <font color="#bbb">🗓️ <time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></font></span></li>
+{% endfor %}
+</ul>
+<center>
+	{% if paginator.previous %}
+		<a href="{{ paginator.previous }}">&laquo; Previous</a> |
+	{% endif %}
+	Page {{ paginator.current_index }} of {{ paginator.number_pagers }}
+	{% if paginator.next %}
+		| <a href="{{ paginator.next }}">Next &raquo;</a>
+	{% endif %}
+</center>
+<br>
+{%endif%}
+
+{% endblock content %}
