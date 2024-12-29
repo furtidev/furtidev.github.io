@@ -73,4 +73,4 @@ But hey, it works:
 ## What's next?
 My main focus for now is going to be on the AST, since it's still premature and I want to make it full-fledged before moving on to interpreters and compilers. 
 
-If you have any feedback or suggestions regarding my approach, feel free to comment below or send me an email on: [furtidev@poto.cafe](mailto:furtidev@poto.cafe). Until next time!
+If you have any feedback or suggestions regarding my approach, feel free to comment below or send me an email on: [furtidev@tuta.io](mailto:furtidev@tuta.io). Until next time!

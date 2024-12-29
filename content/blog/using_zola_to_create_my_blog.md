@@ -86,4 +86,4 @@ Have you seen how the publishing dates are nicely formatted in my site? How did 
 ```
 
 ## Conclusion
-I enjoy using Zola a lot, there's a lot more for me to learn about it, and I'm still a beginner, so if I've made any mistakes or if you have any feedback, send me an email on: [furtidev@poto.cafe](mailto:furtidev@poto.cafe) or you can just comment below.
+I enjoy using Zola a lot, there's a lot more for me to learn about it, and I'm still a beginner, so if I've made any mistakes or if you have any feedback, send me an email on: [furtidev@tuta.io](mailto:furtidev@tuta.io) or you can just comment below.

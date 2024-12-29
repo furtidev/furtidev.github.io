@@ -24,4 +24,4 @@ BitWarden one day randomly locked me out of my account with the following error:
 ## KeePassXC (currently using, great)
 I currently use KeePassXC. There's no server involved, you just download KeePassXC and start using it. Importing data from BitWarden wasn't hard though it wasn't seamless either. I just save regular backups of my database on the cloud, and use a strong master password. Plus, you can also use YubiKey and OnlyKey for extra protection. It is also open source software and I like that everything about it is handled by me and me only. I also use it for OTP.
 
-I'm no encryption/security specialist, I just wanted to share my experience so if I've made any mistakes then comment below or send me an email on: [furtidev@poto.cafe](mailto:furtidev@poto.cafe).
+I'm no encryption/security specialist, I just wanted to share my experience so if I've made any mistakes then comment below or send me an email on: [furtidev@tuta.io](mailto:furtidev@tuta.io).
