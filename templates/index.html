@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block pagetitle %}
-    <title>furtidev's site</title>
-    <meta property="og:title" content="furtidev's site">
-    <meta property="og:description" content="Welcome to my internet home!">
+        <title>furtidev's site</title>
+        <meta property="og:title" content="furtidev's site">
+        <meta property="og:description" content="Welcome to my internet home!">
 {% endblock pagetitle %}
 
 {% block content %}
+
 <div class="header-bar">
 <img src="logo.png" style="border-radius: 10px; width: 15%; height: 15%;"><br/>
 <h1>@furtidev</h1>
@@ -14,90 +15,157 @@
 <br>
 <span class="description">I write software.</span>
 </div>
-<div style="font-size: 20px; line-height: 28px">
-This portion of the site has been empty for a while now, and it's the first thing you see - needless to say, my priorities are different than most. To be honest, introducing myself in the classic "I'm me, this is what I do, I'm so cool" format felt pretentious but I didn't know what else to write either so I kept this empty. I've seen people write about their personal life - living in a seemingly random but beautiful place, with a loving partner and two kids - that's interesting enough but I can't do that. Or can I? I forgot I can just lie on the internets!
-<br><br>
-Other times, I'll see a simple yet effective "About Me". They'll have some of the most "hardest" one-liners (e.g. "President and Lead Developer of Zig Software Foundation" or "Creator of Stardew Valley"). If I could just do that, this massive essay wouldn't be here right now. So.
-<br><br>
-Where does that leave me? Writing a massive rant on why there is no "About Me" on this site I guess. In the meanwhile, enjoy this cat:
-<br><br>
+
+
+<style>
+    .man-body {
+        color: #e0e0e0;
+        font-family: Iosevka;
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .man-container {
+        padding: 0 1ch;
+    }
+
+    .man-header-bar, .man-footer-bar {
+        background: #e0e0e0;
+        color: #1b1b1b;
+        padding: 0 1ch;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+
+    .man-title-left, .man-title-center, .man-title-right {
+        flex: 1;
+    }
+
+    .man-title-center {
+        text-align: center;
+    }
+
+    .man-title-right {
+        text-align: right;
+    }
+
+    .man-heading {
+        display: none;
+    }
+
+    .man-section-header {
+        margin: 1em 0 0 0;
+        font-weight: bold;
+    }
+
+    .man-content {
+        margin-left: 7ch;
+    }
+
+    .man-synopsis-line {
+        margin-left: 7ch;
+        white-space: pre-wrap;
+    }
+
+    .man-underline {
+        text-decoration: underline;
+    }
+
+    .man-pre {
+        margin: 0;
+        white-space: pre-wrap;
+    }
+
+    .man-option {
+        font-weight: bold;
+        margin-left: 7ch;
+        white-space: pre;
+    }
+
+    .man-option-description {
+        margin-left: 13ch;
+        white-space: pre-wrap;
+    }
+
+    .man-footer-bar {
+        bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<div class="man-body">
+        <div class="man-header-bar">
+            <span class="man-title-left">FURTIDEV(1)</span>
+            <span class="man-title-center">General Commands Manual</span>
+            <span class="man-title-right">FURTIDEV(1)</span>
+        </div>
+
+        <div class="man-container">
+            <h1 class="man-heading">FURTIDEV(1)</h1>
+
+            <div class="man-section-header">NAME</div>
+            <div class="man-content">furtidev — some guy</div>
+
+            <div class="man-section-header">SYNOPSIS</div>
+            <div class="man-synopsis-line">furtidev <b>[FLAGS]</b></div>
+
+            <div class="man-section-header">DESCRIPTION</div>
+            <div class="man-content">
+                Interested in systems programming, CLI & TUI tools and games. Does recreational programming and sometimes contributes to open source. 
+            </div>
+
+            <div class="man-section-header">FLAGS</div>
+            <div class="man-option">-j</div>
+            <div class="man-option-description">Runs in joyful mode, more efficient and productive.</div>
+
+            <div class="man-section-header">TECH STACK</div>
+            <div class="man-content">
+                Go, Rust, Python, Flutter/Dart.
+            </div>
+
+            <div class="man-section-header">ENVIRONMENT</div>
+            <div class="man-content">
+                When <b>furtidev</b> is started, it sets the following environment variables:
+            </div>
+            <br>
+            <div class="man-option">TIME FORMAT</div>
+            <div class="man-option-description">12hr</div>
+            <br>
+            <div class="man-option">SETUP</div>
+            <div class="man-option-description">Hyprland <-> KDE, Sublime Text <-> Zed, Ghostty</div>
+            <br>
+            <div class="man-option">FONT</div>
+            <div class="man-option-description">Iosevka</div>
+            <br>
+            <div class="man-option">LOVE</div>
+            <div class="man-option-description">Indie games</div>
+            <br>
+            <div class="man-option">WEBSITE</div>
+            <div class="man-option-description">Built using Zola 0.19.2</div>
+
+            <div class="man-section-header">SEE ALSO</div>
+            <div class="man-content">
+                <a href="https://github.com/furtidev/furtidev.github.io/blob/main/LICENSE.md" target="_blank">license</a>(4), <a href="https://orhun.dev/" target="_blank">orhun</a>(1)
+            </div>
+
+            <div class="man-section-header">KNOWN BUGS</div>
+            <div class="man-content">
+                Can't finish projects.
+            </div>
+        </div>
+        <br>
+        <div class="man-footer-bar">
+            Manual page furtidev(1) line n (press h for help or q to quit)
+        </div>
 </div>
 
-<center id="3d-render"></center>
-<script type="module">
-    import * as THREE from './libraries/three.module.min.js';
-    import { OrbitControls } from './libraries/OrbitControls.js';
-    import { GLTFLoader } from './libraries/GLTFLoader.js';
-    import { DRACOLoader } from './libraries/DRACOLoader.js';
-    import { RoomEnvironment } from './libraries/RoomEnvironment.js';
-    //create a scene
-    const scene = new THREE.Scene();
-    const loader = new GLTFLoader();
-    const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath( './libraries/draco/' );
-    loader.setDRACOLoader( dracoLoader );
 
-    //create a camera
-    const camera = new THREE.PerspectiveCamera(
-      50,
-      window.innerWidth * 1 / window.innerHeight * 1,
-      0.1,
-      500
-    );
-    camera.position.z = 4.5;
-
-    //create an object
-    const geometry = new THREE.BoxGeometry(3, 3, 3);
-    var material = new THREE.MeshBasicMaterial({
-      color: 0xfffff,
-      wireframe: true,
-    });
-    var cube = new THREE.Mesh(geometry, material);
-
-    let cat;
-
-    //add the object to scene
-    // scene.add(cube);
-
-    loader.load( 'Cat.glb', function ( gltf ) {
-        cat = gltf.scene;
-        cat.position.y -= 0.8;
-        cat.scale.x = 1.25;
-        cat.scale.y = 1.25;
-
-        scene.add( cat );
-
-    }, undefined, function ( error ) {
-
-        console.error( error );
-
-    });
-
-    //create renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth * 0.5, window.innerHeight * 0.5);
-    renderer.render(scene, camera);
-
-    const environment = new RoomEnvironment();
-    const pmremGenerator = new THREE.PMREMGenerator( renderer );
-    scene.environment = pmremGenerator.fromScene( environment ).texture;
-
-    //animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      if (cat) {
-          cat.rotation.y += 0.04;
-          // cat.rotation.x += 0.02;
-      }
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    document.getElementById('3d-render').appendChild(renderer.domElement);
-</script>
 <br>
 <center>
-    Built using Zola 0.19.2<br>Cat model by <a href="https://poly.pizza/m/qKICY6xla2">Quaternius</a><p><a href="https://github.com/furtidev/website/blob/main/LICENSE.md" target="_blank">Read license</p>
+        <img src="ncr.png" width="25%" height="25%"/>
 </center>
 {% endblock content %}
