@@ -55,7 +55,7 @@ Ever since I got access to the private beta, Ghostty has been my daily driver. S
 I'm not an avid recompiler, in fact I haven't recompiled Ghostty ever since. I should really do it one of these days.  
 
 # Conclusion
-Need I say more? I'm sure I've gotten my point across, yes, Ghostty is good. You should use it when it's out. Also, why not [join the Discord](discord.gg/ghostty)? I forgot to mention a *killer* feature: shaders. I wrote a small TUI to make the best use of it (if you can't tell, I've been playing a lot of Fallout: New Vegas):
+Need I say more? I'm sure I've gotten my point across, yes, Ghostty is good. You should use it when it's out. Also, why not [join the Discord](https://discord.gg/ghostty)? I forgot to mention a *killer* feature: shaders. I wrote a small TUI to make the best use of it (if you can't tell, I've been playing a lot of Fallout: New Vegas):
 
 {{image_with_figure(path="./fallout_terminal.png", w_scale="70%", h_scale="70%", figure="I got spurs that jingle, jangle, jingle")}}
 
