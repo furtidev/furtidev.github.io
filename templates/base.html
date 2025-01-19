@@ -10,23 +10,54 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:image" content="/furti_text.png">
+    <meta property="og:image:type" content="image/png">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<div class="navbar">
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo-section">
+        <a href="/">
+            <img src="/furti_text.png" class="logo-img">
+        </a>
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
+      <a href='{{ get_url(path="bookmarks", trailing_slash=false) }}'>Bookmarks</a>
+      <a href='{{ get_url(path="tags", trailing_slash=false) }}'>Tags</a>
+    </div>
+
+    <div class="right-section">
+      <a href='{{ get_url(path="rss.xml", trailing_slash=false) }}'>RSS</a>
+    </div>
+  </div>
+</nav>
+
+<!--<div class="navbar">
     <ul>
-    <li><a href="/">~</a></li>
+    <li><a href="/"><img src="/furti_text.png"></a></li>
     <li><a href="{{ get_url(path='@/blog/_index.md') }}">blog</a></li>
     <li><a href='{{ get_url(path="tags", trailing_slash=false) }}'>tags</a></li>
     <li><a href='{{ get_url(path="bookmarks", trailing_slash=false) }}'>bookmarks</a></li>
     <li><a href='{{ get_url(path="status", trailing_slash=false) }}'>status</a></li>
     <li><a href='{{ get_url(path="rss.xml", trailing_slash=false) }}'>rss</a></li>
     </ul>
-</div>
+</div>-->
 
 <div class="content">
-{% block content %} {% endblock content %}    
+{% block content %} {% endblock content %}
 </div>
 </body>
+
+<script>
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+}
+</script>

@@ -27,9 +27,10 @@
 body
   max-width: 60em
   margin: 0 auto
-  font-family: Cantarell
+  font-family: Iosevka
   background: #101010
-  color: #e4e4ef
+  // color: #e4e4ef
+  color: #ccc
   line-height: 1.5rem
 
 @media only screen and (max-width: 600px)
@@ -66,18 +67,68 @@ body
   padding: 20px
 
 .navbar
-  border-bottom: 1px solid #181818
-  padding-bottom: 10px
-  ul
-    padding: 0
-    margin: 10px 0 0 0
-  li
-    list-style: none
-    display: inline
-  li:not(:first-child)::before
-    padding: 0.5em
-    content: " / "
-    color: #ccc
+  border: 1px solid #282828
+  margin-top: 5px
+  border-radius: 8px
+  padding: 1rem 1.5rem
+  width: 100%
+  box-sizing: border-box
+  a
+    text-decoration: underline
+  a:hover
+    color: #fcd34d
+    text-decoration: underline
+
+.navbar-container
+  max-width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.logo-section
+  display: flex
+  align-items: center
+  gap: 0.75rem
+
+.logo-img
+  width: 2rem
+  height: 2rem
+  object-fit: contain
+
+
+.nav-links
+  display: flex
+  gap: 1.5rem
+  align-items: center
+
+.menu-button
+  display: none
+  background: none
+  border: none
+  color: #fcd34d
+  cursor: pointer
+  padding: 0.5rem
+  font-size: 1.5rem
+
+@media (max-width: 768px)
+  .navbar-container
+    flex-wrap: wrap
+
+  .menu-button
+    display: block
+
+  .nav-links
+    display: none
+    width: 100%
+    flex-direction: column
+    align-items: flex-start
+    padding: 1rem 0
+
+    &.active
+      display: flex
+
+  .right-section
+    margin-left: auto
 
 a
   color: #96a6c8
