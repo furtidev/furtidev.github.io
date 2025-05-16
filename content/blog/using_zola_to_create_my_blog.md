@@ -2,6 +2,7 @@
 title = "Using Zola to create my blog"
 date = 2023-07-08
 description = "An introduction to Zola and my experience so far."
+draft = true
 [taxonomies]
 tags = ["tutorial"]
 +++

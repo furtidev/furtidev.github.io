@@ -17,41 +17,40 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<nav class="navbar">
-  <div class="navbar-container">
-    <div class="logo-section">
-        <a href="/">
-            <img src="/furti_text.png" class="logo-img">
-        </a>
-    </div>
+<div class="nav-bar">
+    <div class="column">
+        <div class="title">
+            <a href="/"><div class="main">furtidev / ফুর্তি</div></a>
+            <div class="sub">Programming, Manga & Games</div>
+        </div>
 
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
-
-    <div class="nav-links" id="navLinks">
-      <a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
-      <a href='{{ get_url(path="bookmarks", trailing_slash=false) }}'>Bookmarks</a>
-      <a href='{{ get_url(path="tags", trailing_slash=false) }}'>Tags</a>
+        <div class="menu">
+            <div class="links">
+              <a class="link" href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
+              <a class="link" href='{{ get_url(path="bookmarks", trailing_slash=false) }}'>Bookmarks</a>
+              <a class="link" href='{{ get_url(path="tags", trailing_slash=false) }}'>Tags</a>
+              <a class="link" href='{{ get_url(path="rss.xml", trailing_slash=false) }}'>RSS</a>
+            </div>
+        </div>
     </div>
-
-    <div class="right-section">
-      <a href='{{ get_url(path="rss.xml", trailing_slash=false) }}'>RSS</a>
-    </div>
-  </div>
-</nav>
+</div>
 
 <!--<div class="navbar">
-    <ul>
-    <li><a href="/"><img src="/furti_text.png"></a></li>
-    <li><a href="{{ get_url(path='@/blog/_index.md') }}">blog</a></li>
-    <li><a href='{{ get_url(path="tags", trailing_slash=false) }}'>tags</a></li>
-    <li><a href='{{ get_url(path="bookmarks", trailing_slash=false) }}'>bookmarks</a></li>
-    <li><a href='{{ get_url(path="status", trailing_slash=false) }}'>status</a></li>
-    <li><a href='{{ get_url(path="rss.xml", trailing_slash=false) }}'>rss</a></li>
-    </ul>
 </div>-->
 
 <div class="content">
 {% block content %} {% endblock content %}
+</div>
+
+<div class="footer">
+Built with <a href="https://getzola.org" target="_blank">Zola</a>
+<br>
+Some inspiration from <a href="https://chevyray.dev/" target="_blank">Chevy Ray</a>
+<br>
+<br>
+Sunrise, parabellum.
+<br><br>
+<a href="https://github.com/furtidev/furtidev.github.io/blob/main/LICENSE.md" target="_blank">Click here for copyright information</a>
 </div>
 </body>
 

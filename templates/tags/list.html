@@ -9,17 +9,13 @@
 {% endblock tabs %}
 
 {% block content %}
-<div class="heading-template">
-<h1 style="margin: 0; padding: 0; margin-bottom: 10px">Tags</h1>
-All tags on this site.
-</div>
+<h1>Tags (not a pretty page, I know)</h1>
 
 {% if terms %}
-<br>
-<center>
+<ul>
 {% for term in terms %}
-	<a href="{{ term.permalink | safe }}"><span class="tag-item">{{ term.name }} ({{ term.pages | length}})</span></a>
+	<li><a href="{{ term.permalink | safe }}">{{ term.name }} ({{ term.pages | length}})</a></li>
 {%endfor%}
-</center>
+</ul>
 {%endif%}
 {% endblock content %}

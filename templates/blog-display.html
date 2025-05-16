@@ -23,20 +23,16 @@
 
 <div class="post">
 <article>
-<div class="heading-template" style="line-height: 35px;">
-<span style="font-size: 40px; margin-bottom">{{ page.title }}</span><br/>
-<span style="color: #95a99f">{{ page.description }}</span> <br>
-<span style="font-size: 25px; color: #ccc">🗓️ <time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></span><br>
-<span style="font-size: 20px">
-Tags:
-{% if page.taxonomies.tags %}
-{% for tag in page.taxonomies.tags %}
-<a href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}'>#{{ tag }}</a>
-{% endfor %}
-{% endif %}
-</span>
-</div>
-<div style="font-size: 110%">{{ page.content | safe }}</div>
+<h1 class="title">
+  {{ page.title }}
+  <time class="meta" datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time>
+  {% if page.taxonomies.tags %}
+  {% for tag in page.taxonomies.tags %}
+  <a class="tag" href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}'>#{{ tag }}</a>
+  {% endfor %}
+  {% endif %}
+</h1>
+<div>{{ page.content | safe }}</div>
 </article>
 </div>
 

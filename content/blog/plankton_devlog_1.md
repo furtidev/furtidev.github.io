@@ -2,6 +2,7 @@
 title = "Plankton Devlog #1"
 date = 2023-10-15
 description = "Trying to write my own programming language."
+draft = true
 [taxonomies]
 tags = ["programming"]
 +++

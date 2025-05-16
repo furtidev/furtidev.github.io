@@ -8,27 +8,18 @@
 {% if paginator.pages|length == 0 %}
 <center>no blogs!</center>
 {%else%}
-<div class="heading-template">
-<h1 style="margin: 0; padding: 0; margin-bottom: 10px">Blog Entries</h1>
-Stuff I write from time to time.
-</div>
+<h1>Ramblings / blogs</h1>
 
+<div class="blogs-list">
+<ul>
 {% for page in paginator.pages %}
-<div class='blog-item'>
-	<span class="title"><a href="{{ page.permalink | safe }}">{{page.title}}</a></span><br>
-
-	<span class="date">on <font color="#bbb">🗓️ <time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time> 🕒 ~{{page.reading_time}} minute read</font></span><br>
-
-	<span class="description">{{ page.description }}</span>
-	<br>
-	{% if page.taxonomies.tags %}
-	{% for tag in page.taxonomies.tags %}
-	<i><a href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}' style="font-weight: bold;">#{{ tag }}</a></i>
-	{% endfor %}
-	{% endif %}
-</div>
+<li>
+	<span class="date"><time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></span>
+	<h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+</li>
 {% endfor %}
-<br>
+</ul>
+</div>
 <center>
 	{% if paginator.previous %}
 		<a href="{{ paginator.previous }}">&laquo; Previous</a> |

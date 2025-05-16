@@ -7,165 +7,41 @@
 {% endblock pagetitle %}
 
 {% block content %}
+<p>Hey, you! What are you doing here? This is where I do whatever I want. One of those "whatever" is re-designing this site. I think this is the.... <b>#4th</b> re-design.</p>
 
-<div class="header-bar">
-<img src="logo.png" style="border-radius: 10px; width: 15%; height: 15%;"><br/>
-<h1>@furtidev</h1>
-<span style="font-size: 18px"><a href="https://github.com/furtidev/">[github]</a> <a href="https://furtidev.itch.io/">[itch.io]</a> <a href="https://poto.cafe/@furtidev">[mastodon]</a> <a href="https://twitter.com/furtidev">[twitter]</a> <a href="http://tilde.town/~furtidev/">[tilde.town]</a> </span>
-<br>
-<span class="description">I write software.</span>
+Anyway, some things about me:
+
+<ul>
+    <li>I write software 👾</li>
+    <li>I'm interested in: systems programming, cli/tui/gui apps, writing stories and... you?!</li>
+    <li>... really struggling to write anything here without venting ...</li>
+    <li><del><i>REDACTED</i></del></li>
+</ul>
+
+<p>I know the title of the site ambitiously says "Programming, *Manga* & *Games*" -- I'm so lost that I'm procrastinating reading manga. It'll be okay. It.... or... will it be okay?</p>
+
+<p>I really like these games: </p>
+
+<div style="display: grid;grid-template-columns: auto auto;padding: 10px; grid-row-gap: 10px;">
+<a href="https://store.steampowered.com/app/22380/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/22380/header.jpg?t=1665072891"></a>
+<a href="https://store.steampowered.com/app/588650/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/588650/header.jpg?t=1665072891"></a>
+<a href="https://store.steampowered.com/app/1585180/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1585180/header.jpg?t=1665072891"></a>
+<a href="https://store.steampowered.com/app/569860/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/569860/header.jpg?t=1665072891"></a>
+<a href="https://store.steampowered.com/app/7670/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/7670/header.jpg?t=1665072891"></a>
+<a href="https://store.steampowered.com/app/632470/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/632470/header.jpg?t=1665072891"></a>
+<a href="https://store.steampowered.com/app/413150/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1665072891"></a>
+<a href="https://store.steampowered.com/app/1206560/" target="_blank"><img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1206560/header.jpg?t=1665072891"></a>
 </div>
 
+<p>I've been maintaing this site since July, 2023. It is a bit crazy to think that 2 years have passed -- though, other than the occasional re-design sparked by mental breakdowns not much has changed. It's built using Zola, which was sort of an arbitrary choice based on nothing but the axiom that Hugo is too much.</p>
 
-<style>
-    .man-body {
-        color: #e0e0e0;
-        font-family: Iosevka;
-        font-size: 24px;
-        padding: 0;
-        margin: 0;
-        line-height: 1.2;
-    }
+Some links for you to stalk me (please don't this is a joke):
 
-    .man-container {
-        padding: 0 1ch;
-    }
+<ul>
+    <li><a href="https://github.com/furtidev/" target="_blank">GitHub</a></li>
+    <li><a href="https://furtidev.itch.io/" target="_blank">itch.io</a></li>
+    <li><a href="https://twitter.com/furtidev" target="_blank">Twitter</a></li>
+</ul>
 
-    .man-header-bar, .man-footer-bar {
-        background: #e0e0e0;
-        color: #1b1b1b;
-        padding: 0 1ch;
-        display: flex;
-        justify-content: space-between;
-        font-weight: bold;
-    }
-
-    .man-title-left, .man-title-center, .man-title-right {
-        flex: 1;
-    }
-
-    .man-title-center {
-        text-align: center;
-    }
-
-    .man-title-right {
-        text-align: right;
-    }
-
-    .man-heading {
-        display: none;
-    }
-
-    .man-section-header {
-        margin: 1em 0 0 0;
-        font-weight: bold;
-    }
-
-    .man-content {
-        margin-left: 7ch;
-    }
-
-    .man-synopsis-line {
-        margin-left: 7ch;
-        white-space: pre-wrap;
-    }
-
-    .man-underline {
-        text-decoration: underline;
-    }
-
-    .man-pre {
-        margin: 0;
-        white-space: pre-wrap;
-    }
-
-    .man-option {
-        font-weight: bold;
-        margin-left: 7ch;
-        white-space: pre;
-    }
-
-    .man-option-description {
-        margin-left: 13ch;
-        white-space: pre-wrap;
-    }
-
-    .man-footer-bar {
-        bottom: 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-</style>
-</head>
-<div class="man-body">
-        <div class="man-header-bar">
-            <span class="man-title-left">FURTIDEV(1)</span>
-            <span class="man-title-center">General Commands Manual</span>
-            <span class="man-title-right">FURTIDEV(1)</span>
-        </div>
-
-        <div class="man-container">
-            <h1 class="man-heading">FURTIDEV(1)</h1>
-
-            <div class="man-section-header">NAME</div>
-            <div class="man-content">furtidev — some guy</div>
-
-            <div class="man-section-header">SYNOPSIS</div>
-            <div class="man-synopsis-line">furtidev <b>[FLAGS]</b></div>
-
-            <div class="man-section-header">DESCRIPTION</div>
-            <div class="man-content">
-                Interested in systems programming, CLI & TUI tools and games. Does recreational programming and sometimes contributes to open source. 
-            </div>
-
-            <div class="man-section-header">FLAGS</div>
-            <div class="man-option">-j</div>
-            <div class="man-option-description">Runs in joyful mode, more efficient and productive.</div>
-
-            <div class="man-section-header">TECH STACK</div>
-            <div class="man-content">
-                Go, Rust, Python, Flutter/Dart.
-            </div>
-
-            <div class="man-section-header">ENVIRONMENT</div>
-            <div class="man-content">
-                When <b>furtidev</b> is started, it sets the following environment variables:
-            </div>
-            <br>
-            <div class="man-option">TIME FORMAT</div>
-            <div class="man-option-description">12hr</div>
-            <br>
-            <div class="man-option">SETUP</div>
-            <div class="man-option-description">Hyprland <-> KDE, Sublime Text <-> Zed, Ghostty</div>
-            <br>
-            <div class="man-option">FONT</div>
-            <div class="man-option-description">Iosevka</div>
-            <br>
-            <div class="man-option">LOVE</div>
-            <div class="man-option-description">Indie games</div>
-            <br>
-            <div class="man-option">WEBSITE</div>
-            <div class="man-option-description">Built using Zola 0.19.2</div>
-
-            <div class="man-section-header">SEE ALSO</div>
-            <div class="man-content">
-                <a href="https://github.com/furtidev/furtidev.github.io/blob/main/LICENSE.md" target="_blank">license</a>(4), <a href="https://orhun.dev/" target="_blank">orhun</a>(1)
-            </div>
-
-            <div class="man-section-header">KNOWN BUGS</div>
-            <div class="man-content">
-                Can't finish projects.
-            </div>
-        </div>
-        <br>
-        <div class="man-footer-bar">
-            Manual page furtidev(1) line n (press h for help or q to quit)
-        </div>
-</div>
-
-
-<br>
-<center>
-        <img src="ncr.png" width="25%" height="25%"/>
-</center>
+You can also contact me: <code>furtidev (at) tuta.io</code>.
 {% endblock content %}

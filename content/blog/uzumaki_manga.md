@@ -2,6 +2,7 @@
 title = "Uzumaki: To live is to spiral into horror"
 date = 2024-05-17
 description = "It's a snail person!"
+draft = true
 [taxonomies]
 tags = ["review", "manga"]
 +++

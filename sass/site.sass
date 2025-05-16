@@ -11,6 +11,18 @@
   font-style: normal
 
 @font-face
+  font-family: 'ProzaLibre'
+  src: local("Proza Libre Regular"), url('ProzaLibre-Regular.ttf')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'ProzaLibre'
+  src: local("Proza Libre Italic"), url('ProzaLibre-Italic.ttf')
+  font-weight: normal
+  font-style: italic
+
+@font-face
   font-family: 'Iosevka'
   src: local("Iosevka Bold"), url('iosevka-bold.woff2') format("woff2")
   font-weight: bold
@@ -26,29 +38,61 @@
 
 body
   max-width: 60em
-  margin: 0 auto
-  font-family: Iosevka
-  background: #101010
+  margin: 2em auto
+  font-family: 'ProzaLibre'
+  // font-family: 'Cantarell'
+  background: #eff1f5
   // color: #e4e4ef
-  color: #ccc
-  line-height: 1.5rem
+  color: #454545
+  line-height: 1.7
+  font-size: 16px
+  // letter-spacing: 0.8px
+  hyphens: auto
 
-@media only screen and (max-width: 600px)
-  body
-    margin: 10px
-
-.header-bar
-  padding: 20px
-  text-align: center
-  border-bottom: 0.5px solid #181818
+.nav-bar
+  position: relative
+  padding: 20px 25% 20px 25%
+  border-bottom: 2px solid #181818
   margin-bottom: 10px
+  background: #000
+  color: #ccc
+  border-radius: 20px 20px 0px 0px
+
+  background-image: url('/nav-scenery.png')
+  background-repeat: repeat-x
+  background-size: 5% auto
+  background-position: left bottom -10%
+  overflow: visible
 
   h1
     margin: 10px 0 10px 0
 
-  .description
-    color: #f5f5f5
-    font-size: 20px
+  .column
+    display: flex
+    align-items: center
+
+    .title
+      flex: 1
+
+      a
+        color: #ccc
+
+      .main
+        font-size: 30px
+
+      .sub
+        font-style: italic
+
+    .menu .links
+      .link
+        display: flex
+        font-size: 20px
+
+      a
+        margin: 3px
+        color: #ccc
+        text-decoration: underline
+        text-underline-offset: 4px
 
 .tag-item
   padding: 8px
@@ -66,82 +110,71 @@ body
   border-radius: 10px
   padding: 20px
 
-.navbar
-  border: 1px solid #282828
-  margin-top: 5px
-  border-radius: 8px
-  padding: 1rem 1.5rem
-  width: 100%
-  box-sizing: border-box
-  a
-    text-decoration: underline
-  a:hover
-    color: #fcd34d
-    text-decoration: underline
+a
+  color: #07a
+  text-decoration: none
+  &:visited
+    color: #07a
+    text-decoration: none
+  &:hover
+    color: #fff
+    background: #aaa
+    border-radius: 6px
 
-.navbar-container
-  max-width: 100%
-  display: flex
-  justify-content: space-between
-  align-items: center
+.blogs-list
+  margin: 1.75em
 
-.logo-section
-  display: flex
-  align-items: center
-  gap: 0.75rem
+  ul li
+    display: flex
+    align-items: flex-start
+    margin-left: -4.6em
 
-.logo-img
-  width: 2rem
-  height: 2rem
-  object-fit: contain
+    h2
+      margin: 0em 0 1.2em 0.6em
 
+  .date
+    font-family: Iosevka
+    font-weight: bold
+    background: #c6c7cc
+    padding: 5px
+    text-align: center
+    border-radius: 5px
 
-.nav-links
-  display: flex
-  gap: 1.5rem
-  align-items: center
+.post
+  .title
+    color: saddlebrown
+    .meta
+      display: block
+      font-size: 0.67em
+      color: lightslategray
+    .tag
+      font-size: 0.63em
 
-.menu-button
-  display: none
-  background: none
-  border: none
-  color: #fcd34d
-  cursor: pointer
-  padding: 0.5rem
-  font-size: 1.5rem
+@media (max-width: 572px)
+  body
+    margin: 10px
 
-@media (max-width: 768px)
-  .navbar-container
-    flex-wrap: wrap
-
-  .menu-button
+  .blogs-list ul li
     display: block
 
-  .nav-links
-    display: none
-    width: 100%
-    flex-direction: column
-    align-items: flex-start
-    padding: 1rem 0
+  .nav-bar .column
+    display: block
 
-    &.active
-      display: flex
+  .nav-bar
+    padding: 15px
+    .column
+      .title
+        text-align: center
 
-  .right-section
-    margin-left: auto
+      .menu
+        text-align: center
 
-a
-  color: #96a6c8
-  text-decoration: none
-  &:hover
-   background: #282828
-  &:visited
-    color: #96a6c8
-    text-decoration: none
+        .links
+          display: inline-block
+          margin-top: 10px
 
-.blog-item
-  border-bottom: 2px dashed #453d41
-  padding: 8px 0px 8px 0px
+          .link
+            display: inline-block
 
 pre[class*="language-"]
   border: 1px solid #e4e4ef
@@ -158,7 +191,7 @@ code[class*="language-"], code
   font-family: 'Iosevka', monospace
 
 code:not([class*="language-"])
-  background: #282828
+  background: #F9F9F9
   padding: 2px
 
 blockquote + pre
@@ -193,4 +226,12 @@ blockquote:has(+ pre)
 blockquote p
   border-left: 1px solid #ccc
   padding-left: 20px
+  font-style: italic
+
+.footer
+  background: #ddd
+  border-radius: 0px 0px 20px 20px
+  padding: 1.5em
+  text-align: center
+  font-size: 1.15em
   font-style: italic

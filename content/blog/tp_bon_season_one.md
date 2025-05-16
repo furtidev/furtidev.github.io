@@ -2,6 +2,7 @@
 title = "T・P BON: A time-travelling adventure"
 date = 2024-06-11
 description = "Story of a girl and a boy venturing through time saving lives." 
+draft = true
 [taxonomies]
 tags = ["review", "anime"]
 +++
