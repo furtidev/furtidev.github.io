@@ -1,8 +1,3 @@
-@font-face
-  font-family: 'Iosevka'
-  src: local("Iosevka"), url('iosevka-regular.woff2') format("woff2")
-  font-weight: normal
-  font-style: normal
 
 @font-face
   font-family: 'Cantarell'
@@ -11,16 +6,10 @@
   font-style: normal
 
 @font-face
-  font-family: 'ProzaLibre'
-  src: local("Proza Libre Regular"), url('ProzaLibre-Regular.ttf')
+  font-family: 'Iosevka'
+  src: local("Iosevka"), url('iosevka-regular.woff2') format("woff2")
   font-weight: normal
   font-style: normal
-
-@font-face
-  font-family: 'ProzaLibre'
-  src: local("Proza Libre Italic"), url('ProzaLibre-Italic.ttf')
-  font-weight: normal
-  font-style: italic
 
 @font-face
   font-family: 'Iosevka'
@@ -34,28 +23,33 @@
   font-weight: normal
   font-style: italic
 
+@font-face
+  font-family: 'Martian Mono'
+  src: local("Martian Mono"), url('Martian-Mono.ttf') format("truetype")
+
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap')
 
 body
-  max-width: 60em
+  max-width: 65em
   margin: 2em auto
-  font-family: 'ProzaLibre'
+  font-family: 'Martian Mono'
   // font-family: 'Cantarell'
   background: #eff1f5
   // color: #e4e4ef
   color: #454545
-  line-height: 1.7
+  line-height: 1.8
   font-size: 16px
-  // letter-spacing: 0.8px
+  letter-spacing: 0.6px
   hyphens: auto
 
 .nav-bar
   position: relative
   padding: 20px 25% 20px 25%
   border-bottom: 2px solid #181818
-  margin-bottom: 10px
-  background: #000
-  color: #ccc
+  // margin-bottom: 10px
+  background: #ff7831
+  border: 2px solid #000
+  color: #000
   border-radius: 20px 20px 0px 0px
 
   background-image: url('/nav-scenery.png')
@@ -75,7 +69,7 @@ body
       flex: 1
 
       a
-        color: #ccc
+        color: #000
 
       .main
         font-size: 30px
@@ -90,7 +84,7 @@ body
 
       a
         margin: 3px
-        color: #ccc
+        color: #000
         text-decoration: underline
         text-underline-offset: 4px
 
@@ -124,23 +118,40 @@ a
 .blogs-list
   margin: 1.75em
 
-  ul li
-    display: flex
-    align-items: flex-start
-    margin-left: -4.6em
+  ul
+    li
+      // display: flex
+      // flex-direction: column
+      // margin-left: -4.6em
+      list-style-type: none
 
-    h2
-      margin: 0em 0 1.2em 0.6em
+      h3
+        margin: 8px 0px 8px 0px
 
   .date
+    width: 15%
     font-family: Iosevka
     font-weight: bold
     background: #c6c7cc
     padding: 5px
     text-align: center
     border-radius: 5px
+    border-style: dashed
+
+// ul li::after
+//   display: block
+//   margin-top: 10px
+//   width: 100%
+//   height: 5px
+//   border-radius: 100px
+//   border: 2px solid #000
+//   background: #999
+//   margin: 25px 0px 10px 0px
+//   content: ""
 
 .post
+  h1
+    margin: 0px
   .title
     color: saddlebrown
     .meta
@@ -228,9 +239,17 @@ blockquote p
   padding-left: 20px
   font-style: italic
 
+.content-container
+  padding: 10px
+  background: white
+  border: 2px solid #000
+  border-top: 0px
+
 .footer
   background: #ddd
   border-radius: 0px 0px 20px 20px
+  border: 2px solid #000
+  border-top: 0px
   padding: 1.5em
   text-align: center
   font-size: 1.15em

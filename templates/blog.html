@@ -5,17 +5,18 @@
 {% endblock tabs %}
 
 {% block content %}
+<div class="content-container">
 {% if paginator.pages|length == 0 %}
 <center>no blogs!</center>
 {%else%}
-<h1>Ramblings / blogs</h1>
+<center><h1>My writing</h1></center>
 
 <div class="blogs-list">
 <ul>
 {% for page in paginator.pages %}
 <li>
+	<h3><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
 	<span class="date"><time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></span>
-	<h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
 </li>
 {% endfor %}
 </ul>
@@ -31,5 +32,5 @@
 </center>
 <br>
 {%endif%}
-
+</div>
 {% endblock content %}
