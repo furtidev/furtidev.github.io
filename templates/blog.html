@@ -12,14 +12,11 @@
 <center><h1>My writing</h1></center>
 
 <div class="blogs-list">
-<ul>
 {% for page in paginator.pages %}
-<li>
-	<h3><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
+	<div class="title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></div>
+	<div class="subtitle">{{page.description}}</div>
 	<span class="date"><time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></span>
-</li>
 {% endfor %}
-</ul>
 </div>
 <center>
 	{% if paginator.previous %}
