@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="content-container">
 {% if paginator.pages|length == 0 %}
 <br>
 <center>No bookmarks</center>
 {%else%}
-<div class="heading-template">
-<h1 style="margin: 0; padding: 0; margin-bottom: 10px">Bookmarks</h1>
-Various bookmarks.
-</div>
-
+<center><h1>Bookmarks</h1></center>
 <ul style="font-size: 130%">
 {% for page in paginator.pages %}
 <li><a href="{{ page.extra.bloglink | safe }}" target="_blank">{{page.title}}</a> added on <span class="date">on <font color="#bbb">🗓️ <time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></font></span></li>
@@ -26,5 +23,5 @@ Various bookmarks.
 </center>
 <br>
 {%endif%}
-
+</div>
 {% endblock content %}

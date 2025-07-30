@@ -17,11 +17,12 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
+<body class="main-body">
 <div class="nav-bar">
     <div class="column">
         <div class="title">
-            <a href="/"><div class="main">furtidev / ফুর্তি</div></a>
-            <div class="sub">Programming, Manga & Games</div>
+            <a href="/"><div class="main">furtidev</div></a>
+            <div class="sub">software, manga and games</div>
         </div>
 
         <div class="menu">
@@ -43,20 +44,15 @@
 </div>
 
 <div class="footer">
-Built with <a href="https://getzola.org" target="_blank">Zola</a>
-<br>
-Some inspiration from <a href="https://chevyray.dev/" target="_blank">Chevy Ray</a>
-<br>
+
+<a href="https://github.com/furtidev/furtidev.github.io/blob/main/LICENSE.md" target="_blank">LICENSE</a>
 <br>
 Sunrise, parabellum.
-<br><br>
-<a href="https://github.com/furtidev/furtidev.github.io/blob/main/LICENSE.md" target="_blank">Click here for copyright information</a>
+<br>
+Last built on {{ now() | date(format="%d %B, %Y %r %:z") }} with <a href="https://getzola.org" target="_blank">Zola</a>
+<br>
+<br>
+<img src="/flagbd.png" class="flag">
 </div>
 </body>
 
-<script>
-function toggleMenu() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('active');
-}
-</script>

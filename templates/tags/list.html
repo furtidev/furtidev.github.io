@@ -9,13 +9,15 @@
 {% endblock tabs %}
 
 {% block content %}
-<h1>Tags (not a pretty page, I know)</h1>
+<div class="content-container">
+<center><h1>List of Tags</h1></center>
 
 {% if terms %}
 <ul>
 {% for term in terms %}
-	<li><a href="{{ term.permalink | safe }}">{{ term.name }} ({{ term.pages | length}})</a></li>
+	<li><a href="{{ term.permalink | safe }}">#{{ term.name }} ({{ term.pages | length}})</a></li>
 {%endfor%}
 </ul>
 {%endif%}
+</div>
 {% endblock content %}

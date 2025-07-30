@@ -8,28 +8,26 @@
 
 {% block content %}
 <div class="content-container">
-Hey, you! What are you doing here? Welcome, this is just my internet crib.
+<canvas id="gradient-canvas" class='gradient-canvas' width="64" height="64" ></canvas>
+<p>Hey! I'm a human being, just like you (I hope!). I write software. I play games. I watch anime. I read manga. I also write here on my blog. Good to have you here <code>^-^</code>.</p>
+<center>
+<a href="https://github.com/furtidev" target="_blank">GitHub</a>, <a href="https://bsky.app/profile/furtidev.github.io" target="_blank">Bluesky</a>, <a href="https://twitter.com/furtidev" target="_blank">Twitter</a>, <a href="https://furtidev.itch.io" target="_blank">Itch.io</a>
+</center>
 
-<p>Anyway, some things about me:</p>
+<p>I've been programming since 2018. I began with PHP, although right now I'm passionate about using Go and Rust. Apparently folks really love Zig these days, perhaps someday? Right now I'm working on a static site generator and preparing to write a programming language (how exciting!). Hopefully they'll be out soon. </p>
 
-<ul>
-    <li>I write software 👾</li>
-    <li>I'm interested in: systems programming, cli/tui/gui apps, writing stories and... you?!</li>
-    <li><del><i>REDACTED</i></del></li>
-</ul>
+<p>The colorscheme for this website is from <a href="https://lospec.com/palette-list/nanner-pancakes" target="_blank">here</a>. There's a comment there appreciating how versatile this colorscheme is, how true! I'm using <a href="https://myfffonts.accentgrave.net/#gidole" target="_blank">Gidole</a> by Andreas Larsen as the font. It took me hours of digging around to find a fitting font, I think it looks pretty good.</p>
 
-<p>I know the title of the site ambitiously says "Programming, *Manga* & *Games*" -- I'm so lost that I'm procrastinating reading manga. It'll be okay. It.... or... will it be okay?</p>
+<p>I try to journal and read about psychology and therapeutic models to understand myself a little bit better. Currently on my radar is IFS (not to be confused with IPFS). It's interesting stuff even if you're a layman. On the topic of well-being....</p>
 
-<p>I've been maintaing this site since July, 2023. It is a bit crazy to think that 2 years have passed -- though, other than the occasional re-design sparked by mental breakdowns not much has changed. It's built using Zola, which was sort of an arbitrary choice based on nothing but the axiom that Hugo is too much.</p>
+<center>Some things you should think about:</center>
+<!-- support links -->
+<center style="margin-top: 45px" class="home-image-row">
+  <a href="https://decolonizepalestine.com"><img src="standwith.png" style="image-rendering: pixelated" width="264px" height="93px"></a>
+  <a href="https://www.sudancoup.com/"><img src="sudan.png" style="image-rendering: pixelated" width="198px" height="112px"></a>
+  <a href="https://panzifoundation.org/war-in-congo/"><img src="congo.png" width="210px" height="157px" style="border-radius: 12px; border: 2px dashed #fff"></a>
+</center>
 
-Some links for you to stalk me (please don't this is a joke):
-
-<ul>
-    <li><a href="https://github.com/furtidev/" target="_blank">GitHub</a> (I post my software work here except my 5000 abandoned projects)</li>
-    <li><a href="https://furtidev.itch.io/" target="_blank">itch.io</a> (My games here!)</li>
-    <li><a href="https://twitter.com/furtidev" target="_blank">Twitter</a> (Dunno why I'm linking this)</li>
-</ul>
-
-<p>You can also contact me: <code>furtidev (at) tuta.io</code>.</p>
 </div>
+<script src="/script.js"></script>
 {% endblock content %}
