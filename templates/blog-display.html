@@ -20,11 +20,11 @@
 {% endblock pagetitle %}
 
 {% block content %}
-
 <div class="post content-container">
 <article>
 <h1 class="title">
   {{ page.title }}
+  <span class="meta"><i>{{ page.description }}</i></span>
   <time class="meta" datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time>
   {% if page.taxonomies.tags %}
   {% for tag in page.taxonomies.tags %}
