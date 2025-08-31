@@ -15,7 +15,7 @@ Now, if you don't want any more hints, then you should stop reading this blog ri
 Keep in mind that I'll use `...` to indicate lines of code not shown in the snippets. Also this isn't a tutorial on how to write a JSON parser as I'll only be talking about what kind of decisions I made on certain aspects. I was learning some Rust a while ago and wanted to test what I had learned so far, so I decided to write my parser in Rust. Tokenization was fairly easy but there are some catches. Numbers in JSON map to JavaScript numbers, so one key feature is scientific notation: `10e-5` evaluates to `0.0001`. Rust also supports this, so parsing numbers was really just as simple as capturing the string and casting it to a float.
 
 >tokenizer.rs
-```rust
+```rust,linenos
 let num_result: Result<f64, _> = iter::once(ch)
     .chain(from_fn(|| {
         self.input.by_ref().next_if(|s| {
@@ -34,7 +34,7 @@ let num_result: Result<f64, _> = iter::once(ch)
 String literals took a bit more effort, my tokenizer was getting confused between string literals and `true`/`false`/`null` values. In JSON, string literals can only begin with double quotes, so I came up with a simple trick, the tokenizer switches to "string parsing mode" when it detects a double quote.
 
 >tokenizer.rs
-```rust
+```rust,linenos
 match ch {
     ...
     '"' => {
@@ -48,7 +48,7 @@ match ch {
 So, now in the next iteration, the tokenizer checks if `string_mode` is `true` and checks to make sure the current token is not a double quote (because that would mean the string literal has ended). I wrote a helper function called `make_string()` to deal with the parsing. Now, this function is poorly designed or perhaps you could say, it's poorly named. Because it also handles the logic for creating `true`/`false`/`null` tokens. You might wonder why, but it's simply because the logic for parsing string literals and these special tokens were quite similar, and I .. got a bit lazy so I merged them into a single function.
 
 >tokenizer.rs
-```rust
+```rust,linenos
 if self.string_mode && ch != '"' {
     let tok = Token::Str(self.make_string(false)); // false means it's not a special token but a literal
     tokens.push(tok);
@@ -72,7 +72,7 @@ match ch {
 String literals can also use escape sequences (only a handful are supported by the spec) but fortunately implementing them is trivial. Similar to how if the tokenizer detects a double quote it goes into string parsing mode, this time, if the string parser detects a forward slash (`\`) - it goes into escape mode.
 
 >tokenizer.rs
-```rust
+```rust,linenos
 let mut ident = String::new();
 let mut escape_mode = false;
 
@@ -113,7 +113,7 @@ while let Some(ch) = self.input.peek() {
 So with that, the tokenizer is done. If you're wondering, here are all the token variants:
 
 >tokenizer.rs
-```rust
+```rust,linenos
 pub enum Token {
     LeftBrace,
     RightBrace,
@@ -140,7 +140,7 @@ true
 Which means the root of a JSON file can be anything, but commonly it's an array or a key-value structure (called *objects* in the spec). Now the question is: how do we represent this dynamic file format in Rust? You see, enums in Rust can hold values and this feature can be used to achieve the dynamism we need. We just need to define an enum with all possible types of values and just refer to the enum type everywhere else - a job well done. To be fair, this isn't anything revolutionary. I didn't come up with this, it's a common practice in Rust.
 
 >parser.rs
-```rust
+```rust,linenos
 pub enum Value {
     Null,
     Str(String),
@@ -154,7 +154,7 @@ pub enum Value {
 I could've mapped JSON objects to a `std::collections::HashMap` but in the end I went with my own structs for both objects and arrays, their definitions are simple.
 
 >parser.rs
-```rust
+```rust,linenos
 pub struct Root {
     pub child: Option<Value>,
 }
@@ -179,7 +179,7 @@ pub struct Property {
 As you can see, wherever JSON allows any valid value, we put our newly created enum `Value` as the type. The parser starts by creating a root node and iterating through the tokens. Parsing needs to be recursive when you have things that can contain themselves (e.g an array can contain more arrays), so keeping this in mind, we determine the root value, and if it's an array or an object, we call their respective parsing functions, this easily helps to make the entire process recursive because within those functions we call the parsing functions again if we detect arrays or objects, and so on and so forth. Now, I got a bit lazy again and did a lot of code duplication for each of these functions, and there are nicer ways to do it but I had already crossed the deadline I set for myself so some corners were cut.
 
 >parser.rs
-```rust
+```rust,linenos
 fn parse(&mut self) -> Root {
     let mut root: Root = Root { child: None };
 

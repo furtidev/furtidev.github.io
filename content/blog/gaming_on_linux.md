@@ -3,7 +3,7 @@ title = "Setting up Wine + Bottles on an external drive"
 date = 2025-05-25
 description = "Cursed Linux gaming setup"
 [taxonomies]
-tags = ["tutorial"]
+tags = ["linux", "tutorial"]
 +++
 ## ToC
 - [Step 1: Setup Flatpak](#step-1-setup-flatpak)
