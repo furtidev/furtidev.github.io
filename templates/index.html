@@ -7,28 +7,54 @@
 {% endblock pagetitle %}
 
 {% block content %}
-<div class="content-container">
-<canvas id="gradient-canvas" class='gradient-canvas' width="64" height="64" ></canvas>
-<p>Hey! I'm a human being, just like you (I hope!). I write software. I play games. I watch anime. I read manga. I also write here on my blog. Good to have you here <code>^-^</code>.</p>
-<center>
-<a href="https://github.com/furtidev" target="_blank">GitHub</a>, <a href="https://bsky.app/profile/furtidev.github.io" target="_blank">Bluesky</a>, <a href="https://twitter.com/furtidev" target="_blank">Twitter</a>, <a href="https://furtidev.itch.io" target="_blank">Itch.io</a>
-</center>
+<!-- <div class="general-float" style="display: grid; grid-row-gap: 0.5em; margin-left: 0.25rem">
+<button class="social-button">GitHub</button>
+<button class="social-button">Bluesky</button>
+<button class="social-button">itch.io</button>
+</div> -->
+<div class="bio">
+<h3>Hello, world!</h3>
+<p>I'm <i>furti</i>. You can generally call me that. Lowercase intentional. I like programming languages <span class="employ-focus">(in the "i like designing and implementing them" sense)</span>, compilers and general software <span class="employ-focus">(tui, cli, gui, web, biological mass<sup>[citation needed]</sup>)</span>.</p>
 
-<p>I've been programming since 2018. I began with PHP, although right now I'm passionate about using Go and Rust. Apparently folks really love Zig these days, perhaps someday? Right now I'm working on a static site generator and preparing to write a programming language (how exciting!). Hopefully they'll be out soon. </p>
+<p>According to GitHub, I've been programming for 8 years. This means I have the competency to learn and work on whatever <span class="employ-focus">(reasonably)</span> I want. I work across many domains so the particular stack isn't very relevant. Frequent technologies would be C, Golang and Python. Yeah, some Rust been done too :3</p>
 
-<p>The colorscheme for this website is from <a href="https://lospec.com/palette-list/nanner-pancakes" target="_blank">here</a>. There's a comment there appreciating how versatile this colorscheme is, how true! I'm using <a href="https://myfffonts.accentgrave.net/#gidole" target="_blank">Gidole</a> by Andreas Larsen as the font. It took me hours of digging around to find a fitting font, I think it looks pretty good.</p>
+<p>I like making fiction. Some of these get drafted, and others live rent free in my head. I'm still learning how to write, but I hope to publish some small pieces soon enough; fun facts: my favorite fictional character is Reigen Arataka and my idol is Bartholomew Kuma <span class="employ-focus">(very different characters!)</span>. And Fallout New Vegas is pretty cool. Disco Elysium been danced to.</p>
 
-<p>I try to journal and read about psychology and therapeutic models to understand myself a little bit better. Currently on my radar is IFS (not to be confused with IPFS). It's interesting stuff even if you're a layman. On the topic of well-being....</p>
+<p>It's too hot out there, just get in! Say, what's your favorite food? <span class="employ-focus">[sips nukacola]</span></p>
 
-<center>Some things you should think about:</center>
-<!-- support links -->
-<center style="margin-top: 45px" class="home-image-row">
-  <a href="https://decolonizepalestine.com"><img src="standwith.png" style="image-rendering: pixelated" width="264px" height="93px"></a>
-  <a href="https://www.sudancoup.com/"><img src="sudan.png" style="image-rendering: pixelated" width="198px" height="112px"></a>
-  <a href="https://panzifoundation.org/war-in-congo/"><img src="congo.png" width="210px" height="157px" style="border-radius: 12px; border: 2px dashed #fff"></a>
-</center>
-<hr/>
-<center><img src="Clippy.png"></center>
+<p class="employ-focus">(last updated on 18th of January, 2026)</p>
+
+<div class="info-box"><i class="icon-attention-filled icon" style="scale: 2"></i> Please be gentle and patient with this person.</div>
+
+<h3>Links</h3>
+<ul>
+    <li>e-mail - <code>echo -n "ZnVydGlkZXZAdHV0YS5pbwo=" | base64 --decode</code></li>
+    <li>code - <a href="https://github.com/furtidev" target="_blank">GitHub</a></li>
+    <li>socials - <a href="https://bsky.app/profile/furtidev.github.io" target="_blank">Bluesky</a></li>
+    <li>misc - <a href="https://furtidev.itch.io" target="_blank">Itch.io</a></li>
+</ul>
+
+<h3>Encryption</h3>
+<p>Do you want to send me something private? I find PGP too obtuse, so use <a href="https://github.com/FiloSottile/age" target="_blank"><code>age</code></a> instead.</p>
+<p><code class="command">age -r age1v9ddm7n3yq0qca0jm7e2xkr6ljyw6jg7m5269e2zdv9q9l9js4gqkdz79h -o file.age file</code></p>
+
+<p>And then send me the encrypted file via e-mail or any other way you can contact me.</p>
+
+<h3>Linkback</h3>
+<p>I have a 88x31 button! I'd prefer if you hotlinked it since I have a habit of changing my mind TwT</p>
+<code>
+&lt;a href=&quot;https://furtidev.github.io&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://furtidev.github.io/images/button.png&quot; alt=&quot;furtidev's 88x31 button&quot; title=&quot;furtidev's site&quot;&gt;
+&lt;/a&gt;
+</code>
+
+<h3>Neighbors</h3>
+<p>Some cool people, aje?</p>
+
+<a target='_blank' class="no-decor" href='https://hitblast.github.io/'>
+    <div class="neighbor">
+        <img class="button" src="https://hitblast.github.io/postcard.png" style="image-rendering: pixelated;"> "just skip over this one and double it for the next person" - hitblast
+    </div>
+</a>
 </div>
-<script src="/script.js"></script>
 {% endblock content %}

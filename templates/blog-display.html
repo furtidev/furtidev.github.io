@@ -20,12 +20,11 @@
 {% endblock pagetitle %}
 
 {% block content %}
-<div class="post content-container">
+<div class="post">
 <article>
 <div class="title">
-  {{ page.title }}
-  <span class="meta"><i>{{ page.description }}</i></span>
-  <time class="meta" datetime="{{page.date}}">Published on {{ page.date | date(format="%b %d, %Y") }}</time>
+  <h3>{{ page.title }}</h3>
+  <time class="meta" datetime="{{page.date}}">Published on {{ page.date | date(format="%b %d, %Y") }}</time>,
   {% if page.taxonomies.tags %}
   {% for tag in page.taxonomies.tags %}
   <a class="tag" href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}'>#{{ tag }}</a>
@@ -36,7 +35,7 @@
 </article>
 </div>
 <div class="content-container">
-<center style="color: #aaa; text-decoration: underline;">Note: all old comments are not displayed anymore as I switch repos. Sorry.</center>
+<center style="color: #c47272; text-decoration: underline;">Note: all old comments are not displayed anymore as I switch repos. Sorry.</center>
 
 <script src="https://utteranc.es/client.js"
         repo="furtidev/furtidev.github.io"

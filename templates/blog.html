@@ -13,9 +13,11 @@
 
 <div class="blogs-list">
 {% for page in paginator.pages %}
+<div class="blog-item">
 	<div class="title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></div>
 	<div class="subtitle">{{page.description}}</div>
 	<span class="date"><time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></span>
+</div>
 {% endfor %}
 </div>
 <center>

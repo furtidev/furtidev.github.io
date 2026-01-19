@@ -2,6 +2,7 @@
 title = "Daydreaming and story writing"
 date = 2024-10-13
 description = "or the tale of how I found common ground between the two"
+draft=true
 [taxonomies]
 tags = ["writing"]
 +++

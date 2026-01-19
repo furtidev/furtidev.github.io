@@ -1,43 +1,30 @@
 @font-face
-  font-family: 'Cantarell'
-  src: local("Cantarell"), url('Cantarell.otf') format("opentype")
-  font-weight: normal
-  font-style: normal
+  font-family: 'Source Sans'
+  src: local("Source Sans"), url("./fonts/SourceSans3-VariableFont_wght.ttf") format("truetype-variations")
+
+@font-face 
+    font-family: "Monaspace Argon"
+    src: url("./fonts/MonaspaceArgonVarVF.woff2") format("woff2-variations")
+    font-weight: 125 950
+    font-stretch: 75% 125%
+    font-style: oblique 0deg 20deg
 
 @font-face
-  font-family: 'Iosevka'
-  src: local("Iosevka"), url('iosevka-regular.woff2') format("woff2")
-  font-weight: normal
-  font-style: normal
-
-@font-face
-  font-family: 'Iosevka'
-  src: local("Iosevka Bold"), url('iosevka-bold.woff2') format("woff2")
-  font-weight: bold
-  font-style: normal
-
-@font-face
-  font-family: 'Iosevka'
-  src: local("Iosevka Oblique"), url('iosevka-oblique.woff2') format("woff2")
-  font-weight: normal
-  font-style: italic
-
-@font-face
-  font-family: 'Gidole'
-  src: local("Gidole Regular"), url('Gidole-Regular.woff2') format("woff2")
+  font-family: 'Dosis'
+  src: local("Dosis"), url("./fonts/Dosis-VariableFont_wght.ttf") format("truetype-variations")
 
 body
-  // font-family: 'Krikikrak'
-  font-family: 'Gidole'
-  // font-family: 'Cantarell'
-  margin: 0px
-  background: #2d1e2f
-  // color: #e4e4ef
-  color: #fcecd1
-  line-height: 1.8
-  font-size: 21px
-  letter-spacing: 0.6px
-  hyphens: auto
+  // font-family: "Source Sans"
+  font-family: "Dosis"
+  // font-size: 1.25em
+  font-size: 20px
+
+  background: #201616
+  // color: #f58e8e // original, kept for future purposes
+  // color: #dfa5a5
+  color: #e4a0a0
+  // color: #e79d9d
+  text-shadow: 1px 0px 4px #000
 
   &::-webkit-scrollbar
     width: 14px
@@ -50,199 +37,186 @@ body
     background: #f1e2be
     border-radius: 3px
 
-.main-body
-  display: flex
-  flex-direction: column
-  min-height: 100vh
-
-html
-  scrollbar-width: thin /* auto | thin | none */
-  scrollbar-color: #886243 #f1e2be /* thumb color, track color */
-
-.nav-bar
-  position: relative
-  padding: 20px 25% 20px 25%
-  background: #392945
-  border: solid #000
-  border-width: 0px 0px 2px 0px
-  color: #fbf1c7
-  // border: 1px solid #d65d0e
-
-  // background-image: url('/nav-scenery.png')
-  // background-repeat: repeat-x
-  // background-size: 5% auto
-  // background-position: left bottom -10%
-  // overflow: visible
-
-  h1
-    margin: 10px 0 10px 0
-
-  .column
-    display: flex
-    align-items: center
-
+.body-container
+  margin: 2em auto
+  max-width: 50rem
+  .header 
+    border-radius: 20px 20px 0px 0px
+    padding: 0em 1em 0px 1em
     .title
-      flex: 1
+      display: flex
+      font-size: 13px
+      justify-content: center
+      text-shadow: 0px 2px 3px #000
+    
+.navbar
+  font-family: "Monaspace Argon"
+  display: flex
+  justify-content: center
+  // column-gap: 1rem
+  padding: 0.5rem
+  background-blend-mode: multiply
 
-      a
-        color: #fbf1c7
+  button
+    font-family: inherit
+    font-size: inherit
+    background: inherit
 
-      .main
-        font-size: 30px
-
-      .sub
-        font-style: italic
-
-    .menu .links
-      .link
-        display: flex
-        font-size: 20px
-
-      a
-        margin: 3px
-        color: #fbf1c7
-        text-decoration: underline
-        text-underline-offset: 4px
-
-.tag-item
-  padding: 8px
-  background: #e4e4ef
-  color: #101010
-  border: 1px solid #e4e4ef
-  &:hover
-    color: #e4e4ef
-    background: #101010
-
-.heading-template
-  text-align: center
-  margin-top: 10px
-  border: 1px solid #282828
-  border-radius: 10px
-  padding: 20px
-
-.gradient-text
-  background: -webkit-linear-gradient(#2d1e2f , #fcecd1)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-
-.gradient-text-2
-  background: -webkit-linear-gradient(#a75b72, #bfa1c3)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-
-.notice
-  background: #a94b54
-  border-left: 8px solid #7a3b4f
-  padding: 8px
-  margin: 2px
-  border-radius: 8px
-a
-  color: #a0ddd3
-  text-decoration: none
-  &:visited
-    color: #a0ddd3
+  .styled
+    color: #bbb
     text-decoration: none
-  &:hover
-    color: #6fb0b7
+    padding: 0.2em 0.3em
 
-.blogs-list
-  margin: 1.75em
+    &:hover
+      text-transform: uppercase
 
-  .title
-    margin: 0px 0px 0px 0px
-  .subtitle
-    margin: 0px
+  .yellow
+    color: #fcd825
+    // text-shadow: 1px 1px 5px #d4b620
+    border: 1px solid #302121
+    border-radius: 25% 0px 0px 25%
 
-  // .date
-  //   font-family: Iosevka
+    &:hover
+      background: #fcd825
+      color: #181818
 
-// ul li::after
-//   display: block
-//   margin-top: 10px
-//   width: 100%
-//   height: 5px
-//   border-radius: 100px
-//   border: 2px solid #000
-//   background: #999
-//   margin: 25px 0px 10px 0px
-//   content: ""
+  .magenta
+    color: #b21e4d
+    // text-shadow: 0px 2px 5px #ff2b6e
+    border: 1px solid #302121
+
+    &:hover
+      background: #b21e4d
+      color: #fff
+
+  .orange
+    color: #eb883a
+    // text-shadow: 0px 2px 5px #c97432
+    border: 1px solid #302121
+    border-radius: 0px 25% 25% 0px
+
+    &:hover
+      background: #eb883a
+      color: #fff
+
+.block-content-container
+  padding: 0.5em
+  overflow: auto
 
 .post
-  h1
-    margin: 0px
   .title
-    font-size: 1.5em
-    color: #aad795
     .meta
-      display: block
-      font-size: 0.67em
-      color: #9c807e
-    .tag
-      font-size: 0.63em
+      color: #c47272
 
-.gradient-canvas
+.separator
+  height: .25em
+  background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142))
+
+.image-float
+  float: left
+  border-radius: 1rem
+  margin-right: 0.4rem
+
+.general-float
   float: right
-  border-radius: 10px
 
-.content
-  flex: 1
+.social-button
+  font-family: "Monaspace Argon"
+  font-size: 18px
 
-.content-container
-  padding: 10px
-  border-top: 0px
-  max-width: 50em
-  margin: 2em auto
+  background: #00000009
 
-.home-image-row 
-  display: flex
-  justify-content: center /* center all images horizontally */
-  align-items: center     /* align them vertically (optional) */
-  gap: 1rem               /* optional spacing between images */
+  border-image-slice: 2
+  border-image-width: 2
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255,255,255)" /></svg>')
+  border-image-outset: 2
+
+  color: #fff
+  padding: 4px
+  text-align: left
+
+  min-width: 10em
+
+.bio
+  .blue
+    text-decoration-line: underline
+    text-decoration-style: wavy
+    text-decoration-color: dodgerblue
+
+  .entity
+    color: #737373
+
+  .employ-focus
+    color: #c47272
+
+  .info-box
+    display: flex
+    flex-direction: row
+    align-items: center
+    background: #302121
+    border-radius: 3rem
+    padding: 0px 3rem 0px 0px
+    .icon
+      padding: 3rem
+
+  a.no-decor
+    text-decoration: none
+    color: inherit
+
+  .neighbor
+    display: flex
+    flex-direction: row
+    align-items: center
+    border: 1px solid #302121
+    border-radius: 0.5em
+    padding: 20px
+
+    .button
+      margin-right: 20px
+      width: 25%
+      height: auto
+
+  .header
+    font-family: "Aujournuit"
+    font-size: 2rem
+    border-bottom: 10px solid #aaa
+    padding: 0.75rem 0px 0.75rem 0px
+    margin-bottom: 0.75rem
+
+.blog-item
+  background: #302121
+  padding: 0.75em
+  border-radius: 0.75em
+  margin-bottom: 0.25em
+  .date
+    color: #c47272
+
+.footer::before
+  display: block
+  content: "----"
+  color: #c47272
+
+.footer
+  color: #c47272
+  font-size: 17px
+  // text-align: center
 
 @media (max-width: 572px)
-  // body
-  //   margin: 10px
-  .gradient-canvas
-    float: none
-    display: block
-    margin-left: auto
-    margin-right: auto
+  .bio
+    .neighbor
+      .button
+        width: 40%
 
-  .home-image-row
-    flex-wrap: wrap
-
-  .content-container
-    margin: 0px
-
-  .blogs-list ul li
-    display: block
-
-  .nav-bar .column
-    display: block
-
-  .nav-bar
-    padding: 15px
-    .column
-      .title
-        text-align: center
-
-      .menu
-        text-align: center
-
-        .links
-          display: inline-block
-          margin-top: 10px
-
-          .link
-            display: inline-block
+a
+  color: #a0b7e4
 
 pre[class*="language-"]
   border: 1px solid #d3a084
 
 pre[class*="language-"], pre code
   overflow: auto
-  font-family: 'Iosevka', monospace
-  font-size: 18px
+  font-family: 'Monaspace Argon', monospace
+  font-size: 15px
   padding: 8px
   margin-top: 0px
   scrollbar-width: auto /* auto | thin | none */
@@ -253,12 +227,26 @@ pre table td:nth-of-type(1)
   user-select: none
 
 code[class*="language-"], code
+  font-size: 15px
+  border-radius: 3px
   padding: 0px
-  font-family: 'Iosevka', monospace
+  font-family: 'Monaspace Argon', monospace
 
 code:not([class*="language-"])
-  background: #2d1e2f
   padding: 2px
+
+code.command::before
+  content: "$"
+  color: white
+  margin-right: 0.5em
+
+code.command
+  // font-size: 16px
+  display: block
+  overflow: scroll
+  background: #302121
+  padding: 0.5em
+  border-radius: 0.75em
 
 blockquote + pre
   border-radius: 0px 8px 8px 8px
@@ -268,9 +256,10 @@ p + pre:has(code)
 
 blockquote:has(+ pre)
   display: inline-block
-  font-family: "Iosevka" !important
+  font-family: "Monaspace Argon" !important
   // font-size: 1.2rem
   font-weight: 600
+  font-size: 17px
   margin: 0px
   margin-block: 0px 0px
   background-color: #d3a084
@@ -299,17 +288,21 @@ mark
   color: #392945
   padding: 2px
 
-.footer
-  background: #6a3948
-  color: #dbc9b4
-  border-top: 5px solid #b87e6c
-  padding: 1.5em
-  text-align: center
-  font-size: 1.15em
-  font-style: italic
+/* apparently needed by Zola */
+.giallo
+  overflow: scroll
+  margin-top: 0px
 
-  .flag
-    image-rendering: pixelated
-    width: 160px
-    height: 30px
+.giallo-l
+  display: inline-block
+  min-height: 1lh
+  width: 100%
 
+.giallo-ln
+  display: inline-block
+  user-select: none
+  margin-right: 0.4em
+  // padding: 0.4em
+  min-width: 3ch
+  text-align: right
+  opacity: 0.8

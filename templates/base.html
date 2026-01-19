@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel='preload' href='/images/text.png' type='image/png'>
     <meta property="og:image" content="/android-chrome-512x512.png">
     <meta property="og:image:type" content="image/png">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
@@ -19,42 +20,42 @@
     <!-- <meta name="theme-color" content="#392945"> -->
 </head>
 
-<body class="main-body">
-<div class="nav-bar">
-    <div class="column">
-        <div class="title">
-            <a href="/"><div class="main">furtidev</div></a>
-            <div class="sub">software, manga and games</div>
-        </div>
-
-        <div class="menu">
-            <div class="links">
-              <a class="link" href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
-              <a class="link" href='{{ get_url(path="bookmarks", trailing_slash=false) }}'>Bookmarks</a>
-              <a class="link" href='{{ get_url(path="tags", trailing_slash=false) }}'>Tags</a>
-              <a class="link" href='{{ get_url(path="rss.xml", trailing_slash=false) }}'>RSS</a>
-            </div>
-        </div>
-    </div>
+<body class="body-container">
+<div class="header blend">
+<!-- <pre class="title">
+   ad88                                88
+  d8"                            ,d    ""
+  88                             88
+MM88MMM 88       88 8b,dPPYba, MM88MMM 88
+  88    88       88 88P'   "Y8   88    88
+  88    88       88 88           88    88
+  88    "8a,   ,a88 88           88,   88
+  88     `"YbbdP'Y8 88           "Y888 88
+</pre> -->
+<div class="title">
+    <img src="/images/text.png" style="image-rendering: pixelated" width="60%">
+</div>
 </div>
 
-<!--<div class="navbar">
-</div>-->
+<center>fueled remotely by a distant dyson sphere</center>
 
-<div class="content">
+<div class="navbar">
+    <a href="/" class="styled yellow">home</a>
+    <a href="{{ get_url(path='@/blog/_index.md') }}" class="styled magenta">blog</a>
+    <a href="{{ get_url(path='rss.xml', trailing_slash=false) }}" class="styled orange">rss</a>
+</div>
+
+<div class="separator"></div>
+
+<div class="block-content-container">
 {% block content %} {% endblock content %}
+
 </div>
 
 <div class="footer">
+    © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
 
-<a href="https://github.com/furtidev/furtidev.github.io/blob/main/LICENSE.md" target="_blank">LICENSE</a>
-<br>
-Sunrise, parabellum.
-<br>
-Last built on {{ now() | date(format="%d %B, %Y %r %:z") }} with <a href="https://getzola.org" target="_blank">Zola</a>
-<br>
-<br>
-<img src="/flagbd.png" class="flag">
+    <p><img src="/images/button.png"></p>
 </div>
 </body>
 
