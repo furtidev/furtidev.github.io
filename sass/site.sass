@@ -108,9 +108,10 @@ body
     .meta
       color: #c47272
 
-.separator
-  height: .25em
-  background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142))
+.shape-separator
+  height: 4em
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"><defs><linearGradient id="rainbow" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" stop-color="red"/><stop offset="17%25" stop-color="orange"/><stop offset="33%25" stop-color="yellow"/><stop offset="50%25" stop-color="green"/><stop offset="67%25" stop-color="blue"/><stop offset="83%25" stop-color="indigo"/><stop offset="100%25" stop-color="violet"/></linearGradient></defs><path d="m394.7 317.4-51.5-25.8a57.7 57.7 0 0 1 0-103.2l51.5-25.8a57.7 57.7 0 1 0-77.4-77.4l-25.7 51.6a57.7 57.7 0 0 1-103.2 0l-25.8-51.5a57.7 57.7 0 1 0-77.3 77.3l51.5 25.8a57.7 57.7 0 0 1 0 103.2l-51.5 25.8a57.7 57.7 0 1 0 77.3 77.3l25.8-51.5a57.7 57.7 0 0 1 103.2 0l25.8 51.5a57.7 57.7 0 1 0 77.4-77.4Z" fill="url(%23rainbow)"></path></svg>') no-repeat center
+
 
 .image-float
   float: left
@@ -148,6 +149,19 @@ body
 
   .employ-focus
     color: #c47272
+
+  .quote
+    column-gap: 1em
+    font-family: "Monaspace Argon"
+    font-size: 18px
+    background: #302121
+    padding: 8px
+    border: 0.5px solid #00000050
+    img
+      display: flex
+
+  .reverse
+      text-align: right
 
   .info-box
     display: flex

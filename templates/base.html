@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
     <meta property="og:url" content="{{ current_url | safe}}">
     <meta property="og:type" content="blog" />
-    <meta property="og:site_name" content="furti's blog" />
+    <meta property="og:site_name" content="furtidev" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block pagetitle %}<title>furtidev</title>{% endblock pagetitle %}
     <link rel="stylesheet" href="{{ get_url(path='site.css', trailing_slash=false, cachebust=true) | safe }}">
@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel='preload' href='/images/text.png' type='image/png'>
+    <link rel='preload' href='/images/text.png' type='image/png' fetchpriority='high'>
     <meta property="og:image" content="/android-chrome-512x512.png">
     <meta property="og:image:type" content="image/png">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
@@ -21,8 +21,8 @@
 </head>
 
 <body class="body-container">
-<script src="https://keepandroidopen.org/banner.js?size=mini&hidebutton=off"></script>
 <br>
+<script src="https://keepandroidopen.org/banner.js?size=minimal&hidebutton=off&animation=off"></script>
 <div class="header blend">
 <!-- <pre class="title">
    ad88                                88
@@ -39,7 +39,7 @@ MM88MMM 88       88 8b,dPPYba, MM88MMM 88
 </div>
 </div>
 
-<center>fueled remotely by a distant dyson sphere</center>
+<center>careful, thoughts ahead!</center>
 
 <div class="navbar">
     <a href="/" class="styled yellow">home</a>
@@ -47,7 +47,7 @@ MM88MMM 88       88 8b,dPPYba, MM88MMM 88
     <a href="{{ get_url(path='rss.xml', trailing_slash=false) }}" class="styled orange">rss</a>
 </div>
 
-<div class="separator"></div>
+<div class="shape-separator"></div>
 
 <div class="block-content-container">
 {% block content %} {% endblock content %}

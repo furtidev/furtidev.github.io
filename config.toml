@@ -2,7 +2,7 @@
 base_url = "https://furtidev.github.io"
 
 # title & description for the site
-description = "Personal blog of furti discussing software, manga and games."
+description = "personal blog"
 title = "furtidev"
 
 # Whether to automatically compile all Sass files in the sass directory
