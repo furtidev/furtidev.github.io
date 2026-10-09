@@ -20,21 +20,26 @@
 {% endblock pagetitle %}
 
 {% block content %}
-<div class="post">
-<article>
-<div class="title">
-  <h3>{{ page.title }}</h3>
-  <time class="meta" datetime="{{page.date}}">Published on {{ page.date | date(format="%b %d, %Y") }}</time>,
-  {% if page.taxonomies.tags %}
-  {% for tag in page.taxonomies.tags %}
-  <a class="tag" href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}'>#{{ tag }}</a>
-  {% endfor %}
-  {% endif %}
-</div>
-<div>{{ page.content | safe }}</div>
+<article title="{{ page.title }}">
+  <h1 class="title">{{ page.title }}</h1>
+  {{ page.content | safe }}
+
+  <hr/>
+
+  <footer>
+    <p class="meta">Published on <time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></p>
+    {% if page.taxonomies.tags %}
+    <p>Tags:</p>
+    <ol aria-label="List of tags attached to this blog post">
+      {% for tag in page.taxonomies.tags %}
+        <li class="tag"><a href='{{ get_taxonomy_url(kind="tags", name=tag) | safe }}'>#{{ tag }}</a></li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </footer>
 </article>
-</div>
-<div class="content-container">
+
+<div class="content-container" aria-label="Comment section powered by GitHub">
 
 <script src="https://utteranc.es/client.js"
         repo="furtidev/furtidev.github.io"

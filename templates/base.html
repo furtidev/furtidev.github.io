@@ -24,16 +24,6 @@
 <br>
 <script src="https://keepandroidopen.org/banner.js?size=minimal&hidebutton=off&animation=off"></script>
 <div class="header blend">
-<!-- <pre class="title">
-   ad88                                88
-  d8"                            ,d    ""
-  88                             88
-MM88MMM 88       88 8b,dPPYba, MM88MMM 88
-  88    88       88 88P'   "Y8   88    88
-  88    88       88 88           88    88
-  88    "8a,   ,a88 88           88,   88
-  88     `"YbbdP'Y8 88           "Y888 88
-</pre> -->
 <div class="title">
     <img src="/images/text.png" style="image-rendering: pixelated" width="60%" alt="A stylized icon that reads 'furti' with some hearts serving as the logo of the site.">
 </div>
@@ -41,23 +31,25 @@ MM88MMM 88       88 8b,dPPYba, MM88MMM 88
 
 <center>careful, thoughts ahead!</center>
 
-<div class="navbar">
-    <a href="/" class="styled yellow" alt="Home Page">home</a>
-    <a href="{{ get_url(path='@/blog/_index.md') }}" class="styled magenta" alt="Blog Page">blog</a>
-    <a href="{{ get_url(path='rss.xml', trailing_slash=false) }}" class="styled orange" alt="RSS Preview">rss</a>
-</div>
+<nav class="navbar">
+    <ul>
+        <li><a href="/" class="styled yellow">home</a></li>
+        <li><a href="{{ get_url(path='@/blog/_index.md') }}" class="styled magenta">blog</a></li>
+        <li><a href="{{ get_url(path='rss.xml', trailing_slash=false) }}" class="styled orange">rss</a></li>
+    </ul>
+</nav>
 
 <div class="shape-separator"></div>
 
-<div class="block-content-container">
+<main class="block-content-container">
 {% block content %} {% endblock content %}
 
-</div>
+</main>
 
 <footer class="footer">
-    © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}" alt="Copyright and related notices">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
+    © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
 
-    <p><img src="/images/button.png" alt="Card that can be used by other websites to link to this website in an aesthetically pleasing way"></p>
+    <p><img src="/images/button.png" alt="88x31 Card that can be used by other websites to link to this website in an aesthetically pleasing way"></p>
 </footer>
 </body>
 

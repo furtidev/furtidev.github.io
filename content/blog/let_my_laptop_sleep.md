@@ -22,8 +22,7 @@ On some laptops, the [DSDT](https://wiki.archlinux.org/title/DSDT) table is tune
 
 Apparently you can re-build the firmware DSDT table, but doesn't seem fool-proof and rather unnecessary in my case. Instead, I ended up adding a few kernel parameters to my GRUB config to camouflage the Linux kernel as Windows when interfacing with ACPI: 
 
-> /etc/default/grub
-```sh,linenos
+```sh,linenos,name=/etc/default/grub
 # GRUB boot loader configuration
 
 GRUB_DEFAULT='0'

@@ -48,7 +48,7 @@ body
       font-size: 13px
       justify-content: center
       text-shadow: 0px 2px 3px #000
-    
+
 .navbar
   font-family: "Monaspace Argon"
   display: flex
@@ -56,6 +56,15 @@ body
   // column-gap: 1rem
   padding: 0.5rem
   background-blend-mode: multiply
+
+  ul
+    display: flex
+    padding: 0px
+    margin: 0px
+    list-style: none
+
+  li
+    display: inherit
 
   button
     font-family: inherit
@@ -103,10 +112,8 @@ body
   padding: 0.5em
   overflow: auto
 
-.post
-  .title
-    .meta
-      color: #c47272
+.meta
+  color: #c47272
 
 .shape-separator
   height: 4em
@@ -197,11 +204,21 @@ body
     padding: 0.75rem 0px 0.75rem 0px
     margin-bottom: 0.75rem
 
+.blog-list
+  list-style: none
+  margin: 0px
+  padding: 0px
+
 .blog-item
   background: #302121
   padding: 0.75em
   border-radius: 0.75em
   margin-bottom: 0.25em
+  h3
+    font-weight: normal
+    margin: 0px
+  p
+    margin: 0px
   .date
     color: #c47272
 
@@ -234,6 +251,9 @@ pre[class*="language-"], pre code
   padding: 8px
   margin-top: 0px
   scrollbar-width: auto /* auto | thin | none */
+
+hr
+  color: #e4a0a0
 
 pre table td:nth-of-type(1)
   text-align: center
@@ -268,30 +288,6 @@ blockquote + pre
 p + pre:has(code)
   border-radius: 8px 8px 8px 8px
 
-blockquote:has(+ pre)
-  display: inline-block
-  font-family: "Monaspace Argon" !important
-  // font-size: 1.2rem
-  font-weight: 600
-  font-size: 17px
-  margin: 0px
-  margin-block: 0px 0px
-  background-color: #d3a084
-  border-top-left-radius: 5px
-  border-top-right-radius: 5px
-  padding-left: .75rem
-  padding-right: .75rem
-  // top: 3px
-  color: #111
-
-  p
-    margin-block: 0 0 !important
-    margin: 0 !important
-    position: inherit
-    padding-left: 0px
-    border-left: 0px solid #000
-    font-style: normal
-
 blockquote p
   border-left: 1px solid #ccc
   padding-left: 20px
@@ -302,10 +298,9 @@ mark
   color: #392945
   padding: 2px
 
-/* apparently needed by Zola */
+/* for syntax highlighting, et al. */ 
 .giallo
-  overflow: scroll
-  margin-top: 0px
+  overflow: auto
 
 .giallo-l
   display: inline-block
@@ -316,7 +311,13 @@ mark
   display: inline-block
   user-select: none
   margin-right: 0.4em
-  // padding: 0.4em
+  padding: 0.4em
   min-width: 3ch
   text-align: right
   opacity: 0.8
+
+pre > code[data-name]::before
+  content: attr(data-name)
+  float: right
+  color: #888
+

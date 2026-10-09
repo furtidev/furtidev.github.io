@@ -6,16 +6,16 @@ description = "and why Ghostty matters"
 tags = ["writing", "programming"]
 +++
 
-# Childhood
+## Childhood
 I first started programming on an Android phone, basically running a PHP 7.x and MySQL 5.x server (I couldn't find the app I was using for that at the time) and using a barebones text editor (it was probably [this one](https://play.google.com/store/apps/details?id=com.rhmsoft.edit.pro)). I didn't need to interact with terminals. That all changed in 2021, when I was using the terminal more frequently. As far as terminal emulation goes, I just used the basic Command Line, yeah, the Windows one - yikes. I can't imagine how I programmed on Windows. 
 
-# Adolescence
+## Adolescence
 But after some time, I found [Alacritty](https://alacritty.org/). It was fast, it made me feel cool. I installed all the hip stuff, like [Starship](https://starship.rs/) prompt. But Alacritty had no support for tabs and I *love* organizing things via tabs. So it was inconvenient and on top of that, after going through [this discourse](https://github.com/alacritty/alacritty/issues/3129) on their GitHub, I guess it's safe to say that Alacritty will never have tabs. From this thread and some googling, I learned about Kovid Goyal's [kitty terminal emulator](https://sw.kovidgoyal.net/kitty/) - but I was disappointed because `kitty` wasn't on Windows. Okay, I guess I'll use a terminal multiplexer.. oh no I can't - neither [zellij](https://zellij.dev/) nor tmux are natively supported on Windows. I think I did try [Wezterm](https://www.google.com/search?client=firefox-b-d&q=wezterm) somewhere along the way, but it didn't stick for long.
 
-# Redemption
+## Redemption
 On 13th of January, 2023 (yes, I noted down the exact date), I switched to Linux. That means I could finally use `kitty`. But I had a thought.. what if I just use Alacritty with `zellij`? I did that for a bit and couldn't get used to using a terminal multiplexer for tabs, so - `kitty` it is. So all in all, I've used `kitty` for quite some time up until a **ghost** started haunting me. Before moving on to talking about that, `kitty` deserves some words. I like it a lot - with the occassional [SSH ragequit](https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work), you could say it was a love-hate relationship, majority of it being love though. But anyway, I'm supposed to talk about .. the hauntings of a ghost.
 
-# Enter Ghostty
+## Enter Ghostty
 [Mitchell Hashimoto](https://mitchellh.com/). You might know him. He's just this niche guy, ***co-founder of [HashiCorp](https://www.hashicorp.com/)***. So, when he announced that he was working on a terminal emulator written fully in Zig - there was hype. This was the light in the darkness, as Warp (no, I don't feel like linking Warp) receives $73M in funding for their terminal emulator where you have to log in, yes, log in to use your terminal, the coming of Ghostty showed light to the believers.
 
 Ghostty is still in private beta, with a [1.0 release](https://mitchellh.com/writing/ghostty-is-coming) coming in December, 2024. Mark your calendars, folks. I got invited into the private beta right before Halloween, so it fits. 
@@ -54,10 +54,10 @@ Ever since I got access to the private beta, Ghostty has been my daily driver. S
 
 I'm not an avid recompiler, in fact I haven't recompiled Ghostty ever since. I should really do it one of these days.  
 
-# Conclusion
+## Conclusion
 Need I say more? I'm sure I've gotten my point across, yes, Ghostty is good. You should use it when it's out. Also, why not [join the Discord](https://discord.gg/ghostty)? I forgot to mention a *killer* feature: shaders. I wrote a small TUI to make the best use of it (if you can't tell, I've been playing a lot of Fallout: New Vegas):
 
-{{image_with_figure(path="./fallout_terminal.png", w_scale="70%", h_scale="70%", figure="I got spurs that jingle, jangle, jingle")}}
+{{image_with_figure(path="./fallout_terminal.png", w_scale="70%", h_scale="70%", figure="Showcasing Ghostty capabilities with a Fallout inspired terminal")}}
 
 There's also a repository for Ghostty shaders: [hackrmomo/ghostty-shaders](https://github.com/hackrmomo/ghostty-shaders). And lastly:
 - Childhood: Clueless early days of programming.

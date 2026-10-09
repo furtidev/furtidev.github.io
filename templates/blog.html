@@ -15,15 +15,18 @@
 {%else%}
 <center><h1>My writing</h1></center>
 
-<div class="blogs-list">
+<ul class="blog-list">
 {% for page in paginator.pages %}
-<div class="blog-item">
-	<div class="title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></div>
-	<div class="subtitle">{{page.description}}</div>
-	<span class="date"><time datetime="{{page.date}}">{{ page.date | date(format="%b %d, %Y") }}</time></span>
-</div>
+	<li>
+		<article class="blog-item" title="{{page.title}}">
+			<a href="{{ page.permalink | safe }}"><h3>{{ page.title }}</h3></a>
+			<p class="subtitle" title="{{page.description}}">{{page.description}}</p>
+			<time datetime="{{page.date}}" class="date" title='{{ page.date | date(format="%b %d, %Y") }}'>{{ page.date | date(format="%b %d, %Y") }}</time>
+		</article>
+	</li>
 {% endfor %}
-</div>
+</ul>
+
 <center>
 	{% if paginator.previous %}
 		<a href="{{ paginator.previous }}">&laquo; Previous</a> |
