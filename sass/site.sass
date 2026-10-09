@@ -1,3 +1,5 @@
+@use "sass:map"
+
 @font-face
   font-family: 'Source Sans'
   src: local("Source Sans"), url("./fonts/SourceSans3-VariableFont_wght.ttf") format("truetype-variations")
@@ -13,17 +15,32 @@
   font-family: 'Dosis'
   src: local("Dosis"), url("./fonts/Dosis-VariableFont_wght.ttf") format("truetype-variations")
 
+$themes: ("default": ("bg": #201616, "fg": #e4a0a0, "muted": #c47272, "muted-secondary": #302121), "contrast": ("bg": #000, "fg": #fff, "muted": #aaa, "muted-secondary": #aaaaaa80))
+
+@mixin apply-theme($theme-name)
+  $theme: map-get($themes, $theme-name)
+
+  --contrast-enabled: 0
+  --bg-color: #{map-get($theme, bg)}
+  --fg-color: #{map-get($theme, fg)}
+  --muted-color: #{map-get($theme, muted)}
+  --muted-secondary-color: #{map-get($theme, muted-secondary)}
+
+  @if $theme-name == "contrast"
+    --constrast-enabled: 1
+
+:root
+ @include apply-theme("default")
+
 body
-  // font-family: "Source Sans"
+  &:has(#contrast-toggle:checked)
+    @include apply-theme(contrast)
+
   font-family: "Dosis"
-  // font-size: 1.25em
   font-size: 20px
 
-  background: #201616
-  // color: #f58e8e // original, kept for future purposes
-  // color: #dfa5a5
-  color: #e4a0a0
-  // color: #e79d9d
+  background: var(--bg-color)
+  color: var(--fg-color)
   text-shadow: 1px 0px 4px #000
 
   &::-webkit-scrollbar
@@ -53,6 +70,7 @@ body
   font-family: "Monaspace Argon"
   display: flex
   justify-content: center
+  align-items: center
   // column-gap: 1rem
   padding: 0.5rem
   background-blend-mode: multiply
@@ -82,8 +100,11 @@ body
   .yellow
     color: #fcd825
     // text-shadow: 1px 1px 5px #d4b620
-    border: 1px solid #302121
+    border: 1px solid var(--muted-secondary-color)
     border-radius: 25% 0px 0px 25%
+
+    @container style(--constrast-enabled: 1)
+      color: var(--fg-color)
 
     &:hover
       background: #fcd825
@@ -92,7 +113,10 @@ body
   .magenta
     color: #b21e4d
     // text-shadow: 0px 2px 5px #ff2b6e
-    border: 1px solid #302121
+    border: 1px solid var(--muted-secondary-color)
+
+    @container style(--constrast-enabled: 1)
+      color: var(--fg-color)
 
     &:hover
       background: #b21e4d
@@ -101,8 +125,11 @@ body
   .orange
     color: #eb883a
     // text-shadow: 0px 2px 5px #c97432
-    border: 1px solid #302121
+    border: 1px solid var(--muted-secondary-color)
     border-radius: 0px 25% 25% 0px
+
+    @container style(--constrast-enabled: 1)
+      color: var(--fg-color)
 
     &:hover
       background: #eb883a
@@ -113,7 +140,7 @@ body
   overflow: auto
 
 .meta
-  color: #c47272
+  color: var(--muted-color)
 
 .shape-separator
   height: 4em
@@ -155,13 +182,13 @@ body
     color: #737373
 
   .employ-focus
-    color: #c47272
+    color: var(--muted-color)
 
   .quote
     column-gap: 1em
     font-family: "Monaspace Argon"
     font-size: 18px
-    background: #302121
+    background: var(--muted-secondary-color)
     padding: 8px
     border: 0.5px solid #00000050
     img
@@ -174,9 +201,14 @@ body
     display: flex
     flex-direction: row
     align-items: center
-    background: #302121
+    background: var(--muted-secondary-color)
     border-radius: 3rem
     padding: 0px 3rem 0px 0px
+
+    @container style(--constrast-enabled: 1)
+      background: none
+      border: 2px solid var(--muted-secondary-color)
+
     .icon
       padding: 3rem
 
@@ -188,7 +220,7 @@ body
     display: flex
     flex-direction: row
     align-items: center
-    border: 1px solid #302121
+    border: 1px solid var(--muted-secondary-color)
     border-radius: 0.5em
     padding: 20px
 
@@ -210,25 +242,30 @@ body
   padding: 0px
 
 .blog-item
-  background: #302121
+  background: var(--muted-secondary-color)
   padding: 0.75em
   border-radius: 0.75em
   margin-bottom: 0.25em
+
+  @container style(--constrast-enabled: 1)
+    background: none
+    border: 2px solid var(--muted-secondary-color)
+
   h3
     font-weight: normal
     margin: 0px
   p
     margin: 0px
   .date
-    color: #c47272
+    color: var(--muted-color)
 
 .footer::before
   display: block
   content: "----"
-  color: #c47272
+  color: var(--muted-color)
 
 .footer
-  color: #c47272
+  color: var(--muted-color)
   font-size: 17px
   // text-align: center
 
@@ -253,7 +290,7 @@ pre[class*="language-"], pre code
   scrollbar-width: auto /* auto | thin | none */
 
 hr
-  color: #e4a0a0
+  color: var(--fg-color)
 
 pre table td:nth-of-type(1)
   text-align: center
@@ -278,9 +315,13 @@ code.command
   // font-size: 16px
   display: block
   overflow: scroll
-  background: #302121
+  background: var(--muted-secondary-color)
   padding: 0.5em
   border-radius: 0.75em
+
+  @container style(--constrast-enabled: 1)
+    background: none
+    border: 2px solid var(--muted-secondary-color)
 
 blockquote + pre
   border-radius: 0px 8px 8px 8px
@@ -294,8 +335,9 @@ blockquote p
   font-style: italic
 
 mark
-  background: #c3a79c
-  color: #392945
+  background: var(--muted-color)
+  color: var(--bg-color)
+  text-shadow: none
   padding: 2px
 
 /* for syntax highlighting, et al. */ 

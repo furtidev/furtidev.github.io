@@ -49,7 +49,28 @@
 <footer class="footer">
     © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
 
+    <label>
+        <input type="checkbox" id="contrast-toggle" onchange="change_theme(this)"/>
+        High contrast mode
+    </label>
+
     <p><img src="/images/button.png" alt="88x31 Card that can be used by other websites to link to this website in an aesthetically pleasing way"></p>
 </footer>
 </body>
 
+<script>
+    const contrast_toggle = document.getElementById('contrast-toggle');
+    const theme = localStorage.getItem('contrast_mode');
+
+    if (theme === 'true') {
+        contrast_toggle.checked = true;
+    }
+
+    function change_theme(checkbox) {
+        localStorage.setItem('contrast_mode', is_checked(checkbox));
+    }
+
+    function is_checked(state) {
+        return state.checked ? 'true' : 'false'
+    }
+</script>
