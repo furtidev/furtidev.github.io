@@ -24,12 +24,20 @@
 <br>
 <script src="https://keepandroidopen.org/banner.js?size=minimal&hidebutton=off&animation=off"></script>
 <div class="header blend">
-<div class="title">
-    <img src="/images/text.png" style="image-rendering: pixelated" width="60%" alt="A stylized icon that reads 'furti' with some hearts serving as the logo of the site.">
-</div>
 </div>
 
-<center>careful, thoughts ahead!</center>
+
+<header class="header">
+    <div class="title">
+        <img src="/images/text.png" style="image-rendering: pixelated" width="60%" alt="A stylized icon that reads 'furti' with some hearts serving as the logo of the site.">
+    </div>
+    <center>
+        <label for="contrast-toggle">
+            High contrast mode
+        </label>
+        <input type="checkbox" id="contrast-toggle" name="contrast-toggle" onchange="change_theme(this)" aria-label="Toggle high contrast mode"/>
+    </center>
+</header>
 
 <nav class="navbar">
     <ul>
@@ -48,11 +56,6 @@
 
 <footer class="footer">
     © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
-
-    <label>
-        <input type="checkbox" id="contrast-toggle" onchange="change_theme(this)" aria-label="Toggle high contrast mode"/>
-        High contrast mode
-    </label>
 
     <p><img src="/images/button.png" alt="88x31 Card that can be used by other websites to link to this website in an aesthetically pleasing way"></p>
 </footer>
