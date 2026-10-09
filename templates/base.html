@@ -35,16 +35,16 @@ MM88MMM 88       88 8b,dPPYba, MM88MMM 88
   88     `"YbbdP'Y8 88           "Y888 88
 </pre> -->
 <div class="title">
-    <img src="/images/text.png" style="image-rendering: pixelated" width="60%">
+    <img src="/images/text.png" style="image-rendering: pixelated" width="60%" alt="A stylized icon that reads 'furti' with some hearts serving as the logo of the site.">
 </div>
 </div>
 
 <center>careful, thoughts ahead!</center>
 
 <div class="navbar">
-    <a href="/" class="styled yellow">home</a>
-    <a href="{{ get_url(path='@/blog/_index.md') }}" class="styled magenta">blog</a>
-    <a href="{{ get_url(path='rss.xml', trailing_slash=false) }}" class="styled orange">rss</a>
+    <a href="/" class="styled yellow" alt="Home Page">home</a>
+    <a href="{{ get_url(path='@/blog/_index.md') }}" class="styled magenta" alt="Blog Page">blog</a>
+    <a href="{{ get_url(path='rss.xml', trailing_slash=false) }}" class="styled orange" alt="RSS Preview">rss</a>
 </div>
 
 <div class="shape-separator"></div>
@@ -54,10 +54,10 @@ MM88MMM 88       88 8b,dPPYba, MM88MMM 88
 
 </div>
 
-<div class="footer">
-    © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
+<footer class="footer">
+    © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}" alt="Copyright and related notices">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
 
-    <p><img src="/images/button.png"></p>
-</div>
+    <p><img src="/images/button.png" alt="Card that can be used by other websites to link to this website in an aesthetically pleasing way"></p>
+</footer>
 </body>
 
