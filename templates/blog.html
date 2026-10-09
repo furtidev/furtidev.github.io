@@ -20,8 +20,8 @@
 	<li>
 		<article class="blog-item" title="{{page.title}}">
 			<a href="{{ page.permalink | safe }}"><h3>{{ page.title }}</h3></a>
-			<p class="subtitle" title="{{page.description}}">{{page.description}}</p>
-			<time datetime="{{page.date}}" class="date" title='{{ page.date | date(format="%b %d, %Y") }}'>{{ page.date | date(format="%b %d, %Y") }}</time>
+			<p class="subtitle">{{page.description}}</p>
+			<time datetime="{{page.date}}" class="date">{{ page.date | date(format="%b %d, %Y") }}</time>
 		</article>
 	</li>
 {% endfor %}
