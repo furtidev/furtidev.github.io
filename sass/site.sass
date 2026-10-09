@@ -341,6 +341,22 @@ mark
   text-shadow: none
   padding: 2px
 
+// taken from w3schools
+.skip-to-main
+  position: absolute
+  left: -10000px
+  top: auto
+  width: 1px
+  height: 1px
+  overflow: hidden
+  color: #fff
+  background: #000
+
+  &:focus
+    position: static
+    width: auto
+    height: auto
+
 /* for syntax highlighting, et al. */ 
 .giallo
   overflow: auto
