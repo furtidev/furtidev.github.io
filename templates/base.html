@@ -20,26 +20,27 @@
     <!-- <meta name="theme-color" content="#392945"> -->
 </head>
 
-<body class="body-container">
+<body>
 <a class="skip-to-main" href="#main-content">Skip to main content</a>
 <!-- <br>
 <script src="https://keepandroidopen.org/banner.js?size=minimal&hidebutton=off&animation=off"></script> -->
-<div class="header blend">
-</div>
 
-<header class="header">
-    <div class="title">
-        <img src="/images/text.png" style="image-rendering: pixelated" width="60%" alt="A stylized icon that reads 'furti' with some hearts serving as the logo of the site.">
+<header>
+    <div>
+        <img src="/images/logo.png" width="40%" alt="Stylized wordmark with a barcode and text that reads 'furti'.">
     </div>
-    <center>
-        <label for="contrast-toggle">
-            High contrast mode
-        </label>
-        <input type="checkbox" id="contrast-toggle" name="contrast-toggle" onchange="change_theme(this)" aria-label="Toggle high contrast mode"/>
-    </center>
+
+    <ul class="social-medias">
+        <li>
+            <a href="https://github.com/furtidev" target="_blank"><img src="/images/github.png" style="image-rendering: pixelated; width: 64px" alt="GitHub logo"></a>
+        </li>
+        <li>
+            <a href="https://bsky.app/profile/furtidev.github.io" target="_blank"><img src="/images/bluesky.png" style="image-rendering: pixelated; width: 64px" class="bluesky" alt="BlueSky logo"></a>
+        </li>
+    </ul>
 </header>
 
-<nav class="navbar">
+<nav>
     <ul>
         <li><a href="/" class="styled yellow">home</a></li>
         <li><a href="{{ get_url(path='@/blog/_index.md') }}" class="styled magenta">blog</a></li>
@@ -47,33 +48,16 @@
     </ul>
 </nav>
 
-<div class="shape-separator"></div>
-
-<main class="block-content-container" id="main-content">
+<main id="main-content">
 {% block content %} {% endblock content %}
 
 </main>
 
-<footer class="footer">
-    © 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}">Some rights reserved</a>. Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.
+<footer>
+    <p>© 2023–2026 furtidev. <a href="{{ get_url(path='@/meta/_index.md') }}">Some rights reserved</a></p>
 
-    <p><img src="/images/button.png" alt="88x31 Card that can be used by other websites to link to this website in an aesthetically pleasing way"></p>
+    <p>Built on {{ now() | date(format="%d %B, %Y %r %:z") }}.</p>
+
+    <img src="/images/island.gif" width="20%" alt="A rotating low-poly 3D model of a beach">
 </footer>
 </body>
-
-<script>
-    const contrast_toggle = document.getElementById('contrast-toggle');
-    const theme = localStorage.getItem('contrast_mode');
-
-    if (theme === 'true') {
-        contrast_toggle.checked = true;
-    }
-
-    function change_theme(checkbox) {
-        localStorage.setItem('contrast_mode', is_checked(checkbox));
-    }
-
-    function is_checked(state) {
-        return state.checked ? 'true' : 'false'
-    }
-</script>
