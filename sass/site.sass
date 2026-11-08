@@ -71,9 +71,16 @@ footer
   display: flex
 
 .cmd
+  word-wrap: break-word
   background: #111
   border: 1px solid #ddd
   border-radius: 4px
   padding: 4px
   &:before
     content: "$ "
+
+
+@media screen and (max-width: 480px)
+  .cmd
+    background: inherit
+    border: none
