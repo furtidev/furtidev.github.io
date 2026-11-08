@@ -2,6 +2,7 @@
 title = "Trying Ghostty: My experience with terminal emulators"
 date = 2024-11-10
 description = "and why Ghostty matters"
+draft=true
 [taxonomies]
 tags = ["writing", "programming"]
 +++

@@ -2,6 +2,7 @@
 title = "Please, let my laptop sleep"
 date = 2025-08-31
 description = "Why suspend was inconsistent in my Linux system and how I fixed it"
+draft=true
 [taxonomies]
 tags = ["linux"]
 +++

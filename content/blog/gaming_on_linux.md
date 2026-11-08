@@ -2,6 +2,7 @@
 title = "Setting up Wine + Bottles on an external drive"
 date = 2025-05-25
 description = "Cursed Linux gaming setup"
+draft=true
 [taxonomies]
 tags = ["linux", "tutorial"]
 +++

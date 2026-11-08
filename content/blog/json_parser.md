@@ -2,6 +2,7 @@
 title = "What's so hard about writing a JSON parser?"
 date = 2025-01-19
 description = "turns out, not much"
+draft=true
 [taxonomies]
 tags = ["programming"]
 +++
