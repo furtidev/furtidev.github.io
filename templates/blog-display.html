@@ -21,7 +21,8 @@
 
 {% block content %}
 <article title="{{ page.title }}">
-  <h1 class="title">{{ page.title }}</h1>
+  <h1 style="margin: 0px">{{ page.title }}</h1>
+  <i>{{ page.description }}</i>
   {{ page.content | safe }}
 
   <hr/>
@@ -45,7 +46,7 @@
         repo="furtidev/furtidev.github.io"
         issue-term="pathname"
         label="comment"
-        theme="gruvbox-dark"
+        theme="github-dark"
         crossorigin="anonymous"
         async>
 </script>
